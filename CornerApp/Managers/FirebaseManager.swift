@@ -1,0 +1,177 @@
+//
+//  FirebaseManager.swift
+//  CornerApp
+//
+//  Created by Jar Jar on 8/2/25.
+//
+
+
+import Foundation
+import Firebase
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseStorage
+
+class FirebaseManager: ObservableObject {
+    static let shared = FirebaseManager()
+    private let db = Firestore.firestore()
+    private let auth = Auth.auth()
+    
+    @Published var currentUser: User?
+    @Published var userProfile: UserProfile?
+    @Published var facts: [Fact] = []
+    
+    private init() {
+        setupAuthListener()
+        loadSampleFacts()
+    }
+    
+    private func setupAuthListener() {
+        auth.addStateDidChangeListener { [weak self] _, user in
+            self?.currentUser = user
+            if let user = user {
+                self?.loadUserProfile(uid: user.uid)
+            } else {
+                self?.userProfile = nil
+            }
+        }
+    }
+    
+    private func loadSampleFacts() {
+        // Sample facts - you can replace this with loading from Firebase Storage
+        facts = [
+            Fact(text: "Octopuses have three hearts and blue blood. Two hearts pump blood to the gills, while the third pumps blood to the rest of the body.", category: "Science"),
+            Fact(text: "The longest place name in the world is 85 letters long: Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu, a hill in New Zealand.", category: "Geography"),
+            Fact(text: "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.", category: "History"),
+            Fact(text: "A group of flamingos is called a 'flamboyance.' They get their pink color from eating shrimp and algae rich in carotenoids.", category: "Animals"),
+            Fact(text: "The human brain uses about 20% of the body's total energy, despite only making up about 2% of body weight.", category: "Science")
+        ]
+    }
+    
+    // MARK: - Authentication
+    func signUp(email: String, password: String, completion: @escaping (Result<User, Error>) -> Void) {
+        auth.createUser(withEmail: email, password: password) { [weak self] result, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let user = result?.user else {
+                completion(.failure(NSError(domain: "AuthError", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to create user"])))
+                return
+            }
+            
+            // Create user profile in Firestore
+            let profile = UserProfile(uid: user.uid, email: email)
+            self?.saveUserProfile(profile) { result in
+                switch result {
+                case .success:
+                    completion(.success(user))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
+    
+    func signIn(email: String, password: String, completion: @escaping (Result<User, Error>) -> Void) {
+        print("🔥 FirebaseManager: Starting sign in for \(email)")
+        
+        auth.signIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("❌ FirebaseManager: Sign in failed - \(error.localizedDescription)")
+                completion(.failure(error))
+                return
+            }
+            
+            guard let user = result?.user else {
+                print("❌ FirebaseManager: No user returned from sign in")
+                completion(.failure(NSError(domain: "AuthError", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to sign in"])))
+                return
+            }
+            
+            print("✅ FirebaseManager: Sign in successful for \(user.email ?? "unknown")")
+            completion(.success(user))
+        }
+    }
+    
+    func signOut() throws {
+        try auth.signOut()
+    }
+    
+    // MARK: - User Profile Management
+    private func loadUserProfile(uid: String) {
+        db.collection("users").document(uid).getDocument { [weak self] snapshot, error in
+            if let error = error {
+                print("Error loading user profile: \(error)")
+                return
+            }
+            
+            guard let data = snapshot?.data() else {
+                // Create new profile if doesn't exist
+                let profile = UserProfile(uid: uid, email: self?.currentUser?.email ?? "")
+                self?.saveUserProfile(profile) { _ in }
+                return
+            }
+            
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: data)
+                let profile = try JSONDecoder().decode(UserProfile.self, from: jsonData)
+                DispatchQueue.main.async {
+                    self?.userProfile = profile
+                }
+            } catch {
+                print("Error decoding user profile: \(error)")
+            }
+        }
+    }
+    
+    private func saveUserProfile(_ profile: UserProfile, completion: @escaping (Result<Void, Error>) -> Void) {
+        do {
+            let data = try JSONEncoder().encode(profile)
+            let dict = try JSONSerialization.jsonObject(with: data) as? [String: Any] ?? [:]
+            
+            db.collection("users").document(profile.uid).setData(dict) { error in
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    DispatchQueue.main.async {
+                        self.userProfile = profile
+                    }
+                    completion(.success(()))
+                }
+            }
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
+    // MARK: - Fact Interactions
+    func incrementCornerTaps() {
+        guard var profile = userProfile else { return }
+        profile.cornerButtonTaps += 1
+        saveUserProfile(profile) { _ in }
+    }
+    
+    func likeFact(_ factId: String) {
+        guard var profile = userProfile else { return }
+        if !profile.likedFacts.contains(factId) {
+            profile.likedFacts.append(factId)
+            profile.dislikedFacts.removeAll { $0 == factId }
+            saveUserProfile(profile) { _ in }
+        }
+    }
+    
+    func dislikeFact(_ factId: String) {
+        guard var profile = userProfile else { return }
+        if !profile.dislikedFacts.contains(factId) {
+            profile.dislikedFacts.append(factId)
+            profile.likedFacts.removeAll { $0 == factId }
+            saveUserProfile(profile) { _ in }
+        }
+    }
+    
+    func getRandomFact() -> Fact? {
+        return facts.randomElement()
+    }
+}
