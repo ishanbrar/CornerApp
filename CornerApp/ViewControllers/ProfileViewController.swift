@@ -5,7 +5,6 @@
 //  Created by Jar Jar on 8/2/25.
 //
 
-
 import UIKit
 
 class ProfileViewController: UIViewController {
@@ -16,9 +15,10 @@ class ProfileViewController: UIViewController {
     private var cornerTapsLabel: UILabel!
     private var likedFactsTableView: UITableView!
     private var dislikedFactsTableView: UITableView!
-    private var signOutButton: UIButton!
+    private var authButton: UIButton! // Changed from signOutButton to authButton
     private var likedFactsHeaderLabel: UILabel!
     private var dislikedFactsHeaderLabel: UILabel!
+    private var notSignedInLabel: UILabel! // New label for when user is not signed in
     
     private let firebaseManager = FirebaseManager.shared
     private var likedFacts: [Fact] = []
@@ -27,12 +27,12 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        loadUserData()
+        updateUIForAuthState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadUserData() // Refresh data when view appears
+        updateUIForAuthState() // Update UI based on auth state when view appears
     }
     
     private func setupUI() {
@@ -54,7 +54,8 @@ class ProfileViewController: UIViewController {
         dislikedFactsHeaderLabel = UILabel()
         likedFactsTableView = UITableView()
         dislikedFactsTableView = UITableView()
-        signOutButton = UIButton(type: .system)
+        authButton = UIButton(type: .system) // Changed from signOutButton
+        notSignedInLabel = UILabel() // New label
         
         // Email Label
         emailLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
@@ -64,6 +65,13 @@ class ProfileViewController: UIViewController {
         // Corner Taps Label
         cornerTapsLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         cornerTapsLabel.textColor = UIColor.secondaryLabel
+        
+        // Not Signed In Label
+        notSignedInLabel.text = "Please sign in to view your profile data"
+        notSignedInLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        notSignedInLabel.textColor = UIColor.secondaryLabel
+        notSignedInLabel.textAlignment = .center
+        notSignedInLabel.numberOfLines = 0
         
         // Header Labels
         likedFactsHeaderLabel.text = "Liked Facts"
@@ -78,13 +86,10 @@ class ProfileViewController: UIViewController {
         setupTableView(likedFactsTableView)
         setupTableView(dislikedFactsTableView)
         
-        // Sign Out Button
-        signOutButton.setTitle("Sign Out", for: .normal)
-        signOutButton.backgroundColor = UIColor.systemRed
-        signOutButton.tintColor = .white
-        signOutButton.layer.cornerRadius = 8
-        signOutButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        signOutButton.addTarget(self, action: #selector(signOutButtonTapped), for: .touchUpInside)
+        // Auth Button (will be configured based on auth state)
+        authButton.layer.cornerRadius = 8
+        authButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        authButton.addTarget(self, action: #selector(authButtonTapped), for: .touchUpInside)
         
         // Add to view hierarchy
         view.addSubview(scrollView)
@@ -92,11 +97,12 @@ class ProfileViewController: UIViewController {
         
         contentView.addSubview(emailLabel)
         contentView.addSubview(cornerTapsLabel)
+        contentView.addSubview(notSignedInLabel)
         contentView.addSubview(likedFactsHeaderLabel)
         contentView.addSubview(likedFactsTableView)
         contentView.addSubview(dislikedFactsHeaderLabel)
         contentView.addSubview(dislikedFactsTableView)
-        contentView.addSubview(signOutButton)
+        contentView.addSubview(authButton)
         
         setupConstraints()
     }
@@ -117,11 +123,12 @@ class ProfileViewController: UIViewController {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         emailLabel.translatesAutoresizingMaskIntoConstraints = false
         cornerTapsLabel.translatesAutoresizingMaskIntoConstraints = false
+        notSignedInLabel.translatesAutoresizingMaskIntoConstraints = false
         likedFactsHeaderLabel.translatesAutoresizingMaskIntoConstraints = false
         likedFactsTableView.translatesAutoresizingMaskIntoConstraints = false
         dislikedFactsHeaderLabel.translatesAutoresizingMaskIntoConstraints = false
         dislikedFactsTableView.translatesAutoresizingMaskIntoConstraints = false
-        signOutButton.translatesAutoresizingMaskIntoConstraints = false
+        authButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             // Scroll View
@@ -147,6 +154,11 @@ class ProfileViewController: UIViewController {
             cornerTapsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             cornerTapsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
+            // Not Signed In Label
+            notSignedInLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 60),
+            notSignedInLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            notSignedInLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            
             // Liked Facts Header
             likedFactsHeaderLabel.topAnchor.constraint(equalTo: cornerTapsLabel.bottomAnchor, constant: 30),
             likedFactsHeaderLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
@@ -169,13 +181,60 @@ class ProfileViewController: UIViewController {
             dislikedFactsTableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             dislikedFactsTableView.heightAnchor.constraint(equalToConstant: 200),
             
-            // Sign Out Button
-            signOutButton.topAnchor.constraint(equalTo: dislikedFactsTableView.bottomAnchor, constant: 40),
-            signOutButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            signOutButton.widthAnchor.constraint(equalToConstant: 200),
-            signOutButton.heightAnchor.constraint(equalToConstant: 44),
-            signOutButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -40),
+            // Auth Button
+            authButton.topAnchor.constraint(equalTo: dislikedFactsTableView.bottomAnchor, constant: 40),
+            authButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            authButton.widthAnchor.constraint(equalToConstant: 200),
+            authButton.heightAnchor.constraint(equalToConstant: 44),
+            authButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -40),
         ])
+    }
+    
+    private func updateUIForAuthState() {
+        let isSignedIn = firebaseManager.currentUser != nil
+        
+        if isSignedIn {
+            // User is signed in - show profile data and sign out button
+            loadUserData()
+            configureSignOutButton()
+            showSignedInContent()
+        } else {
+            // User is not signed in - show sign in button and hide profile data
+            configureSignInButton()
+            hideSignedInContent()
+        }
+    }
+    
+    private func configureSignInButton() {
+        authButton.setTitle("Sign In", for: .normal)
+        authButton.backgroundColor = UIColor.systemBlue
+        authButton.tintColor = .white
+    }
+    
+    private func configureSignOutButton() {
+        authButton.setTitle("Sign Out", for: .normal)
+        authButton.backgroundColor = UIColor.systemRed
+        authButton.tintColor = .white
+    }
+    
+    private func showSignedInContent() {
+        emailLabel.isHidden = false
+        cornerTapsLabel.isHidden = false
+        likedFactsHeaderLabel.isHidden = false
+        likedFactsTableView.isHidden = false
+        dislikedFactsHeaderLabel.isHidden = false
+        dislikedFactsTableView.isHidden = false
+        notSignedInLabel.isHidden = true
+    }
+    
+    private func hideSignedInContent() {
+        emailLabel.isHidden = true
+        cornerTapsLabel.isHidden = true
+        likedFactsHeaderLabel.isHidden = true
+        likedFactsTableView.isHidden = true
+        dislikedFactsHeaderLabel.isHidden = true
+        dislikedFactsTableView.isHidden = true
+        notSignedInLabel.isHidden = false
     }
     
     private func loadUserData() {
@@ -200,7 +259,19 @@ class ProfileViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    @objc private func signOutButtonTapped(_ sender: UIButton) {
+    @objc private func authButtonTapped(_ sender: UIButton) {
+        let isSignedIn = firebaseManager.currentUser != nil
+        
+        if isSignedIn {
+            // User is signed in - show sign out confirmation
+            showSignOutConfirmation()
+        } else {
+            // User is not signed in - present authentication screen
+            presentAuthenticationViewController()
+        }
+    }
+    
+    private func showSignOutConfirmation() {
         let alert = UIAlertController(
             title: "Sign Out",
             message: "Are you sure you want to sign out?",
@@ -211,13 +282,22 @@ class ProfileViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive) { [weak self] _ in
             do {
                 try self?.firebaseManager.signOut()
-                self?.dismiss(animated: true)
+                self?.updateUIForAuthState() // Update UI after signing out
             } catch {
                 self?.showErrorAlert(message: "Failed to sign out. Please try again.")
             }
         })
         
         present(alert, animated: true)
+    }
+    
+    private func presentAuthenticationViewController() {
+        let authVC = AuthenticationViewController()
+        authVC.modalPresentationStyle = .fullScreen
+        
+        present(authVC, animated: true) {
+            print("🔥 Auth view controller presented from profile")
+        }
     }
     
     private func showErrorAlert(message: String) {

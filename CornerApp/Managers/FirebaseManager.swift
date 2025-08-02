@@ -23,7 +23,9 @@ class FirebaseManager: ObservableObject {
     
     private init() {
         setupAuthListener()
-        loadSampleFacts()
+        //loadSampleFacts()
+        loadFactsFromFirebaseStorage()
+
     }
     
     private func setupAuthListener() {
@@ -36,7 +38,34 @@ class FirebaseManager: ObservableObject {
             }
         }
     }
-    
+    private func loadFactsFromFirebaseStorage() {
+        let storage = Storage.storage()
+        let path = "f1.json" // Adjust based on your file name in Firebase Storage
+        let storageRef = storage.reference(withPath: path)
+
+        storageRef.getData(maxSize: 5 * 1024 * 1024) { [weak self] data, error in
+            if let error = error {
+                print("❌ Failed to download facts JSON: \(error)")
+                return
+            }
+
+            guard let data = data else {
+                print("❌ No data received from Firebase Storage.")
+                return
+            }
+
+            do {
+                let facts = try JSONDecoder().decode([Fact].self, from: data)
+                DispatchQueue.main.async {
+                    self?.facts = facts
+                    print("✅ Loaded \(facts.count) facts from Firebase Storage")
+                }
+            } catch {
+                print("❌ Failed to decode facts JSON: \(error)")
+            }
+        }
+    }
+
     private func loadSampleFacts() {
         // Sample facts - you can replace this with loading from Firebase Storage
         facts = [
