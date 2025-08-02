@@ -96,39 +96,40 @@ class MainViewController: UIViewController {
         profileButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            // Corner Button
-            cornerButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
-            cornerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            cornerButton.widthAnchor.constraint(equalToConstant: 120),
-            cornerButton.heightAnchor.constraint(equalToConstant: 50),
-            
-            // Profile Button
+            // Profile Button (top right)
             profileButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             profileButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             profileButton.widthAnchor.constraint(equalToConstant: 50),
             profileButton.heightAnchor.constraint(equalToConstant: 50),
             
-            // Fact Label
-            factLabel.topAnchor.constraint(equalTo: cornerButton.bottomAnchor, constant: 60),
+            // Fact Label (centered)
+            factLabel.topAnchor.constraint(equalTo: profileButton.bottomAnchor, constant: 40),
             factLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             factLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             
-            // Action Buttons
-            likeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
-            likeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
-            likeButton.widthAnchor.constraint(equalToConstant: 50),
-            likeButton.heightAnchor.constraint(equalToConstant: 50),
-            
-            dislikeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
+            // Action Buttons above Corner Button
+            dislikeButton.bottomAnchor.constraint(equalTo: cornerButton.topAnchor, constant: -20),
             dislikeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             dislikeButton.widthAnchor.constraint(equalToConstant: 50),
             dislikeButton.heightAnchor.constraint(equalToConstant: 50),
             
-            shareButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
-            shareButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
+            likeButton.centerYAnchor.constraint(equalTo: dislikeButton.centerYAnchor),
+            likeButton.trailingAnchor.constraint(equalTo: dislikeButton.leadingAnchor, constant: -40),
+            likeButton.widthAnchor.constraint(equalToConstant: 50),
+            likeButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            shareButton.centerYAnchor.constraint(equalTo: dislikeButton.centerYAnchor),
+            shareButton.leadingAnchor.constraint(equalTo: dislikeButton.trailingAnchor, constant: 40),
             shareButton.widthAnchor.constraint(equalToConstant: 50),
             shareButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            // Corner Button at bottom center
+            cornerButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
+            cornerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            cornerButton.widthAnchor.constraint(equalToConstant: 140),
+            cornerButton.heightAnchor.constraint(equalToConstant: 55)
         ])
+
     }
     
     private func checkAuthenticationStatus() {
@@ -168,10 +169,14 @@ class MainViewController: UIViewController {
     
     // MARK: - Actions
     @objc private func cornerButtonTapped(_ sender: UIButton) {
+        // Haptic feedback
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+        
         firebaseManager.incrementCornerTaps()
         loadRandomFact()
         
-        // Add animation
+        // Animation
         UIView.animate(withDuration: 0.1, animations: {
             sender.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { _ in
@@ -180,6 +185,7 @@ class MainViewController: UIViewController {
             }
         }
     }
+
     
     @objc private func likeButtonTapped(_ sender: UIButton) {
         guard let fact = currentFact else { return }
