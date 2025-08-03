@@ -226,8 +226,12 @@ class AuthenticationViewController: UIViewController {
                 switch result {
                 case .success:
                     print("✅ Sign in successful - dismissing auth screen")
-                    self?.dismiss(animated: true) {
-                        print("✅ Auth screen dismissed successfully")
+                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                       let keyWindow = windowScene.windows.first,
+                       let rootVC = keyWindow.rootViewController {
+                        rootVC.dismiss(animated: true) {
+                            print("✅ Auth screen dismissed to root")
+                        }
                     }
                 case .failure(let error):
                     print("❌ Sign in failed: \(error.localizedDescription)")
@@ -251,8 +255,12 @@ class AuthenticationViewController: UIViewController {
                 switch result {
                 case .success:
                     print("✅ Sign up successful - dismissing auth screen")
-                    self?.dismiss(animated: true) {
-                        print("✅ Auth screen dismissed successfully")
+                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                       let keyWindow = windowScene.windows.first,
+                       let rootVC = keyWindow.rootViewController {
+                        rootVC.dismiss(animated: true) {
+                            print("✅ Auth screen dismissed to root")
+                        }
                     }
                 case .failure(let error):
                     print("❌ Sign up failed: \(error.localizedDescription)")

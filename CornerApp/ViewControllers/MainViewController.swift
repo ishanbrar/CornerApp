@@ -8,10 +8,13 @@ class MainViewController: UIViewController {
     private var dislikeButton: UIButton!
     private var shareButton: UIButton!
     private var profileButton: UIButton!
-    
+    private var factHistory: [Fact] = []
+    private var undoButton: UIButton!
     private var currentFact: Fact?
     private let firebaseManager = FirebaseManager.shared
     private var hasCheckedAuth = false
+    private var emojiLabel: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +43,16 @@ class MainViewController: UIViewController {
         dislikeButton = UIButton(type: .system)
         shareButton = UIButton(type: .system)
         profileButton = UIButton(type: .system)
+        undoButton = UIButton(type: .system)
+        
+        // emoji label
+        emojiLabel = UILabel()
+        emojiLabel.textAlignment = .center
+        emojiLabel.font = UIFont.systemFont(ofSize: 28)
+        emojiLabel.numberOfLines = 1
+        emojiLabel.adjustsFontSizeToFitWidth = true
+        view.addSubview(emojiLabel)
+
         
         // Corner Button
         cornerButton.setTitle("Corner", for: .normal)
@@ -60,11 +73,16 @@ class MainViewController: UIViewController {
         factLabel.textColor = UIColor.label
         factLabel.text = "Tap Corner to get a fact!"
         
+        
+        
         // Action Buttons
         setupActionButton(likeButton, systemName: "heart", color: .systemRed, action: #selector(likeButtonTapped))
         setupActionButton(dislikeButton, systemName: "heart.slash", color: .systemGray, action: #selector(dislikeButtonTapped))
         setupActionButton(shareButton, systemName: "square.and.arrow.up", color: .systemBlue, action: #selector(shareButtonTapped))
         setupActionButton(profileButton, systemName: "person.circle", color: .systemIndigo, action: #selector(profileButtonTapped))
+        setupActionButton(undoButton, systemName: "arrow.uturn.left", color: .systemOrange, action: #selector(undoButtonTapped))
+        
+
         
         // Add to view
         view.addSubview(cornerButton)
@@ -73,7 +91,7 @@ class MainViewController: UIViewController {
         view.addSubview(dislikeButton)
         view.addSubview(shareButton)
         view.addSubview(profileButton)
-        
+        view.addSubview(undoButton)
         // Layout
         setupConstraints()
     }
@@ -94,7 +112,10 @@ class MainViewController: UIViewController {
         dislikeButton.translatesAutoresizingMaskIntoConstraints = false
         shareButton.translatesAutoresizingMaskIntoConstraints = false
         profileButton.translatesAutoresizingMaskIntoConstraints = false
-        
+        undoButton.translatesAutoresizingMaskIntoConstraints = false
+        emojiLabel.translatesAutoresizingMaskIntoConstraints = false
+
+
         NSLayoutConstraint.activate([
             // Profile Button (top right)
             profileButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
@@ -102,12 +123,18 @@ class MainViewController: UIViewController {
             profileButton.widthAnchor.constraint(equalToConstant: 50),
             profileButton.heightAnchor.constraint(equalToConstant: 50),
             
-            // Fact Label (centered)
+            // Fact Label
             factLabel.topAnchor.constraint(equalTo: profileButton.bottomAnchor, constant: 40),
             factLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             factLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             
-            // Action Buttons above Corner Button
+            // Undo Button - just above like/dislike/share
+            undoButton.bottomAnchor.constraint(equalTo: dislikeButton.topAnchor, constant: -20),
+            undoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            undoButton.widthAnchor.constraint(equalToConstant: 50),
+            undoButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            // Dislike Button - just above Corner button
             dislikeButton.bottomAnchor.constraint(equalTo: cornerButton.topAnchor, constant: -20),
             dislikeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             dislikeButton.widthAnchor.constraint(equalToConstant: 50),
@@ -123,12 +150,19 @@ class MainViewController: UIViewController {
             shareButton.widthAnchor.constraint(equalToConstant: 50),
             shareButton.heightAnchor.constraint(equalToConstant: 50),
             
-            // Corner Button at bottom center
+            // Corner Button at bottom
             cornerButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
             cornerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             cornerButton.widthAnchor.constraint(equalToConstant: 140),
-            cornerButton.heightAnchor.constraint(equalToConstant: 55)
+            cornerButton.heightAnchor.constraint(equalToConstant: 55),
+            
+            //emojis buttom  middle
+            emojiLabel.topAnchor.constraint(equalTo: factLabel.bottomAnchor, constant: 16),
+                emojiLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+                emojiLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
+
         ])
+
 
     }
     
@@ -155,10 +189,17 @@ class MainViewController: UIViewController {
     }
     
     private func loadRandomFact() {
+        if let current = currentFact {
+            factHistory.append(current)
+        }
+
         currentFact = firebaseManager.getRandomFact()
         factLabel.text = currentFact?.text ?? "Tap Corner to get a fact!"
+        emojiLabel.text = currentFact?.emojis?.joined(separator: " ") ?? ""
         updateButtonStates()
     }
+
+
     
     private func updateButtonStates() {
         guard let fact = currentFact, let profile = firebaseManager.userProfile else { return }
@@ -188,18 +229,42 @@ class MainViewController: UIViewController {
 
     
     @objc private func likeButtonTapped(_ sender: UIButton) {
+        // Haptic feedback
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+        
         guard let fact = currentFact else { return }
-        firebaseManager.likeFact(fact.id)
-        updateButtonStates()
+        firebaseManager.likeFact(fact.id) {
+            DispatchQueue.main.async {
+                self.updateButtonStates()
+            }
+        }
     }
+
     
     @objc private func dislikeButtonTapped(_ sender: UIButton) {
+        // Haptic feedback
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
         guard let fact = currentFact else { return }
         firebaseManager.dislikeFact(fact.id)
         updateButtonStates()
     }
+    @objc private func undoButtonTapped(_ sender: UIButton) {
+        // Haptic feedback
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+        guard let previousFact = factHistory.popLast() else { return }
+        currentFact = previousFact
+        factLabel.text = currentFact?.text
+        updateButtonStates()
+    }
+
     
     @objc private func shareButtonTapped(_ sender: UIButton) {
+        // Haptic feedback
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
         guard let fact = currentFact else { return }
         
         let activityViewController = UIActivityViewController(

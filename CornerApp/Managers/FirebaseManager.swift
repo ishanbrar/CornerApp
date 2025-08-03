@@ -182,14 +182,19 @@ class FirebaseManager: ObservableObject {
         saveUserProfile(profile) { _ in }
     }
     
-    func likeFact(_ factId: String) {
+    func likeFact(_ factId: String, completion: (() -> Void)? = nil) {
         guard var profile = userProfile else { return }
         if !profile.likedFacts.contains(factId) {
             profile.likedFacts.append(factId)
             profile.dislikedFacts.removeAll { $0 == factId }
-            saveUserProfile(profile) { _ in }
+            saveUserProfile(profile) { _ in
+                completion?()
+            }
+        } else {
+            completion?()
         }
     }
+
     
     func dislikeFact(_ factId: String) {
         guard var profile = userProfile else { return }

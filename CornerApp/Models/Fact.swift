@@ -12,10 +12,13 @@ struct Fact: Codable {
     let id: String
     let text: String
     let category: String?
-    
-    init(id: String = UUID().uuidString, text: String, category: String? = nil) {
+    let emojis: [String]?
+
+    init(id: String = UUID().uuidString, text: String, category: String? = nil, emojis: [String]? = nil) {
         self.id = id
         self.text = text
         self.category = category
+        self.emojis = emojis
     }
 }
+

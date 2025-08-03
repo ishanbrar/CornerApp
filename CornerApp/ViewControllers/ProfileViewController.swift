@@ -114,9 +114,10 @@ class ProfileViewController: UIViewController {
         tableView.backgroundColor = UIColor.systemGray6
         tableView.layer.cornerRadius = 8
         tableView.separatorStyle = .singleLine
-        tableView.isScrollEnabled = true
+        tableView.isScrollEnabled = true // ✅ Must be true for independent scrolling
         tableView.showsVerticalScrollIndicator = true
     }
+
     
     private func setupConstraints() {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -169,6 +170,8 @@ class ProfileViewController: UIViewController {
             likedFactsTableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             likedFactsTableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             likedFactsTableView.heightAnchor.constraint(equalToConstant: 200),
+            // Currently fixed heights
+          
             
             // Disliked Facts Header
             dislikedFactsHeaderLabel.topAnchor.constraint(equalTo: likedFactsTableView.bottomAnchor, constant: 30),
@@ -180,7 +183,7 @@ class ProfileViewController: UIViewController {
             dislikedFactsTableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             dislikedFactsTableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             dislikedFactsTableView.heightAnchor.constraint(equalToConstant: 200),
-            
+
             // Auth Button
             authButton.topAnchor.constraint(equalTo: dislikedFactsTableView.bottomAnchor, constant: 40),
             authButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
@@ -241,7 +244,7 @@ class ProfileViewController: UIViewController {
         guard let profile = firebaseManager.userProfile else { return }
         
         emailLabel.text = "📧 \(profile.email)"
-        cornerTapsLabel.text = "🎯 Corner Button Taps: \(profile.cornerButtonTaps)"
+        cornerTapsLabel.text = "🎯 Corners: \(profile.cornerButtonTaps)"
         
         // Load liked and disliked facts
         likedFacts = firebaseManager.facts.filter { profile.likedFacts.contains($0.id) }
@@ -282,7 +285,8 @@ class ProfileViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive) { [weak self] _ in
             do {
                 try self?.firebaseManager.signOut()
-                self?.updateUIForAuthState() // Update UI after signing out
+                self?.dismissProfile()
+
             } catch {
                 self?.showErrorAlert(message: "Failed to sign out. Please try again.")
             }
