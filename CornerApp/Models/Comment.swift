@@ -1,16 +1,19 @@
 import Foundation
-import FirebaseFirestoreSwift
+import FirebaseFirestore
+import FirebaseFirestoreCombineSwift
 
-struct Comment: Identifiable, Codable {
+struct Comment: Codable {
     @DocumentID var id: String?
-    let username: String
-    let commentText: String
-    let timestamp: Date
-    var likes: Int
-    
+    var username: String
+    var commentText: String
+    var timestamp: Date
+    var likeCount: Int
+    var likedByCurrentUser: Bool? = false
+
     var formattedDate: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
+        formatter.timeStyle = .short
         return formatter.string(from: timestamp)
     }
 }

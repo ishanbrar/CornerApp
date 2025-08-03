@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseFirestoreCombineSwift
 import FirebaseStorage
 
 class FirebaseManager: ObservableObject {

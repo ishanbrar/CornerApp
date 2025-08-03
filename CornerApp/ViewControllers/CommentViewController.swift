@@ -2,7 +2,8 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class CommentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CommentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+
     var factID: String!
     var factText: String!
     
@@ -38,7 +39,8 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         commentField.placeholder = "Add a comment..."
         commentField.borderStyle = .roundedRect
-        
+        commentField.delegate = self
+
         sendButton.setTitle("Send", for: .normal)
         sendButton.addTarget(self, action: #selector(sendComment), for: .touchUpInside)
         
@@ -71,19 +73,22 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     @objc private func sendComment() {
         guard let text = commentField.text, !text.isEmpty,
               let user = Auth.auth().currentUser else { return }
-        
+
+        let commentID = UUID().uuidString
         let comment = Comment(
             username: user.email ?? "Anonymous",
             commentText: text,
             timestamp: Date(),
-            likes: 0
+            likeCount: 0,
+            likedByCurrentUser: false
         )
-        
+
         do {
             try db.collection("comments")
                 .document(factID)
                 .collection("userComments")
-                .addDocument(from: comment)
+                .document(commentID) // Use the UUID here
+                .setData(from: comment)
             
             commentField.text = ""
             fetchComments()
@@ -91,6 +96,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
             print("❌ Error posting comment: \(error)")
         }
     }
+
 
     private func fetchComments() {
         db.collection("comments")
@@ -105,6 +111,8 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
                     DispatchQueue.main.async {
                         self?.tableView.reloadData()
                     }
+                } else if let error = error {
+                    print("❌ Error fetching comments: \(error)")
                 }
             }
     }
@@ -116,7 +124,12 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
-        cell.configure(with: comments[indexPath.row])
+        cell.configure(with: comments[indexPath.row], factID: factID)
         return cell
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        sendComment()
+        return true
+    }
+
 }

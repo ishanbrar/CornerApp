@@ -1,6 +1,15 @@
+//
+//  CommentManager.swift
+//  CornerApp
+//
+//  Created by Jar Jar on 8/3/25.
+//
+
+
 import Foundation
 import FirebaseFirestore
-import FirebaseFirestoreSwift
+import FirebaseFirestoreCombineSwift
+import FirebaseAuth
 
 class CommentManager {
     static let shared = CommentManager()
@@ -27,6 +36,28 @@ class CommentManager {
                 completion(comments)
             }
     }
+    //get comment likes etc
+    func fetchLikeInfo(for commentID: String, inFact factID: String, completion: @escaping (Bool, Int) -> Void) {
+        let commentRef = db.collection("comments").document(factID).collection("userComments").document(commentID)
+        let likesRef = commentRef.collection("likes")
+
+        // Get like count
+        likesRef.getDocuments { snapshot, error in
+            let count = snapshot?.documents.count ?? 0
+
+            // Check if current user liked
+            guard let userID = Auth.auth().currentUser?.uid else {
+                completion(false, count)
+                return
+            }
+
+            likesRef.document(userID).getDocument { doc, _ in
+                let liked = doc?.exists ?? false
+                completion(liked, count)
+            }
+        }
+    }
+
 
     // Add a comment to a fact
     func addComment(toFactID factID: String, comment: Comment, completion: @escaping (Error?) -> Void) {

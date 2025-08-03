@@ -6,6 +6,9 @@
 //
 
 import UIKit
+protocol ProfileViewControllerDelegate: AnyObject {
+    func didSelectFact(_ fact: Fact)
+}
 
 class ProfileViewController: UIViewController {
     
@@ -23,6 +26,8 @@ class ProfileViewController: UIViewController {
     private let firebaseManager = FirebaseManager.shared
     private var likedFacts: [Fact] = []
     private var dislikedFacts: [Fact] = []
+    weak var delegate: ProfileViewControllerDelegate?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -320,6 +325,19 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             return dislikedFacts.isEmpty ? 1 : dislikedFacts.count
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let fact: Fact
+        if indexPath.section == 0 {
+            fact = likedFacts[indexPath.row]
+        } else {
+            fact = dislikedFacts[indexPath.row]
+        }
+
+        delegate?.didSelectFact(fact)
+        dismiss(animated: true)
+    }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FactCell", for: indexPath) as! FactTableViewCell
