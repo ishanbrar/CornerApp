@@ -8,8 +8,8 @@
 import UIKit
 protocol ProfileViewControllerDelegate: AnyObject {
     func didSelectFact(_ fact: Fact)
+    func didSearchForEmoji(_ emoji: String)  // ← NEW
 }
-
 class ProfileViewController: UIViewController {
     
     private var scrollView: UIScrollView!
@@ -22,7 +22,7 @@ class ProfileViewController: UIViewController {
     private var likedFactsHeaderLabel: UILabel!
     private var dislikedFactsHeaderLabel: UILabel!
     private var notSignedInLabel: UILabel! // New label for when user is not signed in
-    
+    private var searchBar: UISearchBar!  // ← NEW
     private let firebaseManager = FirebaseManager.shared
     private var likedFacts: [Fact] = []
     private var dislikedFacts: [Fact] = []
@@ -61,6 +61,16 @@ class ProfileViewController: UIViewController {
         dislikedFactsTableView = UITableView()
         authButton = UIButton(type: .system) // Changed from signOutButton
         notSignedInLabel = UILabel() // New label
+        
+        //search bar
+        searchBar = UISearchBar()  // ← NEW
+
+        // Search Bar setup
+        searchBar.placeholder = "Search by emoji(s)... 🔍 (e.g., 🇩🇪🎾)"  // ← UPDATED
+        searchBar.delegate = self  // ← NEW
+        searchBar.searchBarStyle = .minimal  // ← NEW
+        searchBar.backgroundColor = UIColor.systemGray6  // ← NEW
+        searchBar.layer.cornerRadius = 8  // ← NEW
         
         // Email Label
         emailLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
@@ -102,6 +112,7 @@ class ProfileViewController: UIViewController {
         
         contentView.addSubview(emailLabel)
         contentView.addSubview(cornerTapsLabel)
+        contentView.addSubview(searchBar)  // ← ADDED THIS LINE
         contentView.addSubview(notSignedInLabel)
         contentView.addSubview(likedFactsHeaderLabel)
         contentView.addSubview(likedFactsTableView)
@@ -135,7 +146,8 @@ class ProfileViewController: UIViewController {
         dislikedFactsHeaderLabel.translatesAutoresizingMaskIntoConstraints = false
         dislikedFactsTableView.translatesAutoresizingMaskIntoConstraints = false
         authButton.translatesAutoresizingMaskIntoConstraints = false
-        
+        searchBar.translatesAutoresizingMaskIntoConstraints = false  // ← NEW
+
         NSLayoutConstraint.activate([
             // Scroll View
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -160,13 +172,19 @@ class ProfileViewController: UIViewController {
             cornerTapsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             cornerTapsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
+            // Search Bar
+            searchBar.topAnchor.constraint(equalTo: cornerTapsLabel.bottomAnchor, constant: 20),
+            searchBar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            searchBar.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            searchBar.heightAnchor.constraint(equalToConstant: 44),
+            
             // Not Signed In Label
             notSignedInLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 60),
             notSignedInLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             notSignedInLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
             // Liked Facts Header
-            likedFactsHeaderLabel.topAnchor.constraint(equalTo: cornerTapsLabel.bottomAnchor, constant: 30),
+            likedFactsHeaderLabel.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 30),
             likedFactsHeaderLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             likedFactsHeaderLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
@@ -228,6 +246,7 @@ class ProfileViewController: UIViewController {
     private func showSignedInContent() {
         emailLabel.isHidden = false
         cornerTapsLabel.isHidden = false
+        searchBar.isHidden = false
         likedFactsHeaderLabel.isHidden = false
         likedFactsTableView.isHidden = false
         dislikedFactsHeaderLabel.isHidden = false
@@ -238,6 +257,7 @@ class ProfileViewController: UIViewController {
     private func hideSignedInContent() {
         emailLabel.isHidden = true
         cornerTapsLabel.isHidden = true
+        searchBar.isHidden = true
         likedFactsHeaderLabel.isHidden = true
         likedFactsTableView.isHidden = true
         dislikedFactsHeaderLabel.isHidden = true
@@ -248,7 +268,7 @@ class ProfileViewController: UIViewController {
     private func loadUserData() {
         guard let profile = firebaseManager.userProfile else { return }
         
-        emailLabel.text = "📧 \(profile.email)"
+        emailLabel.text = "👤 \(profile.username) (\(profile.email))"
         cornerTapsLabel.text = "🎯 Corners: \(profile.cornerButtonTaps)"
         
         // Load liked and disliked facts
@@ -257,10 +277,104 @@ class ProfileViewController: UIViewController {
         
         // Update header labels with counts
         likedFactsHeaderLabel.text = "❤️ Liked Facts (\(likedFacts.count))"
-        dislikedFactsHeaderLabel.text = "💔 Disliked Facts (\(dislikedFacts.count))"
-        
+        dislikedFactsHeaderLabel.text = "👎 Disliked Facts (\(dislikedFacts.count))"
+
         likedFactsTableView.reloadData()
         dislikedFactsTableView.reloadData()
+    }
+    
+    // MARK: - Enhanced Search Functionality
+    // MARK: - Enhanced Search Functionality
+    // MARK: - Enhanced Search Functionality
+    // MARK: - Enhanced Search Functionality
+    // MARK: - Enhanced Search Functionality
+    private func searchFactsByEmoji(_ searchText: String) {
+        // Extract emojis from search text
+        let emojis = extractEmojis(from: searchText)
+        
+        print("🔍 Search text: \(searchText)")
+        print("🔍 Extracted emojis: \(emojis)")
+        
+        guard !emojis.isEmpty else {
+            print("❌ No emojis found in search text")
+            showNoResultsAlert()
+            return
+        }
+        
+        // First try: with variation selectors (original emojis)
+        var matchingFacts = firebaseManager.facts.filter { fact in
+            guard let factEmojis = fact.emojis else {
+                return false
+            }
+            
+            // Check if ALL searched emojis are present in the fact's emojis
+            return emojis.allSatisfy { searchedEmoji in
+                factEmojis.contains { factEmoji in
+                    factEmoji.contains(searchedEmoji)
+                }
+            }
+        }
+        
+        print("🔍 First try - Total matching facts: \(matchingFacts.count)")
+        
+        // If no results, try without variation selectors
+        if matchingFacts.isEmpty {
+            let cleanEmojis = emojis.map { emoji in
+                emoji.replacingOccurrences(of: "\u{FE0F}", with: "")
+            }
+            
+            print("🔍 Trying with clean emojis: \(cleanEmojis)")
+            
+            matchingFacts = firebaseManager.facts.filter { fact in
+                guard let factEmojis = fact.emojis else {
+                    return false
+                }
+                
+                // Check if ALL searched emojis are present in the fact's emojis
+                return cleanEmojis.allSatisfy { searchedEmoji in
+                    factEmojis.contains { factEmoji in
+                        factEmoji.contains(searchedEmoji)
+                    }
+                }
+            }
+            
+            print("�� Second try - Total matching facts: \(matchingFacts.count)")
+        }
+        
+        if let firstMatch = matchingFacts.first {
+            delegate?.didSearchForEmoji(searchText)
+            delegate?.didSelectFact(firstMatch)
+            dismiss(animated: true)
+        } else {
+            showNoResultsAlert()
+        }
+    }
+    
+    private func extractEmojis(from text: String) -> [String] {
+        // Handle flag emojis and other composed emojis properly
+        var emojis: [String] = []
+        
+        // Split the text into grapheme clusters (complete emojis)
+        let graphemeClusters = Array(text)
+        
+        for cluster in graphemeClusters {
+            let emoji = String(cluster)
+            if emoji.unicodeScalars.contains(where: { $0.properties.isEmoji }) && emojis.count < 3 {
+                emojis.append(emoji)
+            }
+        }
+        
+        print("🔍 Extracted emojis: \(emojis)")
+        return emojis
+    }
+    private func showNoResultsAlert() {
+        let alert = UIAlertController(
+            title: "No Results",
+            message: "No facts found with those emojis. Try different emojis!",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
     
     @objc private func dismissProfile() {
@@ -316,6 +430,21 @@ class ProfileViewController: UIViewController {
     }
 }
 
+// MARK: - UISearchBarDelegate
+extension ProfileViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+              !searchText.isEmpty else { return }
+        
+        searchFactsByEmoji(searchText)
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Optional: Add real-time search functionality here
+    }
+}
+
 // MARK: - TableView DataSource and Delegate
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -327,15 +456,20 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let fact: Fact
-        if indexPath.section == 0 {
-            fact = likedFacts[indexPath.row]
-        } else {
-            fact = dislikedFacts[indexPath.row]
+        // Check which table view was tapped
+        if tableView == likedFactsTableView {
+            // Don't allow selection if no liked facts
+            if likedFacts.isEmpty { return }
+            let fact = likedFacts[indexPath.row]
+            delegate?.didSelectFact(fact)
+            dismiss(animated: true)
+        } else if tableView == dislikedFactsTableView {
+            // Don't allow selection if no disliked facts
+            if dislikedFacts.isEmpty { return }
+            let fact = dislikedFacts[indexPath.row]
+            delegate?.didSelectFact(fact)
+            dismiss(animated: true)
         }
-
-        delegate?.didSelectFact(fact)
-        dismiss(animated: true)
     }
 
     

@@ -7,7 +7,11 @@ class AuthenticationViewController: UIViewController {
     private var signInButton: UIButton!
     private var signUpButton: UIButton!
     private var titleLabel: UILabel!
+    private var usernameTextField: UITextField!
+
     private var activityIndicator: UIActivityIndicatorView!
+    private var isSignUpMode = false
+
     
     private let firebaseManager = FirebaseManager.shared
     
@@ -24,6 +28,8 @@ class AuthenticationViewController: UIViewController {
         titleLabel = UILabel()
         emailTextField = UITextField()
         passwordTextField = UITextField()
+        usernameTextField = UITextField()
+
         signInButton = UIButton(type: .system)
         signUpButton = UIButton(type: .system)
         activityIndicator = UIActivityIndicatorView(style: .medium)
@@ -44,6 +50,16 @@ class AuthenticationViewController: UIViewController {
         emailTextField.font = UIFont.systemFont(ofSize: 16)
         emailTextField.delegate = self
         
+        // Username TextField
+             usernameTextField.placeholder = "Username"
+             usernameTextField.borderStyle = .roundedRect
+             usernameTextField.autocapitalizationType = .none
+             usernameTextField.autocorrectionType = .no
+             usernameTextField.backgroundColor = UIColor.systemGray6
+             usernameTextField.font = UIFont.systemFont(ofSize: 16)
+             usernameTextField.delegate = self
+             usernameTextField.isHidden = true // Hidden by default for sign in
+             
         // Password TextField
         passwordTextField.placeholder = "Password"
         passwordTextField.borderStyle = .roundedRect
@@ -51,6 +67,8 @@ class AuthenticationViewController: UIViewController {
         passwordTextField.backgroundColor = UIColor.systemGray6
         passwordTextField.font = UIFont.systemFont(ofSize: 16)
         passwordTextField.delegate = self
+        
+        
         
         // Sign In Button
         signInButton.setTitle("Sign In", for: .normal)
@@ -78,6 +96,8 @@ class AuthenticationViewController: UIViewController {
         view.addSubview(signInButton)
         view.addSubview(signUpButton)
         view.addSubview(activityIndicator)
+        view.addSubview(usernameTextField)
+
         
         setupConstraints()
     }
@@ -85,6 +105,8 @@ class AuthenticationViewController: UIViewController {
     private func setupConstraints() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
+        usernameTextField.translatesAutoresizingMaskIntoConstraints = false
+
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         signUpButton.translatesAutoresizingMaskIntoConstraints = false
@@ -101,9 +123,16 @@ class AuthenticationViewController: UIViewController {
             emailTextField.widthAnchor.constraint(equalToConstant: 280),
             emailTextField.heightAnchor.constraint(equalToConstant: 44),
             
+            // Username TextField
+                      usernameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                      usernameTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
+                      usernameTextField.widthAnchor.constraint(equalToConstant: 280),
+                      usernameTextField.heightAnchor.constraint(equalToConstant: 44),
+                      
+            
             // Password TextField
             passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
+            passwordTextField.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: 20),
             passwordTextField.widthAnchor.constraint(equalToConstant: 280),
             passwordTextField.heightAnchor.constraint(equalToConstant: 44),
             
@@ -172,6 +201,7 @@ class AuthenticationViewController: UIViewController {
     private func setButtonsEnabled(_ enabled: Bool) {
         signInButton.isEnabled = enabled
         signUpButton.isEnabled = enabled
+        usernameTextField.isEnabled = enabled
         emailTextField.isEnabled = enabled
         passwordTextField.isEnabled = enabled
         
@@ -185,7 +215,7 @@ class AuthenticationViewController: UIViewController {
         }
     }
     
-    private func validateInput() -> (email: String, password: String)? {
+    private func validateInput() -> (email: String, password: String, username: String?)? {
         guard let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
               !email.isEmpty else {
             showAlert(message: "Please enter your email address")
@@ -208,11 +238,38 @@ class AuthenticationViewController: UIViewController {
             return nil
         }
         
-        return (email: email, password: password)
-    }
+        // Username validation only for sign up
+        if isSignUpMode {
+            guard let username = usernameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+                  !username.isEmpty else {
+                showAlert(message: "Please enter a username")
+                return nil
+            }
+            
+            guard username.count >= 3 else {
+                showAlert(message: "Username must be at least 3 characters long")
+                return nil
+            }
+            
+            guard username.count <= 20 else {
+                showAlert(message: "Username must be 20 characters or less")
+                return nil
+            }
+            
+            return (email: email, password: password, username: username)
+        }
+        
+        return (email: email, password: password, username: nil)
+        }
     
     // MARK: - Actions
     @objc private func signInButtonTapped(_ sender: UIButton) {
+        if isSignUpMode {
+             // Switch to sign in mode
+             switchToSignInMode()
+             return
+         }
+         
         dismissKeyboard()
         
         guard let credentials = validateInput() else { return }
@@ -242,14 +299,20 @@ class AuthenticationViewController: UIViewController {
     }
     
     @objc private func signUpButtonTapped(_ sender: UIButton) {
+        if !isSignUpMode {
+            // Switch to sign up mode
+            switchToSignUpMode()
+            return
+        }
+        
         dismissKeyboard()
         
         guard let credentials = validateInput() else { return }
         
         setButtonsEnabled(false)
         
-        firebaseManager.signUp(email: credentials.email, password: credentials.password) { [weak self] result in
-            DispatchQueue.main.async {
+        firebaseManager.signUp(email: credentials.email, password: credentials.password, username: credentials.username!) { [weak self] result in
+                    DispatchQueue.main.async {
                 self?.setButtonsEnabled(true)
                 
                 switch result {
@@ -269,7 +332,30 @@ class AuthenticationViewController: UIViewController {
             }
         }
     }
-    
+    private func switchToSignUpMode() {
+           isSignUpMode = true
+           usernameTextField.isHidden = false
+           signInButton.setTitle("Back to Sign In", for: .normal)
+           signUpButton.setTitle("Create Account", for: .normal)
+           
+           // Update constraints for username field
+           UIView.animate(withDuration: 0.3) {
+               self.view.layoutIfNeeded()
+           }
+       }
+       
+       private func switchToSignInMode() {
+           isSignUpMode = false
+           usernameTextField.isHidden = true
+           signInButton.setTitle("Sign In", for: .normal)
+           signUpButton.setTitle("Sign Up", for: .normal)
+           
+           // Update constraints for username field
+           UIView.animate(withDuration: 0.3) {
+               self.view.layoutIfNeeded()
+           }
+       }
+       
     private func formatErrorMessage(_ error: Error) -> String {
         let errorMessage = error.localizedDescription
         
@@ -308,10 +394,20 @@ class AuthenticationViewController: UIViewController {
 extension AuthenticationViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField {
+            if isSignUpMode {
+                       usernameTextField.becomeFirstResponder()
+                   } else {
+                       passwordTextField.becomeFirstResponder()
+                   }
+               } else if textField == usernameTextField {
             passwordTextField.becomeFirstResponder()
         } else if textField == passwordTextField {
             dismissKeyboard()
-            signInButtonTapped(signInButton)
+            if isSignUpMode {
+                           signUpButtonTapped(signUpButton)
+                       } else {
+                           signInButtonTapped(signInButton)
+                       }
         }
         return true
     }

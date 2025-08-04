@@ -75,8 +75,12 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
               let user = Auth.auth().currentUser else { return }
 
         let commentID = UUID().uuidString
+        
+        // Get username from user profile
+        let username = FirebaseManager.shared.userProfile?.username ?? user.email ?? "Anonymous"
+        
         let comment = Comment(
-            username: user.email ?? "Anonymous",
+            username: username,
             commentText: text,
             timestamp: Date(),
             likeCount: 0,

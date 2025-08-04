@@ -79,7 +79,7 @@ class FirebaseManager: ObservableObject {
     }
     
     // MARK: - Authentication
-    func signUp(email: String, password: String, completion: @escaping (Result<User, Error>) -> Void) {
+    func signUp(email: String, password: String, username: String, completion: @escaping (Result<User, Error>) -> Void) {
         auth.createUser(withEmail: email, password: password) { [weak self] result, error in
             if let error = error {
                 completion(.failure(error))
@@ -92,7 +92,7 @@ class FirebaseManager: ObservableObject {
             }
             
             // Create user profile in Firestore
-            let profile = UserProfile(uid: user.uid, email: email)
+            let profile = UserProfile(uid: user.uid, email: email, username: username)
             self?.saveUserProfile(profile) { result in
                 switch result {
                 case .success:
@@ -130,6 +130,7 @@ class FirebaseManager: ObservableObject {
     }
     
     // MARK: - User Profile Management
+    // MARK: - User Profile Management
     private func loadUserProfile(uid: String) {
         db.collection("users").document(uid).getDocument { [weak self] snapshot, error in
             if let error = error {
@@ -139,7 +140,7 @@ class FirebaseManager: ObservableObject {
             
             guard let data = snapshot?.data() else {
                 // Create new profile if doesn't exist
-                let profile = UserProfile(uid: uid, email: self?.currentUser?.email ?? "")
+                let profile = UserProfile(uid: uid, email: self?.currentUser?.email ?? "", username: "User\(Int.random(in: 1000...9999))")
                 self?.saveUserProfile(profile) { _ in }
                 return
             }
@@ -152,6 +153,10 @@ class FirebaseManager: ObservableObject {
                 }
             } catch {
                 print("Error decoding user profile: \(error)")
+                // If decoding fails, it might be an old profile without username
+                // Create a new profile with username
+                let profile = UserProfile(uid: uid, email: self?.currentUser?.email ?? "", username: "User\(Int.random(in: 1000...9999))")
+                self?.saveUserProfile(profile) { _ in }
             }
         }
     }

@@ -257,5 +257,11 @@ extension MainViewController: ProfileViewControllerDelegate {
         emojiLabel.text = fact.emojis?.joined(separator: " ") ?? ""
         updateButtonStates()
     }
+    func didSearchForEmoji(_ emoji: String) {  // ← NEW
+            // This method is called when a user searches for an emoji in the profile
+            // The fact selection is already handled by didSelectFact
+            // We can add additional logging or analytics here if needed
+            print("🔍 User searched for emoji: \(emoji)")
+        }
 }
 
