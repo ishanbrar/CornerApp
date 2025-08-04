@@ -366,6 +366,11 @@ class AuthenticationViewController: UIViewController {
                 switch result {
                 case .success:
                     print("✅ Sign in successful - dismissing auth screen")
+                    
+                    // Play success sound and haptic feedback
+                    SoundManager.shared.playSuccessSound()
+                    SoundManager.shared.playSuccessHaptic()
+                    
                     if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                        let keyWindow = windowScene.windows.first,
                        let rootVC = keyWindow.rootViewController {
@@ -375,6 +380,11 @@ class AuthenticationViewController: UIViewController {
                     }
                 case .failure(let error):
                     print("❌ Sign in failed: \(error.localizedDescription)")
+                    
+                    // Play error sound and haptic feedback
+                    SoundManager.shared.playErrorSound()
+                    SoundManager.shared.playErrorHaptic()
+                    
                     self?.showAlert(message: self?.formatErrorMessage(error) ?? "Sign in failed")
                 }
             }
@@ -415,6 +425,11 @@ class AuthenticationViewController: UIViewController {
                     }
                 case .failure(let error):
                     print("❌ Sign up failed: \(error.localizedDescription)")
+                    
+                    // Play error sound and haptic feedback
+                    SoundManager.shared.playErrorSound()
+                    SoundManager.shared.playErrorHaptic()
+                    
                     self?.showAlert(message: self?.formatErrorMessage(error) ?? "Sign up failed")
                 }
             }

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "12",
+    "text": "geese sucks at cod.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.691988Z",
+    "emojis": ["🇺🇸", "🛢️", "☠️"]
+  },
+  {
+    "id": "6bd0408f-73c0-4611-ba3d-3f66a3059bc5",
+    "text": "jarjar is supreme.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.692178Z",
+    "emojis": ["🇺🇸", "💸", "🏠"]
+  },
+  {
+    "id": "e29ae782-3fe1-4e7b-ad72-14a8b8182af0",
+    "text": "lolol.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.692347Z",
+    "emojis": ["🇺🇸", "🏥", "💳"]
+  }
+
+]

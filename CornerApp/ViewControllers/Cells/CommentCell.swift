@@ -142,44 +142,54 @@ class CommentCell: UITableViewCell {
         let likesRef = commentRef.collection("likes")
         let userLikeRef = likesRef.document(userID)
 
-        let isLiked = comment.likedByCurrentUser ?? false
-
-        if isLiked {
-            // Unlike: Remove from likes subcollection and decrement count
-            userLikeRef.delete { error in
-                if let error = error {
-                    print("❌ Error unliking comment: \(error)")
-                } else {
-                    // Update the comment document with new like count
-                    commentRef.updateData([
-                        "likeCount": FieldValue.increment(Int64(-1))
-                    ]) { error in
-                        if let error = error {
-                            print("❌ Error updating like count: \(error)")
-                        } else {
-                            print("✅ Comment unliked successfully")
-                            // Refresh the comment data
-                            self.refreshCommentData()
+        // First, check the actual like status in Firestore
+        userLikeRef.getDocument { [weak self] snapshot, error in
+            guard let self = self else { return }
+            
+            if let error = error {
+                print("❌ Error checking like status: \(error)")
+                return
+            }
+            
+            let isCurrentlyLiked = snapshot?.exists ?? false
+            
+            if isCurrentlyLiked {
+                // Unlike: Remove from likes subcollection and decrement count
+                userLikeRef.delete { error in
+                    if let error = error {
+                        print("❌ Error unliking comment: \(error)")
+                    } else {
+                        // Update the comment document with new like count
+                        commentRef.updateData([
+                            "likeCount": FieldValue.increment(Int64(-1))
+                        ]) { error in
+                            if let error = error {
+                                print("❌ Error updating like count: \(error)")
+                            } else {
+                                print("✅ Comment unliked successfully")
+                                // Refresh the comment data
+                                self.refreshCommentData()
+                            }
                         }
                     }
                 }
-            }
-        } else {
-            // Like: Add to likes subcollection and increment count
-            userLikeRef.setData(["liked": true, "timestamp": FieldValue.serverTimestamp()]) { error in
-                if let error = error {
-                    print("❌ Error liking comment: \(error)")
-                } else {
-                    // Update the comment document with new like count
-                    commentRef.updateData([
-                        "likeCount": FieldValue.increment(Int64(1))
-                    ]) { error in
-                        if let error = error {
-                            print("❌ Error updating like count: \(error)")
-                        } else {
-                            print("✅ Comment liked successfully")
-                            // Refresh the comment data
-                            self.refreshCommentData()
+            } else {
+                // Like: Add to likes subcollection and increment count
+                userLikeRef.setData(["liked": true, "timestamp": FieldValue.serverTimestamp()]) { error in
+                    if let error = error {
+                        print("❌ Error liking comment: \(error)")
+                    } else {
+                        // Update the comment document with new like count
+                        commentRef.updateData([
+                            "likeCount": FieldValue.increment(Int64(1))
+                        ]) { error in
+                            if let error = error {
+                                print("❌ Error updating like count: \(error)")
+                            } else {
+                                print("✅ Comment liked successfully")
+                                // Refresh the comment data
+                                self.refreshCommentData()
+                            }
                         }
                     }
                 }

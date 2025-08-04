@@ -19,6 +19,7 @@ class ProfileViewController: UIViewController {
     private var likedFactsTableView: UITableView!
     private var dislikedFactsTableView: UITableView!
     private var authButton: UIButton! // Changed from signOutButton to authButton
+    private var factPackButton: UIButton! // New button for fact pack selection
     private var likedFactsHeaderLabel: UILabel!
     private var dislikedFactsHeaderLabel: UILabel!
     private var notSignedInLabel: UILabel! // New label for when user is not signed in
@@ -60,6 +61,7 @@ class ProfileViewController: UIViewController {
         likedFactsTableView = UITableView()
         dislikedFactsTableView = UITableView()
         authButton = UIButton(type: .system) // Changed from signOutButton
+        factPackButton = UIButton(type: .system) // New fact pack button
         notSignedInLabel = UILabel() // New label
         
         //search bar
@@ -106,6 +108,14 @@ class ProfileViewController: UIViewController {
         authButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         authButton.addTarget(self, action: #selector(authButtonTapped), for: .touchUpInside)
         
+        // Fact Pack Button
+        factPackButton.setTitle("Change Fact Pack", for: .normal)
+        factPackButton.backgroundColor = UIColor.systemBlue
+        factPackButton.setTitleColor(.white, for: .normal)
+        factPackButton.layer.cornerRadius = 8
+        factPackButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        factPackButton.addTarget(self, action: #selector(factPackButtonTapped), for: .touchUpInside)
+        
         // Add to view hierarchy
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
@@ -118,6 +128,7 @@ class ProfileViewController: UIViewController {
         contentView.addSubview(likedFactsTableView)
         contentView.addSubview(dislikedFactsHeaderLabel)
         contentView.addSubview(dislikedFactsTableView)
+        contentView.addSubview(factPackButton)
         contentView.addSubview(authButton)
         
         setupConstraints()
@@ -146,6 +157,7 @@ class ProfileViewController: UIViewController {
         dislikedFactsHeaderLabel.translatesAutoresizingMaskIntoConstraints = false
         dislikedFactsTableView.translatesAutoresizingMaskIntoConstraints = false
         authButton.translatesAutoresizingMaskIntoConstraints = false
+        factPackButton.translatesAutoresizingMaskIntoConstraints = false
         searchBar.translatesAutoresizingMaskIntoConstraints = false  // ← NEW
 
         NSLayoutConstraint.activate([
@@ -207,8 +219,14 @@ class ProfileViewController: UIViewController {
             dislikedFactsTableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             dislikedFactsTableView.heightAnchor.constraint(equalToConstant: 200),
 
+            // Fact Pack Button
+            factPackButton.topAnchor.constraint(equalTo: dislikedFactsTableView.bottomAnchor, constant: 20),
+            factPackButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            factPackButton.widthAnchor.constraint(equalToConstant: 200),
+            factPackButton.heightAnchor.constraint(equalToConstant: 44),
+            
             // Auth Button
-            authButton.topAnchor.constraint(equalTo: dislikedFactsTableView.bottomAnchor, constant: 40),
+            authButton.topAnchor.constraint(equalTo: factPackButton.bottomAnchor, constant: 20),
             authButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             authButton.widthAnchor.constraint(equalToConstant: 200),
             authButton.heightAnchor.constraint(equalToConstant: 44),
@@ -388,6 +406,11 @@ class ProfileViewController: UIViewController {
             // User is not signed in - present authentication screen
             presentAuthenticationViewController()
         }
+    }
+    
+    @objc private func factPackButtonTapped(_ sender: UIButton) {
+        let factPackVC = FactPackSelectionViewController()
+        navigationController?.pushViewController(factPackVC, animated: true)
     }
     
     private func showSignOutConfirmation() {

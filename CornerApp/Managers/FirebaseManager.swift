@@ -40,18 +40,25 @@ class FirebaseManager: ObservableObject {
         }
     }
     private func loadFactsFromFirebaseStorage() {
+        loadFactsFromFactPack("f1.json") { _ in }
+    }
+    
+    func loadFactsFromFactPack(_ factPackName: String, completion: @escaping (Bool) -> Void) {
         let storage = Storage.storage()
-        let path = "f1.json" // Adjust based on your file name in Firebase Storage
-        let storageRef = storage.reference(withPath: path)
+        let storageRef = storage.reference(withPath: factPackName)
+        
+        print("🔄 Loading facts from fact pack: \(factPackName)")
         
         storageRef.getData(maxSize: 5 * 1024 * 1024) { [weak self] data, error in
             if let error = error {
-                print("❌ Failed to download facts JSON: \(error)")
+                print("❌ Failed to download facts JSON from \(factPackName): \(error)")
+                completion(false)
                 return
             }
             
             guard let data = data else {
-                print("❌ No data received from Firebase Storage.")
+                print("❌ No data received from Firebase Storage for \(factPackName).")
+                completion(false)
                 return
             }
             
@@ -59,15 +66,18 @@ class FirebaseManager: ObservableObject {
                 let facts = try JSONDecoder().decode([Fact].self, from: data)
                 DispatchQueue.main.async {
                     self?.facts = facts
-                    print("✅ Loaded \(facts.count) facts from Firebase Storage")
+                    print("✅ Loaded \(facts.count) facts from fact pack: \(factPackName)")
                     
                     // Debug: Print first few fact IDs to verify they're correct
                     for (index, fact) in facts.prefix(5).enumerated() {
                         print("📋 Fact \(index + 1): ID=\(fact.id), Text=\(fact.text.prefix(50))...")
                     }
+                    
+                    completion(true)
                 }
             } catch {
-                print("❌ Failed to decode facts JSON: \(error)")
+                print("❌ Failed to decode facts JSON from \(factPackName): \(error)")
+                completion(false)
             }
         }
     }
