@@ -60,6 +60,11 @@ class FirebaseManager: ObservableObject {
                 DispatchQueue.main.async {
                     self?.facts = facts
                     print("✅ Loaded \(facts.count) facts from Firebase Storage")
+                    
+                    // Debug: Print first few fact IDs to verify they're correct
+                    for (index, fact) in facts.prefix(5).enumerated() {
+                        print("📋 Fact \(index + 1): ID=\(fact.id), Text=\(fact.text.prefix(50))...")
+                    }
                 }
             } catch {
                 print("❌ Failed to decode facts JSON: \(error)")
@@ -216,7 +221,13 @@ class FirebaseManager: ObservableObject {
     }
         
         func getRandomFact() -> Fact? {
-            return facts.randomElement()
+            let fact = facts.randomElement()
+            if let fact = fact {
+                print("🎲 Selected random fact: ID=\(fact.id), Text=\(fact.text.prefix(50))...")
+            } else {
+                print("❌ No facts available for random selection")
+            }
+            return fact
         }
     }
 

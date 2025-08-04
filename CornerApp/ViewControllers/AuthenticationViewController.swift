@@ -8,6 +8,8 @@ class AuthenticationViewController: UIViewController {
     private var signUpButton: UIButton!
     private var titleLabel: UILabel!
     private var usernameTextField: UITextField!
+    private var logoImageView: UIImageView!
+    private var containerView: UIView!
 
     private var activityIndicator: UIActivityIndicatorView!
     private var isSignUpMode = false
@@ -21,132 +23,213 @@ class AuthenticationViewController: UIViewController {
         setupKeyboardHandling()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        // Update gradient layer frame when view layout changes
+        if let gradientLayer = view.layer.sublayers?.first as? CAGradientLayer {
+            gradientLayer.frame = view.bounds
+        }
+    }
+    
     private func setupUI() {
-        view.backgroundColor = UIColor.systemBackground
+        // Set up the background with a subtle gradient
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [
+            UIColor.black.cgColor,
+            UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0).cgColor
+        ]
+        gradientLayer.locations = [0.0, 1.0]
+        view.layer.insertSublayer(gradientLayer, at: 0)
         
         // Initialize UI elements
+        containerView = UIView()
         titleLabel = UILabel()
         emailTextField = UITextField()
         passwordTextField = UITextField()
         usernameTextField = UITextField()
-
+        logoImageView = UIImageView()
         signInButton = UIButton(type: .system)
         signUpButton = UIButton(type: .system)
         activityIndicator = UIActivityIndicatorView(style: .medium)
         
+        // Logo Image
+        logoImageView.image = UIImage(named: "CornerLogo")
+        logoImageView.contentMode = .scaleAspectFit
+        logoImageView.tintColor = .white
+        
         // Title Label
         titleLabel.text = "Corner"
-        titleLabel.font = UIFont.systemFont(ofSize: 32, weight: .bold)
+        titleLabel.font = UIFont.systemFont(ofSize: 42, weight: .bold)
         titleLabel.textAlignment = .center
-        titleLabel.textColor = UIColor.systemBlue
+        titleLabel.textColor = .white
+        
+
+        
+        // Container View for form elements
+        containerView.backgroundColor = UIColor(white: 0.05, alpha: 0.8)
+        containerView.layer.cornerRadius = 20
+        containerView.layer.borderWidth = 1
+        containerView.layer.borderColor = UIColor(white: 0.2, alpha: 1.0).cgColor
         
         // Email TextField
         emailTextField.placeholder = "Email"
-        emailTextField.borderStyle = .roundedRect
+        emailTextField.borderStyle = .none
         emailTextField.keyboardType = .emailAddress
         emailTextField.autocapitalizationType = .none
         emailTextField.autocorrectionType = .no
-        emailTextField.backgroundColor = UIColor.systemGray6
+        emailTextField.backgroundColor = UIColor(white: 0.1, alpha: 1.0)
         emailTextField.font = UIFont.systemFont(ofSize: 16)
+        emailTextField.textColor = .white
+        emailTextField.attributedPlaceholder = NSAttributedString(
+            string: "Email",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(white: 0.5, alpha: 1.0)]
+        )
+        emailTextField.layer.cornerRadius = 12
+        emailTextField.layer.borderWidth = 1
+        emailTextField.layer.borderColor = UIColor(white: 0.2, alpha: 1.0).cgColor
+        emailTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 0))
+        emailTextField.leftViewMode = .always
         emailTextField.delegate = self
         
         // Username TextField
-             usernameTextField.placeholder = "Username"
-             usernameTextField.borderStyle = .roundedRect
-             usernameTextField.autocapitalizationType = .none
-             usernameTextField.autocorrectionType = .no
-             usernameTextField.backgroundColor = UIColor.systemGray6
-             usernameTextField.font = UIFont.systemFont(ofSize: 16)
-             usernameTextField.delegate = self
-             usernameTextField.isHidden = true // Hidden by default for sign in
+        usernameTextField.placeholder = "Username"
+        usernameTextField.borderStyle = .none
+        usernameTextField.autocapitalizationType = .none
+        usernameTextField.autocorrectionType = .no
+        usernameTextField.backgroundColor = UIColor(white: 0.1, alpha: 1.0)
+        usernameTextField.font = UIFont.systemFont(ofSize: 16)
+        usernameTextField.textColor = .white
+        usernameTextField.attributedPlaceholder = NSAttributedString(
+            string: "Username",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(white: 0.5, alpha: 1.0)]
+        )
+        usernameTextField.layer.cornerRadius = 12
+        usernameTextField.layer.borderWidth = 1
+        usernameTextField.layer.borderColor = UIColor(white: 0.2, alpha: 1.0).cgColor
+        usernameTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 0))
+        usernameTextField.leftViewMode = .always
+        usernameTextField.delegate = self
+        usernameTextField.isHidden = true // Hidden by default for sign in
              
         // Password TextField
         passwordTextField.placeholder = "Password"
-        passwordTextField.borderStyle = .roundedRect
+        passwordTextField.borderStyle = .none
         passwordTextField.isSecureTextEntry = true
-        passwordTextField.backgroundColor = UIColor.systemGray6
+        passwordTextField.backgroundColor = UIColor(white: 0.1, alpha: 1.0)
         passwordTextField.font = UIFont.systemFont(ofSize: 16)
+        passwordTextField.textColor = .white
+        passwordTextField.attributedPlaceholder = NSAttributedString(
+            string: "Password",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(white: 0.5, alpha: 1.0)]
+        )
+        passwordTextField.layer.cornerRadius = 12
+        passwordTextField.layer.borderWidth = 1
+        passwordTextField.layer.borderColor = UIColor(white: 0.2, alpha: 1.0).cgColor
+        passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 0))
+        passwordTextField.leftViewMode = .always
         passwordTextField.delegate = self
-        
-        
         
         // Sign In Button
         signInButton.setTitle("Sign In", for: .normal)
-        signInButton.backgroundColor = UIColor.systemBlue
-        signInButton.tintColor = .white
-        signInButton.layer.cornerRadius = 8
+        signInButton.backgroundColor = .white
+        signInButton.setTitleColor(.black, for: .normal)
+        signInButton.layer.cornerRadius = 12
         signInButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         signInButton.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
         
+        // Add shadow to button
+        signInButton.layer.shadowColor = UIColor.black.cgColor
+        signInButton.layer.shadowOffset = CGSize(width: 0, height: 4)
+        signInButton.layer.shadowRadius = 8
+        signInButton.layer.shadowOpacity = 0.3
+        
         // Sign Up Button
-        signUpButton.setTitle("Sign Up", for: .normal)
-        signUpButton.backgroundColor = UIColor.systemGreen
-        signUpButton.tintColor = .white
-        signUpButton.layer.cornerRadius = 8
+        signUpButton.setTitle("Create Account", for: .normal)
+        signUpButton.backgroundColor = .clear
+        signUpButton.setTitleColor(.white, for: .normal)
+        signUpButton.layer.cornerRadius = 12
+        signUpButton.layer.borderWidth = 1
+        signUpButton.layer.borderColor = UIColor.white.cgColor
         signUpButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         
         // Activity Indicator
         activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = .white
         
         // Add to view
+        view.addSubview(logoImageView)
         view.addSubview(titleLabel)
-        view.addSubview(emailTextField)
-        view.addSubview(passwordTextField)
+        view.addSubview(containerView)
+        containerView.addSubview(emailTextField)
+        containerView.addSubview(passwordTextField)
+        containerView.addSubview(usernameTextField)
         view.addSubview(signInButton)
         view.addSubview(signUpButton)
         view.addSubview(activityIndicator)
-        view.addSubview(usernameTextField)
 
         
         setupConstraints()
     }
     
     private func setupConstraints() {
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        containerView.translatesAutoresizingMaskIntoConstraints = false
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         usernameTextField.translatesAutoresizingMaskIntoConstraints = false
-
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         signUpButton.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
+            // Logo Image
+            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
+            logoImageView.widthAnchor.constraint(equalToConstant: 80),
+            logoImageView.heightAnchor.constraint(equalToConstant: 80),
+            
             // Title Label
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            titleLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 20),
+            
+            // Container View
+            containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            containerView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 60),
+            containerView.widthAnchor.constraint(equalToConstant: 320),
+            containerView.heightAnchor.constraint(equalToConstant: 250),
             
             // Email TextField
-            emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            emailTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 80),
-            emailTextField.widthAnchor.constraint(equalToConstant: 280),
-            emailTextField.heightAnchor.constraint(equalToConstant: 44),
+            emailTextField.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 24),
+            emailTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
+            emailTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
+            emailTextField.heightAnchor.constraint(equalToConstant: 50),
             
             // Username TextField
-                      usernameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                      usernameTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
-                      usernameTextField.widthAnchor.constraint(equalToConstant: 280),
-                      usernameTextField.heightAnchor.constraint(equalToConstant: 44),
-                      
+            usernameTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 16),
+            usernameTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
+            usernameTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
+            usernameTextField.heightAnchor.constraint(equalToConstant: 50),
             
             // Password TextField
-            passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            passwordTextField.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: 20),
-            passwordTextField.widthAnchor.constraint(equalToConstant: 280),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 44),
+            passwordTextField.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: 16),
+            passwordTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
+            passwordTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
+            passwordTextField.heightAnchor.constraint(equalToConstant: 50),
             
             // Sign In Button
             signInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            signInButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 40),
-            signInButton.widthAnchor.constraint(equalToConstant: 280),
-            signInButton.heightAnchor.constraint(equalToConstant: 44),
+            signInButton.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 60),
+            signInButton.widthAnchor.constraint(equalToConstant: 320),
+            signInButton.heightAnchor.constraint(equalToConstant: 50),
             
             // Sign Up Button
             signUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             signUpButton.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 20),
-            signUpButton.widthAnchor.constraint(equalToConstant: 280),
-            signUpButton.heightAnchor.constraint(equalToConstant: 44),
+            signUpButton.widthAnchor.constraint(equalToConstant: 320),
+            signUpButton.heightAnchor.constraint(equalToConstant: 50),
             
             // Activity Indicator
             activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -338,6 +421,21 @@ class AuthenticationViewController: UIViewController {
            signInButton.setTitle("Back to Sign In", for: .normal)
            signUpButton.setTitle("Create Account", for: .normal)
            
+           // Update button styling for sign up mode
+           signInButton.backgroundColor = .clear
+           signInButton.setTitleColor(.white, for: .normal)
+           signInButton.layer.borderWidth = 1
+           signInButton.layer.borderColor = UIColor.white.cgColor
+           signInButton.layer.shadowOpacity = 0
+           
+           signUpButton.backgroundColor = .white
+           signUpButton.setTitleColor(.black, for: .normal)
+           signUpButton.layer.borderWidth = 0
+           signUpButton.layer.shadowColor = UIColor.black.cgColor
+           signUpButton.layer.shadowOffset = CGSize(width: 0, height: 4)
+           signUpButton.layer.shadowRadius = 8
+           signUpButton.layer.shadowOpacity = 0.3
+           
            // Update constraints for username field
            UIView.animate(withDuration: 0.3) {
                self.view.layoutIfNeeded()
@@ -348,7 +446,22 @@ class AuthenticationViewController: UIViewController {
            isSignUpMode = false
            usernameTextField.isHidden = true
            signInButton.setTitle("Sign In", for: .normal)
-           signUpButton.setTitle("Sign Up", for: .normal)
+           signUpButton.setTitle("Create Account", for: .normal)
+           
+           // Update button styling for sign in mode
+           signInButton.backgroundColor = .white
+           signInButton.setTitleColor(.black, for: .normal)
+           signInButton.layer.borderWidth = 0
+           signInButton.layer.shadowColor = UIColor.black.cgColor
+           signInButton.layer.shadowOffset = CGSize(width: 0, height: 4)
+           signInButton.layer.shadowRadius = 8
+           signInButton.layer.shadowOpacity = 0.3
+           
+           signUpButton.backgroundColor = .clear
+           signUpButton.setTitleColor(.white, for: .normal)
+           signUpButton.layer.borderWidth = 1
+           signUpButton.layer.borderColor = UIColor.white.cgColor
+           signUpButton.layer.shadowOpacity = 0
            
            // Update constraints for username field
            UIView.animate(withDuration: 0.3) {
@@ -410,5 +523,21 @@ extension AuthenticationViewController: UITextFieldDelegate {
                        }
         }
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // Add focus effect
+        UIView.animate(withDuration: 0.2) {
+            textField.layer.borderColor = UIColor.white.cgColor
+            textField.layer.borderWidth = 2
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        // Remove focus effect
+        UIView.animate(withDuration: 0.2) {
+            textField.layer.borderColor = UIColor(white: 0.2, alpha: 1.0).cgColor
+            textField.layer.borderWidth = 1
+        }
     }
 }

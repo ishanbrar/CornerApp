@@ -1,3 +1,4 @@
+//  MainViewController.swift
 import UIKit
 import FirebaseFirestore
 import FirebaseFirestoreCombineSwift
@@ -255,7 +256,14 @@ class MainViewController: UIViewController {
 
     @objc private func openComments(_ sender: UIButton) {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-        guard let fact = currentFact else { return }
+        guard let fact = currentFact else { 
+            print("❌ Error: No current fact available")
+            return 
+        }
+        
+        print("📱 Opening comments for factID: \(fact.id)")
+        print("📱 Fact text: \(fact.text)")
+        
         let vc = CommentViewController()
         vc.factID = fact.id
         vc.factText = fact.text

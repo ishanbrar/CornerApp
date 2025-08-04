@@ -23,6 +23,16 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Validate factID is set
+        guard !factID.isEmpty else {
+            print("❌ Error: factID not set in CommentViewController")
+            navigationController?.popViewController(animated: true)
+            return
+        }
+        
+        print("📱 CommentViewController loaded with factID: \(factID)")
+        
         setupUI()
         setupKeyboardHandling()
         fetchComments()
@@ -211,6 +221,15 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         guard let text = commentField.text, !text.isEmpty,
               let user = Auth.auth().currentUser else { return }
 
+        // Validate factID
+        guard !factID.isEmpty else {
+            print("❌ Error: factID is empty")
+            return
+        }
+        
+        print("📝 Posting comment to factID: \(factID)")
+        print("📝 Fact text: \(factText ?? "Unknown")")
+        
         let commentID = UUID().uuidString
         
         // Get username from user profile
@@ -231,6 +250,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
                 .document(commentID)
                 .setData(from: comment)
             
+            print("✅ Comment posted successfully to factID: \(factID)")
             commentField.text = ""
             fetchComments()
         } catch {
@@ -239,12 +259,15 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     private func fetchComments() {
+        print("🔍 Fetching comments for factID: \(factID)")
+        
         db.collection("comments")
             .document(factID)
             .collection("userComments")
             .order(by: "timestamp", descending: true)
             .getDocuments { [weak self] snapshot, error in
                 if let documents = snapshot?.documents {
+                    print("📊 Found \(documents.count) comments for factID: \(self?.factID ?? "unknown")")
                     self?.comments = documents.compactMap {
                         try? $0.data(as: Comment.self)
                     }
