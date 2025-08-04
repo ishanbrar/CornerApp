@@ -1,0 +1,4666 @@
+[
+  {
+    "id": "factID",
+    "text": "Over 134 million Americans\u2014more than 40% of the population\u2014live within 10 miles of a toxic waste site, according to the EPA. These sites often correlate with higher cancer risks and socioeconomic inequality.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.691988Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udee2\ufe0f",
+      "\u2620\ufe0f"
+    ]
+  },
+  {
+    "id": "6bd0408f-73c0-46ea-ba3d-3f66a3059bc5",
+    "text": "In 2023, a full-time minimum wage worker earning $7.25 an hour would need to work over 100 hours per week to afford a modest one-bedroom apartment in 93% of U.S. counties, based on HUD affordability standards.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.692178Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb8",
+      "\ud83c\udfe0"
+    ]
+  },
+  {
+    "id": "e29ae782-3fec-4e7b-ad72-14a8b8182af0",
+    "text": "An estimated 41% of U.S. adults\u2014over 100 million people\u2014have some form of medical debt. This includes debt from emergency services, chronic care, and even routine procedures.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.692347Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfe5",
+      "\ud83d\udcb3"
+    ]
+  },
+  {
+    "id": "491dc850-1c8d-4064-917a-866f3f07e424",
+    "text": "In Chicago, the life expectancy in Streeterville is 90 years, while just 9 miles south in Englewood, it drops to 60. This 30-year gap reflects systemic inequality in healthcare, safety, and environmental exposure.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.692496Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfe5",
+      "\u2696\ufe0f"
+    ]
+  },
+  {
+    "id": "216f5f39-b63f-4d07-b684-d09cdef03297",
+    "text": "Only about 2% of U.S. philanthropic giving\u2014roughly $12 billion\u2014goes toward environmental causes, despite the mounting urgency of climate-related issues globally.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.692569Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf0d",
+      "\ud83d\udcb0"
+    ]
+  },
+  {
+    "id": "eb4bca16-4400-4dc6-839d-82bb855cef5f",
+    "text": "Since 1990, the Pentagon has been legally required to complete a financial audit. As of 2023, it has failed five consecutive audits, leaving trillions in spending unaccounted for.",
+    "category": "Military",
+    "createdAt": "2025-08-02T20:39:05.693136Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb5",
+      "\ud83d\udcca"
+    ]
+  },
+  {
+    "id": "c7582063-087c-4030-b587-0cafeaf0f441",
+    "text": "Facebook\u2019s algorithm has been shown to amplify emotionally charged misinformation.",
+    "category": "Technology",
+    "createdAt": "2025-08-02T20:39:05.693397Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcf1",
+      "\u274c"
+    ]
+  },
+  {
+    "id": "6bd5494d-a6df-4c2d-8e27-e5f249c1e369",
+    "text": "Black women in the U.S. are three times more likely to die from pregnancy-related causes than white women. This disparity holds across income and education levels, indicating systemic bias in healthcare delivery.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.693544Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83e\udd30",
+      "\u2696\ufe0f"
+    ]
+  },
+  {
+    "id": "9d7dbb95-3205-4566-8b6e-fb7d93922b97",
+    "text": "Climate change is driving up insurance premiums, causing some U.S. insurers to abandon entire states.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.693740Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf0e",
+      "\ud83d\udcc8"
+    ]
+  },
+  {
+    "id": "a28f6345-615a-4bbb-be72-47ef9a7b5d78",
+    "text": "One in five U.S. adults\u2014about 58 million people\u2014experience mental illness annually. Yet over half receive no treatment, largely due to cost, stigma, and lack of access.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.693849Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83e\udde0",
+      "\ud83d\udeaa"
+    ]
+  },
+  {
+    "id": "87e0edc0-cfef-4908-9f45-9f8cb3495327",
+    "text": "The majority of calls to 911 in the U.S. are for non-criminal issues like mental health crises.",
+    "category": "Criminal Justice",
+    "createdAt": "2025-08-02T20:39:05.693951Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcde",
+      "\ud83e\udde0"
+    ]
+  },
+  {
+    "id": "88d7bc62-fecd-4f19-926d-b8e18c76ccab",
+    "text": "There are over 16 million vacant homes in the U.S.\u2014more than five times the number of people experiencing homelessness. This mismatch reveals stark housing policy failures.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.694270Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfd8\ufe0f",
+      "\ud83d\ude1e"
+    ]
+  },
+  {
+    "id": "97ee6550-d089-4a22-87fb-72564371990e",
+    "text": "In the U.S., alcohol is linked to over 140,000 deaths annually, surpassing the toll from all opioid overdoses. This includes liver disease, cancers, and alcohol-involved accidents.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.694327Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf77",
+      "\u26b0\ufe0f"
+    ]
+  },
+  {
+    "id": "e585a1f7-5c21-408a-bec4-a5759e830c8f",
+    "text": "More than 25% of U.S. adults report being estranged from at least one family member.",
+    "category": "Psychology",
+    "createdAt": "2025-08-02T20:39:05.694358Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67",
+      "\ud83d\udeb6"
+    ]
+  },
+  {
+    "id": "f3a73fb9-1b0a-43d7-979b-2590623cac49",
+    "text": "Since 1970, the world has lost nearly 70% of its wildlife population.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.694374Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83e\udd92",
+      "\ud83d\udcc9"
+    ]
+  },
+  {
+    "id": "17d5312e-9151-40c9-b16a-877139cc5429",
+    "text": "Plastic particles have been found in human blood and lungs.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.694392Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83e\ude7a",
+      "\ud83e\uddea"
+    ]
+  },
+  {
+    "id": "94bbdb65-6268-4d04-9512-52ddd3cdd14f",
+    "text": "60% of the global fish population is overfished or at capacity.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.694409Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udc1f",
+      "\ud83d\udcc9"
+    ]
+  },
+  {
+    "id": "13c75601-17f2-40af-9ea7-d809adad0daa",
+    "text": "U.S. police departments have received billions of dollars in surplus military equipment.",
+    "category": "Criminal Justice",
+    "createdAt": "2025-08-02T20:39:05.694424Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\ude93",
+      "\ud83d\udee1\ufe0f"
+    ]
+  },
+  {
+    "id": "20feaffb-516c-45c7-90dd-8a5129a202a2",
+    "text": "The number of countries classified as full democracies has declined in recent years.",
+    "category": "Politics",
+    "createdAt": "2025-08-02T20:39:05.694439Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\uddf3\ufe0f",
+      "\ud83d\udcc9"
+    ]
+  },
+  {
+    "id": "35af2873-c72f-48de-a1fe-800b84e78d14",
+    "text": "Cryptocurrency mining consumes more energy annually than some countries.",
+    "category": "Technology",
+    "createdAt": "2025-08-02T20:39:05.694463Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\u26cf\ufe0f",
+      "\u26a1\ufe0f"
+    ]
+  },
+  {
+    "id": "44a2f47e-579b-499b-b4ea-bf7b49ef5102",
+    "text": "The average U.S. public defender handles over 100 cases at once.",
+    "category": "Criminal Justice",
+    "createdAt": "2025-08-02T20:39:05.694490Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\u2696\ufe0f",
+      "\ud83d\udcda"
+    ]
+  },
+  {
+    "id": "df8af1be-2565-4285-8a53-28d2b19bfe26",
+    "text": "Gun violence is the leading cause of death for U.S. children and teens.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.694510Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udd2b",
+      "\ud83d\ude22"
+    ]
+  },
+  {
+    "id": "b9251017-ec6f-4a50-99b2-b0e40bf194ba",
+    "text": "More people globally die from unsafe water than from violence.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.694525Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udca7",
+      "\u26b0\ufe0f"
+    ]
+  },
+  {
+    "id": "e680831a-8187-4a5e-a36c-8b4e2cc2e7eb",
+    "text": "Studies show loneliness increases the risk of premature death by 26%, rivaling smoking and obesity in long-term health impact. It is now classified as a public health epidemic by the U.S. Surgeon General.",
+    "category": "Psychology",
+    "createdAt": "2025-08-02T20:39:05.694539Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\ude14",
+      "\ud83e\ude7a"
+    ]
+  },
+  {
+    "id": "03156df9-bc1c-4bbb-97cb-f42ba3000954",
+    "text": "Food waste accounts for about 8% of global greenhouse gas emissions.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.694555Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udf4e",
+      "\ud83c\udf2b\ufe0f"
+    ]
+  },
+  {
+    "id": "909bd33c-7df6-4ec4-a7fd-6a6427af634b",
+    "text": "Fast fashion produces more carbon emissions than international flights and shipping combined.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.694571Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udc57",
+      "\ud83c\udf2b\ufe0f"
+    ]
+  },
+  {
+    "id": "505e6ab8-5d1e-42fe-9c37-304e6eebd85d",
+    "text": "White-collar crimes\u2014like fraud, embezzlement, and insider trading\u2014cost the U.S. over $1 trillion annually, dwarfing the losses from all burglaries and robberies combined.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.694586Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcbc",
+      "\ud83d\udcb0"
+    ]
+  },
+  {
+    "id": "f885068c-0f83-4b8d-941f-fc22f55ce7a9",
+    "text": "AI-generated deepfakes are increasingly used for financial scams and political disinformation.",
+    "category": "Technology",
+    "createdAt": "2025-08-02T20:39:05.694601Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83e\udd16",
+      "\ud83c\udfad"
+    ]
+  },
+  {
+    "id": "05979983-5839-462a-a694-53f4e1fe2e04",
+    "text": "Over 90% of plastic ever made has not been recycled.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.694618Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udecd\ufe0f",
+      "\ud83d\uddd1\ufe0f"
+    ]
+  },
+  {
+    "id": "350187d0-4634-4585-ad04-448ab1fea298",
+    "text": "The U.S. has no federally mandated paid parental leave.",
+    "category": "Labor",
+    "createdAt": "2025-08-02T20:39:05.694635Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udc76",
+      "\ud83d\udeab"
+    ]
+  },
+  {
+    "id": "9cdfef90-e89a-42a1-b770-0e819708d1a8",
+    "text": "Amazon warehouse workers are injured at nearly twice the rate of other warehouse employees.",
+    "category": "Labor",
+    "createdAt": "2025-08-02T20:39:05.694665Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udce6",
+      "\ud83e\udd15"
+    ]
+  },
+  {
+    "id": "3e0ad0f7-7429-4902-9d7f-0ef8bec14c94",
+    "text": "The U.S. maternal mortality rate rose to 32.9 deaths per 100,000 live births in 2021, higher than all other developed countries, with wide racial disparities.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.694681Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83e\udd30",
+      "\u26b0\ufe0f"
+    ]
+  },
+  {
+    "id": "6f2e3c4d-b746-484d-bb9b-8db9a5dac7a9",
+    "text": "The vast majority of antibiotic use in the U.S. is in livestock, not humans.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.694704Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udc04",
+      "\ud83d\udc8a"
+    ]
+  },
+  {
+    "id": "411e185b-533c-4155-a150-07e309464ff5",
+    "text": "One-third of all food produced globally is wasted, even as hunger persists.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.694720Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udf7d\ufe0f",
+      "\ud83d\uddd1\ufe0f"
+    ]
+  },
+  {
+    "id": "906deb24-0224-4732-86ef-cbe102990d2b",
+    "text": "More than 60% of Americans live paycheck to paycheck.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.694734Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb8",
+      "\ud83d\ude13"
+    ]
+  },
+  {
+    "id": "c622412d-e4db-46ee-a226-968e1ebd0fed",
+    "text": "Nearly half of all adults in the U.S. have a chronic disease.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.694748Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83e\ude7a",
+      "\ud83d\ude37"
+    ]
+  },
+  {
+    "id": "989aa26a-e4fd-4f97-90a1-3c4477436a68",
+    "text": "The number of journalists jailed worldwide reached a record high in recent years.",
+    "category": "Human Rights",
+    "createdAt": "2025-08-02T20:39:05.694767Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udcf0",
+      "\ud83d\udd17"
+    ]
+  },
+  {
+    "id": "25e82c4d-335b-45d9-a0fe-e4af10d84e1d",
+    "text": "More than 40 million people globally are estimated to be victims of human trafficking.",
+    "category": "Human Rights",
+    "createdAt": "2025-08-02T20:39:05.694793Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\u26d3\ufe0f",
+      "\ud83d\ude14"
+    ]
+  },
+  {
+    "id": "8b3cf641-df74-4103-ae2b-696c4d35a5c3",
+    "text": "The U.S. education system is among the most unequal in the developed world.",
+    "category": "Education",
+    "createdAt": "2025-08-02T20:39:05.694807Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcda",
+      "\u2696\ufe0f"
+    ]
+  },
+  {
+    "id": "093759ab-709e-4554-881c-199365be66ed",
+    "text": "A third of American adults read below a sixth-grade level.",
+    "category": "Education",
+    "createdAt": "2025-08-02T20:39:05.694828Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcd6",
+      "\ud83d\ude1e"
+    ]
+  },
+  {
+    "id": "1bcbd70d-5a76-4711-bcbf-16aa17bf21ae",
+    "text": "The top 1% of earners in the U.S. hold more wealth than the entire middle class combined.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.694848Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb0",
+      "\u2696\ufe0f"
+    ]
+  },
+  {
+    "id": "371eeb0a-364e-448a-bbe9-be2f3964cfa4",
+    "text": "The U.S. military budget is larger than those of the next 10 countries combined.",
+    "category": "Military",
+    "createdAt": "2025-08-02T20:39:05.694867Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udee1\ufe0f",
+      "\ud83d\udcb8"
+    ]
+  },
+  {
+    "id": "5444fcd7-0c7c-44c3-aefd-afac3c065ead",
+    "text": "More than half of U.S. adults do not have enough savings to cover a $1,000 emergency.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.694882Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb8",
+      "\ud83d\udea8"
+    ]
+  },
+  {
+    "id": "0d41e037-8ec5-4673-b387-49cd3307e970",
+    "text": "The average global temperature has increased faster in the last 50 years than in any comparable period.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.694897Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udf21\ufe0f",
+      "\ud83d\udcc8"
+    ]
+  },
+  {
+    "id": "51c38355-9cff-4fee-b0ba-55cf748c623e",
+    "text": "The U.S. leads the world in the number of school shootings.",
+    "category": "Public Safety",
+    "createdAt": "2025-08-02T20:39:05.694915Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfeb",
+      "\ud83d\udd2b"
+    ]
+  },
+  {
+    "id": "3bf6ff13-a64c-4d7d-bffe-7e0264673481",
+    "text": "More than 70 countries criminalize same-sex relationships.",
+    "category": "Human Rights",
+    "createdAt": "2025-08-02T20:39:05.694930Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udff3\ufe0f\u200d\ud83c\udf08",
+      "\ud83d\udeab"
+    ]
+  },
+  {
+    "id": "5f0d3d23-4bdb-4079-a28e-1e7ee2505949",
+    "text": "Some states in the U.S. spend more per prisoner than per student.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.694945Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udd17",
+      "\ud83d\udcda"
+    ]
+  },
+  {
+    "id": "fbe74504-c887-4e20-8548-1f2c184c8b0d",
+    "text": "The global fertility rate has dropped by more than half since 1950.",
+    "category": "Demographics",
+    "createdAt": "2025-08-02T20:39:05.694959Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udc76",
+      "\ud83d\udcc9"
+    ]
+  },
+  {
+    "id": "15310fe8-882b-4b0b-b206-b52cc8deb949",
+    "text": "There are more trees on Earth than stars in the Milky Way galaxy.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.694974Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udf33",
+      "\u2b50"
+    ]
+  },
+  {
+    "id": "7e924bbe-0292-41cc-8a76-9a12bd59a5e6",
+    "text": "The number of forcibly displaced people globally has exceeded 100 million.",
+    "category": "Human Rights",
+    "createdAt": "2025-08-02T20:39:05.694990Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udeb6",
+      "\ud83c\udf92"
+    ]
+  },
+  {
+    "id": "da32d376-827b-414e-9b55-f7c6070ca87f",
+    "text": "Globally, one child dies every 10 seconds from hunger-related causes.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.695006Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udf7d\ufe0f",
+      "\ud83d\ude22"
+    ]
+  },
+  {
+    "id": "8234fb81-b709-4596-baf6-b0195ca4f33d",
+    "text": "More than half the world\u2019s population lacks access to essential healthcare.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.695044Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udfe5",
+      "\ud83d\udeab"
+    ]
+  },
+  {
+    "id": "61e3e11f-f9b5-4d58-bf90-187db4b36d86",
+    "text": "The U.S. accounts for less than 5% of the world\u2019s population but nearly a quarter of its prisoners.",
+    "category": "Criminal Justice",
+    "createdAt": "2025-08-02T20:39:05.695063Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udd17",
+      "\ud83d\udcca"
+    ]
+  },
+  {
+    "id": "20f0bbac-501a-4bb5-93e2-936e3fea4b87",
+    "text": "Data centers now consume about 2% of the world\u2019s electricity.",
+    "category": "Technology",
+    "createdAt": "2025-08-02T20:39:05.695105Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udcbb",
+      "\u26a1\ufe0f"
+    ]
+  },
+  {
+    "id": "8862a662-ac35-441a-9152-15947e3626d0",
+    "text": "Heat waves kill more people in the U.S. annually than hurricanes, tornadoes, and floods combined.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.695133Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf21\ufe0f",
+      "\u26b0\ufe0f"
+    ]
+  },
+  {
+    "id": "2a376746-9d1a-448d-8d0b-dd1be1d41909",
+    "text": "Some rural hospitals in the U.S. are closing at a rate of one per month.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.695148Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfe5",
+      "\ud83d\udeaa"
+    ]
+  },
+  {
+    "id": "a6c99b29-0da4-4e71-9d3f-adb5f669c3cd",
+    "text": "More than 95% of the U.S. population has detectable levels of BPA in their bodies.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.695163Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83e\uddea",
+      "\ud83e\ude7a"
+    ]
+  },
+  {
+    "id": "13b348b8-eba4-4b86-b18a-c624ffce478c",
+    "text": "Mass shootings in the U.S. have occurred more days than not in recent years.",
+    "category": "Public Safety",
+    "createdAt": "2025-08-02T20:39:05.695179Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udd2b",
+      "\ud83d\ude22"
+    ]
+  },
+  {
+    "id": "7b3c2a47-767e-4dda-a857-038955fd2529",
+    "text": "The U.S. government classifies over 50 million documents each year as secret.",
+    "category": "Politics",
+    "createdAt": "2025-08-02T20:39:05.695194Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcdc",
+      "\ud83d\udd12"
+    ]
+  },
+  {
+    "id": "04779569-02ec-4335-9e06-bf75c7f81644",
+    "text": "Over 60% of Americans report being dissatisfied with the state of the country.",
+    "category": "Sociology",
+    "createdAt": "2025-08-02T20:39:05.695231Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\ude1e",
+      "\ud83d\udcca"
+    ]
+  },
+  {
+    "id": "1c577a63-e6c8-4a45-bf5f-27c2c07f3730",
+    "text": "In Chicago, the life expectancy in Streeterville is 90 years, while just 9 miles south in Englewood, it drops to 60. This 30-year gap reflects systemic inequality in healthcare, safety, and environmental exposure.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.695244Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfe5",
+      "\u2696\ufe0f"
+    ]
+  },
+  {
+    "id": "26150a62-f622-40a3-a5d7-5336dcb75047",
+    "text": "In some U.S. cities, Black homeowners are more likely to be undervalued by appraisers.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.695260Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfe0",
+      "\u2696\ufe0f"
+    ]
+  },
+  {
+    "id": "f5830cc2-bcb5-45f9-b65a-6fc70bef3cdb",
+    "text": "In many states, unpaid prison labor is legal and often mandatory.",
+    "category": "Criminal Justice",
+    "createdAt": "2025-08-02T20:39:05.695282Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udd17",
+      "\ud83d\udcbc"
+    ]
+  },
+  {
+    "id": "84cfc3e2-dcce-4376-bb28-5e3283d74d6d",
+    "text": "Food deserts affect over 23 million Americans, limiting access to healthy groceries.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.695298Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf4e",
+      "\ud83d\udeab"
+    ]
+  },
+  {
+    "id": "a4f81c14-823e-4f5e-be79-92c0cfd63cca",
+    "text": "Large corporations pay lower effective tax rates than small businesses in the U.S.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.695315Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfe2",
+      "\ud83d\udcc9"
+    ]
+  },
+  {
+    "id": "fb9c3bad-0fe4-4086-aa1d-aabb61eaacdc",
+    "text": "School funding in the U.S. is heavily based on property taxes, reinforcing inequality.",
+    "category": "Education",
+    "createdAt": "2025-08-02T20:39:05.695333Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfeb",
+      "\u2696\ufe0f"
+    ]
+  },
+  {
+    "id": "8f4b1d8f-be63-45e9-9a32-bb664f555c11",
+    "text": "Digital surveillance tools are increasingly used in workplaces to monitor employees.",
+    "category": "Technology",
+    "createdAt": "2025-08-02T20:39:05.695350Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udcbb",
+      "\ud83d\udc41\ufe0f"
+    ]
+  },
+  {
+    "id": "e09c04e5-60e9-45d6-bdd6-6ff7cf7cf2d8",
+    "text": "Over half of U.S. renters spend more than 30% of their income on housing.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.695366Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfe0",
+      "\ud83d\udcb8"
+    ]
+  },
+  {
+    "id": "1be536fa-3934-49fc-9bcd-24b9c5379fed",
+    "text": "Child marriage is still legal in parts of the U.S.",
+    "category": "Human Rights",
+    "createdAt": "2025-08-02T20:39:05.695380Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udc70",
+      "\ud83d\udeab"
+    ]
+  },
+  {
+    "id": "1abe7dff-cd37-4ddf-a32a-c52df4da7253",
+    "text": "Incarceration has been shown to increase recidivism rather than reduce it in many cases.",
+    "category": "Criminal Justice",
+    "createdAt": "2025-08-02T20:39:05.695396Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udd17",
+      "\ud83d\udd04"
+    ]
+  },
+  {
+    "id": "01657a86-9e7f-43a7-adc0-cf33725e102d",
+    "text": "Many low-income countries spend more on debt repayments than on healthcare.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.695413Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udcb8",
+      "\ud83c\udfe5"
+    ]
+  },
+  {
+    "id": "2a538cf7-f492-48bb-b191-ce4f1ababcd9",
+    "text": "Methane leaks from oil and gas operations are often underreported and highly damaging to climate.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.695436Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udee2\ufe0f",
+      "\ud83c\udf2b\ufe0f"
+    ]
+  },
+  {
+    "id": "bffa9a8e-1fb1-49ca-876c-3d0277aa11cf",
+    "text": "Prison gerrymandering counts inmates as residents of the prison district, skewing political representation.",
+    "category": "Politics",
+    "createdAt": "2025-08-02T20:39:05.695466Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udd17",
+      "\ud83d\uddf3\ufe0f"
+    ]
+  },
+  {
+    "id": "81bdcb11-b9eb-4a42-b62e-e5bc1225cbd1",
+    "text": "The U.S. has experienced a significant rise in autoimmune diseases over the past two decades.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.695483Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83e\ude7a",
+      "\ud83d\udee1\ufe0f"
+    ]
+  },
+  {
+    "id": "f0866ef8-98fc-4625-8a82-4c59db1296db",
+    "text": "Mass extinction rates are currently estimated to be 1,000 times the natural background rate.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.695500Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83e\udd92",
+      "\u26b0\ufe0f"
+    ]
+  },
+  {
+    "id": "f01ca87b-1ac2-4175-a3d6-ad7f39d3d5e6",
+    "text": "Medical errors are one of the leading causes of death in the U.S.",
+    "category": "Medicine",
+    "createdAt": "2025-08-02T20:39:05.695515Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfe5",
+      "\u274c"
+    ]
+  },
+  {
+    "id": "b49ffe7b-b79a-4663-ab2c-8379cb725711",
+    "text": "Major pharmaceutical companies spend more on marketing than research and development.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.695541Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udc8a",
+      "\ud83d\udcfa"
+    ]
+  },
+  {
+    "id": "dbe23878-b902-4079-b49c-ed838230be50",
+    "text": "Artificial intelligence systems often inherit and replicate human biases.",
+    "category": "Technology",
+    "createdAt": "2025-08-02T20:39:05.695558Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83e\udd16",
+      "\u2696\ufe0f"
+    ]
+  },
+  {
+    "id": "1bcd32ba-3385-4086-bc38-156d86756309",
+    "text": "Over 30 million Americans live in counties without an abortion provider.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.695573Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfe5",
+      "\ud83d\udeab"
+    ]
+  },
+  {
+    "id": "4357a0a7-993c-4413-a6e0-3500ca8fecc5",
+    "text": "Police in some U.S. cities solve fewer than half of reported violent crimes.",
+    "category": "Criminal Justice",
+    "createdAt": "2025-08-02T20:39:05.695589Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\ude93",
+      "\ud83d\udd0d"
+    ]
+  },
+  {
+    "id": "8cadf727-c1f2-40da-a69c-cd614780212b",
+    "text": "Ocean acidity has increased by about 30% since the Industrial Revolution.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.695605Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udf0a",
+      "\ud83d\udcc8"
+    ]
+  },
+  {
+    "id": "bc706ad2-36b2-40e7-a164-309f496266b2",
+    "text": "Some modern maps intentionally distort scale for political or commercial reasons.",
+    "category": "Geography",
+    "createdAt": "2025-08-02T20:39:05.695621Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\uddfa\ufe0f",
+      "\ud83c\udfad"
+    ]
+  },
+  {
+    "id": "23eb9d0d-97d3-420d-9fe6-1676ed5f5d59",
+    "text": "Corporate lobbying expenditures in the U.S. have reached billions annually.",
+    "category": "Politics",
+    "createdAt": "2025-08-02T20:39:05.695641Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfe2",
+      "\ud83d\udcb8"
+    ]
+  },
+  {
+    "id": "f2b282be-f48c-4721-887e-7ed8e4bca689",
+    "text": "In the U.S., undocumented workers contribute billions to Social Security they may never claim.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.695658Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb8",
+      "\ud83e\uddd1\u200d\ud83d\udcbc"
+    ]
+  },
+  {
+    "id": "1cf716e1-e07d-47d4-8f6f-b43a5dfd1bba",
+    "text": "Over 80,000 prisoners in the U.S. are in solitary confinement on any given day. Psychologists warn that isolation beyond 15 days can cause irreversible mental harm.",
+    "category": "Criminal Justice",
+    "createdAt": "2025-08-02T20:39:05.695678Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udd17",
+      "\ud83e\udde0"
+    ]
+  },
+  {
+    "id": "777bd7cc-73a7-4578-92c1-b51bcad312bf",
+    "text": "The number of annual billion-dollar natural disasters in the U.S. has quadrupled since 1980.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.695694Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf2a\ufe0f",
+      "\ud83d\udcc8"
+    ]
+  },
+  {
+    "id": "847919fd-f3e4-46ea-a075-dba86456e0a8",
+    "text": "The global fashion industry is responsible for 20% of wastewater and 10% of emissions.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.695710Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udc57",
+      "\ud83d\udca7"
+    ]
+  },
+  {
+    "id": "a77d7810-629c-43f8-9511-54370036fc87",
+    "text": "Facial recognition technology is less accurate for darker-skinned individuals.",
+    "category": "Technology",
+    "createdAt": "2025-08-02T20:39:05.695726Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83e\udd16",
+      "\u2696\ufe0f"
+    ]
+  },
+  {
+    "id": "ef88bceb-c27e-4c52-966e-344bc70c48b2",
+    "text": "U.S. veterans account for about 13% of adult homeless individuals.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.695741Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf96\ufe0f",
+      "\ud83c\udfe0"
+    ]
+  },
+  {
+    "id": "a6c6105a-544f-4e93-9409-d8648ac787a7",
+    "text": "Massive underground reservoirs called aquifers are being depleted faster than they can replenish.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.695757Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udca7",
+      "\ud83d\udcc9"
+    ]
+  },
+  {
+    "id": "3c8fb462-8547-4976-a8f4-2fb978ff0cff",
+    "text": "Some pharmaceutical drugs are priced at over $1 million per treatment.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.695772Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udc8a",
+      "\ud83d\udcb8"
+    ]
+  },
+  {
+    "id": "15156858-8f92-4901-8713-c800f982c5ed",
+    "text": "The digital divide means millions of U.S. students lack reliable internet for schoolwork.",
+    "category": "Education",
+    "createdAt": "2025-08-02T20:39:05.695789Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcbb",
+      "\ud83d\udeab"
+    ]
+  },
+  {
+    "id": "15c01d1a-febb-4976-acb1-18ad866b9a44",
+    "text": "False information spreads faster online than factual news, according to MIT studies.",
+    "category": "Technology",
+    "createdAt": "2025-08-02T20:39:05.695807Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcf1",
+      "\u274c"
+    ]
+  },
+  {
+    "id": "17fc5414-7407-449d-b4f8-390208f9c0ea",
+    "text": "The global economic cost of air pollution is estimated at over $5 trillion annually.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.695826Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udf2b\ufe0f",
+      "\ud83d\udcb8"
+    ]
+  },
+  {
+    "id": "805eaa58-83d2-45b7-b7f5-d75752593a57",
+    "text": "For every dollar a white family holds in wealth, a Black family holds around 10 cents on average.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.695844Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb8",
+      "\u2696\ufe0f"
+    ]
+  },
+  {
+    "id": "b6812019-d7f4-422e-b784-0b3281248d34",
+    "text": "Global inequality has reached levels not seen since the early 20th century.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.695861Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udcb8",
+      "\u2696\ufe0f"
+    ]
+  },
+  {
+    "id": "6ee951f5-351e-4671-90aa-36b47a1d826e",
+    "text": "About one in every seven American adults does not have a bank account or uses alternatives like check-cashing.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.695878Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfe6",
+      "\ud83d\udeab"
+    ]
+  },
+  {
+    "id": "c137f12c-8c07-4fac-bc26-d860f8707a27",
+    "text": "Climate migration is expected to displace over 200 million people by 2050.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.695895Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udf0e",
+      "\ud83d\udeb6"
+    ]
+  },
+  {
+    "id": "5443ab54-7512-4793-8932-1b5f82dec160",
+    "text": "Police misconduct settlements have cost major U.S. cities billions of dollars.",
+    "category": "Criminal Justice",
+    "createdAt": "2025-08-02T20:39:05.695911Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\ude93",
+      "\ud83d\udcb8"
+    ]
+  },
+  {
+    "id": "22c84f5e-b73b-476f-8c99-b4d193cf9b57",
+    "text": "The average car is parked 95% of the time.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.695927Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\ude97",
+      "\ud83d\udd70\ufe0f"
+    ]
+  },
+  {
+    "id": "1a34794e-0ba7-429e-9110-b2dd4c2f456a",
+    "text": "The U.S. has lost over 90% of its native prairie ecosystem.",
+    "category": "Environment",
+    "createdAt": "2025-08-02T20:39:05.695944Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf3e",
+      "\ud83d\udcc9"
+    ]
+  },
+  {
+    "id": "d7301294-98a4-4cda-9dc2-78bba8ca2f95",
+    "text": "More people die each year from heat than all other weather events combined in the U.S.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.695962Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf21\ufe0f",
+      "\u26b0\ufe0f"
+    ]
+  },
+  {
+    "id": "0436901f-25ce-4fbb-a4b0-6ad20182ebac",
+    "text": "The global average for internet freedom has been declining for over a decade.",
+    "category": "Politics",
+    "createdAt": "2025-08-02T20:39:05.695979Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udf10",
+      "\ud83d\udcc9"
+    ]
+  },
+  {
+    "id": "48cd904d-4992-407b-a328-46902659df73",
+    "text": "Many popular food dyes used in the U.S. are banned in Europe due to health concerns.",
+    "category": "Public Health",
+    "createdAt": "2025-08-02T20:39:05.695996Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf6c",
+      "\ud83d\udeab"
+    ]
+  },
+  {
+    "id": "309b46dd-74b7-4ddd-9730-003d49633fe9",
+    "text": "Food delivery apps often charge restaurants fees of 20\u201330%, squeezing profit margins.",
+    "category": "Economics",
+    "createdAt": "2025-08-02T20:39:05.696043Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udf7d\ufe0f",
+      "\ud83d\udcb8"
+    ]
+  },
+  {
+    "id": "3baa23c7-3df1-4b3c-bc4b-e0285037a69c",
+    "text": "Some jurisdictions in the U.S. still allow legal forced sterilization under guardianship.",
+    "category": "Human Rights",
+    "createdAt": "2025-08-02T20:39:05.696085Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83e\ude7a",
+      "\ud83d\udeab"
+    ]
+  },
+  {
+    "id": "beffd222-17cc-4056-aaac-694128445809",
+    "text": "Michael Phelps has won 23 Olympic gold medals, more than 60 countries in Olympic history.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:14:26.685900Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfc5",
+      "\ud83c\udfca"
+    ]
+  },
+  {
+    "id": "d67f7f9d-506d-4202-9a01-1abebec8d0f9",
+    "text": "The average NFL game has only about 11 minutes of actual gameplay.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:14:26.683689Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfc8",
+      "\u23f0"
+    ]
+  },
+  {
+    "id": "741fa484-2702-4e7b-8287-9ba82f03c45c",
+    "text": "Serena Williams served at an average speed of 106 mph during her 2013 season.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:14:26.685602Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfbe",
+      "\ud83d\udca8"
+    ]
+  },
+  {
+    "id": "fc7d0cbc-2f6f-4c6e-a174-a9fed84450a5",
+    "text": "The Tour de France spans over 2,000 miles and burns more than 120,000 calories per cyclist.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:14:26.685846Z",
+    "emojis": [
+      "\ud83c\uddeb\ud83c\uddf7",
+      "\ud83d\udeb4",
+      "\ud83d\udd25"
+    ]
+  },
+  {
+    "id": "bc21fcf2-b3d3-4f73-9cd3-4880b4367829",
+    "text": "The fastest recorded tennis serve was 163.7 mph by Sam Groth in 2012.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:14:26.685654Z",
+    "emojis": [
+      "\ud83c\udde6\ud83c\uddfa",
+      "\ud83c\udfbe",
+      "\ud83d\udca8"
+    ]
+  },
+  {
+    "id": "44ffefa3-289f-489f-af1a-c487131c1c0b",
+    "text": "In 2022, Cristiano Ronaldo became the first person to reach 500 million Instagram followers.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:14:26.685554Z",
+    "emojis": [
+      "\ud83c\uddf5\ud83c\uddf9",
+      "\u26bd",
+      "\ud83d\udcf1"
+    ]
+  },
+  {
+    "id": "c9d158b7-b0c2-419e-817f-4e0f48dfd1fd",
+    "text": "Shaquille O\u2019Neal made only 52.7% of his free throws across his NBA career.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:14:26.683400Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfc0",
+      "\u274c"
+    ]
+  },
+  {
+    "id": "d6669bdb-a5d1-4e08-a56c-ea8eac440845",
+    "text": "Usain Bolt\u2019s top speed during his 100m world record was 27.8 mph.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:14:26.685947Z",
+    "emojis": [
+      "\ud83c\uddef\ud83c\uddf2",
+      "\ud83c\udfc3",
+      "\ud83d\udca8"
+    ]
+  },
+  {
+    "id": "1a41d11a-a03d-44a0-af89-29d07653a450",
+    "text": "Simone Biles has won more World Championship medals than any other gymnast in history.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:14:26.685701Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83e\udd38",
+      "\ud83c\udfc5"
+    ]
+  },
+  {
+    "id": "949dc614-f4a3-4fbc-99ba-4e7a53a25546",
+    "text": "The average Major League Baseball pitch is thrown at over 92 mph.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:14:26.685747Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\u26be",
+      "\ud83d\udca8"
+    ]
+  },
+  {
+    "id": "32428ec2-9876-47df-ac06-d57eeca90682",
+    "text": "The average NBA game sees around 229 points scored in total.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:16:21.404950Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfc0",
+      "\ud83d\udcca"
+    ]
+  },
+  {
+    "id": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+    "text": "LeBron James surpassed 40,000 career NBA points in 2024.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfc0",
+      "\ud83c\udf1f"
+    ]
+  },
+  {
+    "id": "b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+    "text": "The fastest recorded 100m sprint by a woman is 10.49 seconds by Florence Griffith-Joyner (1988).",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfc3\u200d\u2640\ufe0f",
+      "\ud83d\udca8"
+    ]
+  },
+  {
+    "id": "c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+    "text": "A standard soccer pitch can be up to 7,140 square meters.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\u26bd",
+      "\ud83d\udccf"
+    ]
+  },
+  {
+    "id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+    "text": "The Boston Marathon has been run annually since 1897.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfc3",
+      "\ud83c\udfc5"
+    ]
+  },
+  {
+    "id": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+    "text": "An average NHL game features about 5.1 goals scored.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\udde6",
+      "\ud83c\udfd2",
+      "\ud83e\udd45"
+    ]
+  },
+  {
+    "id": "f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
+    "text": "The longest tennis match lasted 11 hours and 5 minutes at Wimbledon in 2010.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddec\ud83c\udde7",
+      "\ud83c\udfbe",
+      "\u23f0"
+    ]
+  },
+  {
+    "id": "a7b8c9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+    "text": "Formula 1 cars can accelerate from 0 to 100 mph in about 4 seconds.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udfce\ufe0f",
+      "\ud83d\udca8"
+    ]
+  },
+  {
+    "id": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
+    "text": "The New York Yankees have won 27 World Series titles.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\u26be",
+      "\ud83c\udfc6"
+    ]
+  },
+  {
+    "id": "c9d0e1f2-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+    "text": "A professional volleyball player\u2019s jump can reach over 3 meters.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udfd0",
+      "\u2b06\ufe0f"
+    ]
+  },
+  {
+    "id": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+    "text": "The Ironman World Championship covers 140.6 miles.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udfca\u200d\u2642\ufe0f",
+      "\ud83d\udeb4"
+    ]
+  },
+  {
+    "id": "e1f2a3b4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+    "text": "Golf\u2019s Masters Tournament has been held annually since 1934.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\u26f3",
+      "\ud83c\udfc6"
+    ]
+  },
+  {
+    "id": "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+    "text": "The fastest recorded boxing punch was 45 mph by Keith Liddell.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83e\udd4a",
+      "\ud83d\udca8"
+    ]
+  },
+  {
+    "id": "a3b4c5d6-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+    "text": "A standard Olympic swimming pool holds 2.5 million liters of water.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udfca",
+      "\ud83d\udca7"
+    ]
+  },
+  {
+    "id": "b4c5d6e7-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
+    "text": "The Tour de France has 21 stages over 23 days.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddeb\ud83c\uddf7",
+      "\ud83d\udeb4",
+      "\ud83d\uddfa\ufe0f"
+    ]
+  },
+  {
+    "id": "c5d6e7f8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
+    "text": "The highest score in an NFL game was 113 points in 1966.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfc8",
+      "\ud83d\udcca"
+    ]
+  },
+  {
+    "id": "d6e7f8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
+    "text": "A basketball hoop is 10 feet (3.05 meters) high.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udfc0",
+      "\ud83d\udccf"
+    ]
+  },
+  {
+    "id": "e7f8a9b0-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
+    "text": "The longest home run in MLB history was 575 feet by Babe Ruth in 1921.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\u26be",
+      "\ud83d\udccf"
+    ]
+  },
+  {
+    "id": "f8a9b0c1-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
+    "text": "The fastest recorded slap shot in hockey was 108.8 mph by Zdeno Chara in 2012.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\udde6",
+      "\ud83c\udfd2",
+      "\ud83d\udca8"
+    ]
+  },
+  {
+    "id": "a9b0c1d2-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+    "text": "The FIFA World Cup occurs every 4 years since 1930.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\u26bd",
+      "\ud83c\udfc6"
+    ]
+  },
+  {
+    "id": "b0c1d2e3-4f5a-6b7c-8d9e-0f1a2b3c4d5e",
+    "text": "A marathon is 26.2 miles (42.195 kilometers) long.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udfc3",
+      "\ud83d\udccf"
+    ]
+  },
+  {
+    "id": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
+    "text": "The highest-paid athlete in 2023 earned $136 million.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udfc5",
+      "\ud83d\udcb8"
+    ]
+  },
+  {
+    "id": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a",
+    "text": "The fastest recorded speed in downhill skiing is 158 mph.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\u26f7\ufe0f",
+      "\ud83d\udca8"
+    ]
+  },
+  {
+    "id": "e3f4a5b6-7c8d-8e9f-0f1a-2b3c4d5e6f7b",
+    "text": "The Super Bowl is watched by over 100 million people annually.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfc8",
+      "\ud83d\udcfa"
+    ]
+  },
+  {
+    "id": "f4a5b6c7-8d9e-9f0a-1a2b-3c4d5e6f7a8c",
+    "text": "The longest recorded golf drive was 515 yards by Mike Austin in 1974.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\u26f3",
+      "\ud83d\udccf"
+    ]
+  },
+  {
+    "id": "a5b6c7d8-9e0f-0a1b-2b3c-4d5e6f7a8c9d",
+    "text": "The average MLB game lasts 3 hours and 10 minutes.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\u26be",
+      "\u23f0"
+    ]
+  },
+  {
+    "id": "b6c7d8e9-0f1a-1b2c-3c4d-5e6f7a8c9d0e",
+    "text": "The Olympic Games feature over 400 events across 40 sports.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udfc5",
+      "\ud83c\udfc3"
+    ]
+  },
+  {
+    "id": "c7d8e9f0-1a2b-2c3d-4d5e-6f7a8c9d0e1f",
+    "text": "The fastest recorded cycling sprint reached 51 mph.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udeb4",
+      "\ud83d\udca8"
+    ]
+  },
+  {
+    "id": "d8e9f0a1-2b3c-3d4e-5e6f-7a8c9d0e1f2a",
+    "text": "The heaviest sumo wrestler in history weighed 584 pounds.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddef\ud83c\uddf5",
+      "\ud83e\udd3c",
+      "\u2696\ufe0f"
+    ]
+  },
+  {
+    "id": "e9f0a1b2-3c4d-4e5f-6f7a-8c9d0e1f2a3b",
+    "text": "The longest winning streak in NBA history is 33 games by the Lakers in 1971\u201372.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfc0",
+      "\ud83c\udfc6"
+    ]
+  },
+  {
+    "id": "f0a1b2c3-4d5e-5f6a-7a8c-9d0e1f2a3b4c",
+    "text": "A regulation soccer ball weighs 450 grams.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\u26bd",
+      "\u2696\ufe0f"
+    ]
+  },
+  {
+    "id": "a1b2c3d4-5e6f-6a7b-8c9d-0e1f2a3b4c5d",
+    "text": "The highest vertical leap recorded is 48 inches by Michael Jordan.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfc0",
+      "\u2b06\ufe0f"
+    ]
+  },
+  {
+    "id": "b2c3d4e5-6f7a-7b8c-9d0e-1f2a3b4c5d6e",
+    "text": "The Tour de France climbs over 100,000 feet in elevation.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddeb\ud83c\uddf7",
+      "\ud83d\udeb4",
+      "\u26f0\ufe0f"
+    ]
+  },
+  {
+    "id": "c3d4e5f6-7a8b-8c9d-0e1f-2a3b4c5d6e7f",
+    "text": "The fastest recorded serve in women\u2019s tennis was 131 mph by Sabine Lisicki in 2014.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udde9\ud83c\uddea",
+      "\ud83c\udfbe",
+      "\ud83d\udca8"
+    ]
+  },
+  {
+    "id": "033b8344-2aaf-42e7-a7ee-1eff7a0d3833",
+    "text": "The Stanley Cup has been awarded since 1893.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\udde6",
+      "\ud83c\udfd2",
+      "\ud83c\udfc6"
+    ]
+  },
+  {
+    "id": "e5f6a7b8-9c0d-0e1f-1a2b-3c4d5e6f7a8b",
+    "text": "A standard cricket match can last up to 5 days.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
+      "\ud83c\udfcf",
+      "\u23f0"
+    ]
+  },
+  {
+    "id": "f6a7b8c9-0d1e-1f2a-2b3c-4d5e6f7a8b9c",
+    "text": "The fastest recorded pitch in softball was 77 mph by Monica Abbott in 2012.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83e\udd4e",
+      "\ud83d\udca8"
+    ]
+  },
+  {
+    "id": "a7b8c9d0-1e2f-2a3b-3c4d-5e6f7a8b9c0d",
+    "text": "The average NFL player\u2019s career lasts 3.3 years.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfc8",
+      "\u23f3"
+    ]
+  },
+  {
+    "id": "b8c9d0e1-2f3a-3b4c-4d5e-6f7a8b9c0d1e",
+    "text": "The highest score in a single NBA game by a player is 100 points by Wilt Chamberlain in 1962.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfc0",
+      "\ud83c\udfc5"
+    ]
+  },
+  {
+    "id": "c9d0e1f2-3a4b-4c5d-5e6f-7a8b9c0d1e2f",
+    "text": "The Paralympic Games feature over 4,400 athletes.",
+    "category": "Sports",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\u267f",
+      "\ud83c\udfc5"
+    ]
+  },
+  {
+    "id": "d6606a11-bd6c-4a66-a44e-aeae99a717e2",
+    "text": "Apple became the first U.S. company to reach a $3 trillion market cap in 2022.",
+    "category": "Finance",
+    "createdAt": "2025-08-03T02:14:26.685666Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf4e",
+      "\ud83d\udcb0"
+    ]
+  },
+  {
+    "id": "fcb4593d-4f7f-4702-a772-a6cd119f88c7",
+    "text": "Globally, over $100 trillion is held in mutual funds.",
+    "category": "Finance",
+    "createdAt": "2025-08-03T02:14:26.685202Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udcb5",
+      "\ud83d\udcc8"
+    ]
+  },
+  {
+    "id": "1d5b5a5e-0eb8-41fa-8ddf-1ece9a03fb2b",
+    "text": "The average credit card interest rate in the U.S. surpassed 20% in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-03T02:14:26.685565Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb3",
+      "\ud83d\udcc9"
+    ]
+  },
+  {
+    "id": "046e1895-91e0-4dbd-97f9-4b2fb159e8a6",
+    "text": "In 2021, Americans held over $1.5 trillion in student loan debt.",
+    "category": "Finance",
+    "createdAt": "2025-08-03T02:14:26.685859Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf93",
+      "\ud83d\udcb8"
+    ]
+  },
+  {
+    "id": "5671231d-0906-4b3f-9a3b-4eef3a992d0f",
+    "text": "The average CEO of an S&P 500 company earned 324 times more than the average worker in 2022.",
+    "category": "Finance",
+    "createdAt": "2025-08-03T02:14:26.685759Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcbc",
+      "\ud83d\udcb0"
+    ]
+  },
+  {
+    "id": "410dbaa3-355a-4680-92b2-e5e40bfd1cbe",
+    "text": "Over 60% of U.S. adults don't have a retirement plan beyond Social Security.",
+    "category": "Finance",
+    "createdAt": "2025-08-03T02:14:26.685960Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udc74",
+      "\ud83d\udcb8"
+    ]
+  },
+  {
+    "id": "1a75d86c-c49c-4cdd-b5fa-cbea9b331cb1",
+    "text": "The cryptocurrency market cap peaked at over $3 trillion in 2021.",
+    "category": "Finance",
+    "createdAt": "2025-08-03T02:14:26.685335Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\u20bf",
+      "\ud83d\udcc8"
+    ]
+  },
+  {
+    "id": "56ef9f5e-a05a-48e2-8fc7-54f212e41a9b",
+    "text": "Real estate accounts for roughly 60% of global household wealth.",
+    "category": "Finance",
+    "createdAt": "2025-08-03T02:14:26.683701Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udfe0",
+      "\ud83d\udcb0"
+    ]
+  },
+  {
+    "id": "bf9eb809-831a-42d7-9ba5-07aa0ec79b3a",
+    "text": "High-frequency trading firms can make decisions in microseconds, faster than a blink.",
+    "category": "Finance",
+    "createdAt": "2025-08-03T02:14:26.685912Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\u26a1",
+      "\ud83d\udcca"
+    ]
+  },
+  {
+    "id": "e557536a-1cc6-4a21-bee7-b9391f48c03d",
+    "text": "The U.S. national debt exceeded $33 trillion in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-03T02:14:26.684759Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb5",
+      "\ud83d\udcc9"
+    ]
+  },
+  {
+    "id": "f40b5662-4621-4039-a460-20f74b424847",
+    "text": "In 2023, the average U.S. household had 7951 dollars in credit card debt.",
+    "category": "Finance",
+    "createdAt": "2025-08-03T02:16:21.432102Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb3",
+      "\ud83d\udcc9"
+    ]
+  },
+  {
+    "id": "d0e1f2a3-5c6d-6e7f-8a9b-0c1d2e3f4a5b",
+    "text": "The global GDP was $105 trillion in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udcb5",
+      "\ud83d\udcc8"
+    ]
+  },
+  {
+    "id": "e1f2a3b4-6d7e-7f8a-9b0c-1d2e3f4a5b6c",
+    "text": "Gold prices peaked at $2,135 per ounce in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83e\ude99",
+      "\ud83d\udcc8"
+    ]
+  },
+  {
+    "id": "f2a3b4c5-7e8f-8a9b-0c1d-2e3f4a5b6c7d",
+    "text": "The U.S. stock market handles about $400 billion in daily trades.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcca",
+      "\ud83d\udcb0"
+    ]
+  },
+  {
+    "id": "a3b4c5d6-8f9a-9b0c-1d2e-3f4a5b6c7d8e",
+    "text": "Over 50% of Americans have less than $1,000 in savings in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb8",
+      "\ud83d\udcc9"
+    ]
+  },
+  {
+    "id": "b4c5d6e7-9a0b-0c1d-2e3f-4a5b6c7d8e9f",
+    "text": "The Euro is used by 20 countries in 2025.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddea\ud83c\uddfa",
+      "\u20ac",
+      "\ud83c\udf0d"
+    ]
+  },
+  {
+    "id": "c5d6e7f8-0b1c-1d2e-3f4a-5b6c7d8e9f0a",
+    "text": "Bitcoin\u2019s highest price was $69,000 in November 2021.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\u20bf",
+      "\ud83d\udcc8"
+    ]
+  },
+  {
+    "id": "d6e7f8a9-1c2d-2e3f-4a5b-6c7d8e9f0a1b",
+    "text": "The average U.S. mortgage rate hit 7.8% in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfe0",
+      "\ud83d\udcc9"
+    ]
+  },
+  {
+    "id": "e7f8a9b0-2d3e-3f4a-5b6c-7d8e9f0a1b2c",
+    "text": "Global remittances exceeded $800 billion in 2022.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udcb8",
+      "\ud83d\udcec"
+    ]
+  },
+  {
+    "id": "f8a9b0c1-3e4f-4a5b-6c7d-8e9f0a1b2c3d",
+    "text": "The U.S. federal budget deficit was $1.7 trillion in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb5",
+      "\ud83d\udcc9"
+    ]
+  },
+  {
+    "id": "a9b0c1d2-4f5a-5b6c-7d8e-9f0a1b2c3d4e",
+    "text": "Over 2 billion people globally are unbanked in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udfe6",
+      "\ud83d\udeab"
+    ]
+  },
+  {
+    "id": "b0c1d2e3-5a6b-6c7d-8e9f-0a1b2c3d4e5f",
+    "text": "The average 401(k) balance was $112,300 in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb0",
+      "\ud83d\udc74"
+    ]
+  },
+  {
+    "id": "c1d2e3f4-6b7c-7d8e-9f0a-1b2c3d4e5f6a",
+    "text": "The U.S. housing market was valued at $47 trillion in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfe0",
+      "\ud83d\udcc8"
+    ]
+  },
+  {
+    "id": "d2e3f4a5-7c8d-8e9f-0a1b-2c3d4e5f6a7b",
+    "text": "Over 70% of U.S. adults have a credit score above 700 in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb3",
+      "\u2705"
+    ]
+  },
+  {
+    "id": "e3f4a5b6-8d9e-9f0a-1b2c-3d4e5f6a7b8c",
+    "text": "The global bond market was worth $130 trillion in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udcdc",
+      "\ud83d\udcb0"
+    ]
+  },
+  {
+    "id": "f4a5b6c7-9e0f-0a1b-2c3d-4e5f6a7b8c9d",
+    "text": "The average U.S. car loan was $40,184 in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\ude97",
+      "\ud83d\udcb8"
+    ]
+  },
+  {
+    "id": "a5b6c7d8-0f1a-1b2c-3d4e-5f6a7b8c9d0e",
+    "text": "Hedge funds manage over $4.3 trillion globally in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udcbc",
+      "\ud83d\udcc8"
+    ]
+  },
+  {
+    "id": "b6c7d8e9-1a2b-2c3d-4e5f-6a7b8c9d0e1f",
+    "text": "The U.S. minimum wage is $7.25 per hour in 2025.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb5",
+      "\u23f0"
+    ]
+  },
+  {
+    "id": "c7d8e9f0-2b3c-3d4e-5f6a-7b8c9d0e1f2a",
+    "text": "Over 30% of U.S. adults have no emergency savings in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb8",
+      "\ud83d\udeab"
+    ]
+  },
+  {
+    "id": "d8e9f0a1-3c4d-4e5f-6a7b-8c9d0e1f2a3b",
+    "text": "The global fintech market was valued at $226 billion in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udcbb",
+      "\ud83d\udcb0"
+    ]
+  },
+  {
+    "id": "e9f0a1b2-4d5e-5f6a-7b8c-9d0e1f2a3b4c",
+    "text": "The average U.S. rent was $2,052 per month in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfe0",
+      "\ud83d\udcb8"
+    ]
+  },
+  {
+    "id": "f0a1b2c3-5e6f-6a7b-8c9d-0e1f2a3b4c5d",
+    "text": "Over 1.4 billion credit cards are in use in the U.S. in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb3",
+      "\ud83d\udd22"
+    ]
+  },
+  {
+    "id": "a1b2c3d4-6f7a-7b8c-9d0e-1f2a3b4c5d6e",
+    "text": "The U.S. spent $877 billion on defense in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udee1\ufe0f",
+      "\ud83d\udcb0"
+    ]
+  },
+  {
+    "id": "b2c3d4e5-7a8b-8c9d-0e1f-2a3b4c5d6e7f",
+    "text": "The global luxury goods market was worth $1.1 trillion in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udc8e",
+      "\ud83d\udc5c"
+    ]
+  },
+  {
+    "id": "c3d4e5f6-8b9c-9d0e-0f1a-3b4c5d6e7f8a",
+    "text": "Over 40% of U.S. households carry medical debt in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfe5",
+      "\ud83d\udcb8"
+    ]
+  },
+  {
+    "id": "d4e5f6a7-9c0d-0e1f-1a2b-4c5d6e7f8a9b",
+    "text": "The average U.S. tax refund was $2,753 in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb5",
+      "\ud83d\udcdd"
+    ]
+  },
+  {
+    "id": "e5f6a7b8-0d1e-1f2a-2b3c-5d6e7f8a9b0c",
+    "text": "The global insurance market was valued at $6.9 trillion in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udcdc",
+      "\ud83d\udcb0"
+    ]
+  },
+  {
+    "id": "f6a7b8c9-1e2f-2a3b-3c4d-6e7f8a9b0c1d",
+    "text": "Over 25% of U.S. adults have no retirement savings in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udc74",
+      "\ud83d\udeab"
+    ]
+  },
+  {
+    "id": "a7b8c9d0-2f3a-3b4c-4d5e-7f8a9b0c1d2e",
+    "text": "The U.S. personal savings rate was 3.8% in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb8",
+      "\ud83d\udcc9"
+    ]
+  },
+  {
+    "id": "b8c9d0e1-3a4b-4c5d-5e6f-8a9b0c1d2e3f",
+    "text": "The global e-commerce market reached $5.8 trillion in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\uded2",
+      "\ud83d\udcbb"
+    ]
+  },
+  {
+    "id": "c9d0e1f2-4b5c-5d6e-6f7a-9b0c1d2e3f4a",
+    "text": "The average U.S. auto insurance premium was $2,019 in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\ude97",
+      "\ud83d\udcdc"
+    ]
+  },
+  {
+    "id": "d0e1f2a3-5c6d-6e7f-7a8b-0c1d2e3f4a5b",
+    "text": "Over 10% of U.S. adults own cryptocurrency in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\u20bf",
+      "\ud83d\udcbb"
+    ]
+  },
+  {
+    "id": "e1f2a3b4-6d7e-7f8a-8b9c-1d2e3f4a5b6c",
+    "text": "The U.S. median household income was $81,060 in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb5",
+      "\ud83c\udfe0"
+    ]
+  },
+  {
+    "id": "f2a3b4c5-7e8f-8a9b-9c0d-2e3f4a5b6c7d",
+    "text": "The global venture capital market invested $344 billion in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udcbc",
+      "\ud83d\udcb0"
+    ]
+  },
+  {
+    "id": "a3b4c5d6-8f9a-9b0c-0d1e-3f4a5b6c7d8e",
+    "text": "Over 60% of U.S. adults have credit card debt in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcb3",
+      "\ud83d\udcc9"
+    ]
+  },
+  {
+    "id": "b4c5d6e7-9a0b-0c1d-1e2f-4a5b6c7d8e9f",
+    "text": "The average U.S. home price was $412,300 in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfe0",
+      "\ud83d\udcb0"
+    ]
+  },
+  {
+    "id": "c5d6e7f8-0b1c-1d2e-2f3a-5b6c7d8e9f0a",
+    "text": "The global derivatives market was valued at $1.2 quadrillion in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udcca",
+      "\ud83d\udcb0"
+    ]
+  },
+  {
+    "id": "d6e7f8a9-1c2d-2e3f-3a4b-6c7d8e9f0a1b",
+    "text": "The average U.S. student loan payment is $503 per month in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf93",
+      "\ud83d\udcb8"
+    ]
+  },
+  {
+    "id": "e7f8a9b0-2d3e-3f4a-4b5c-7d8e9f0a1b2c",
+    "text": "Over 15% of U.S. adults are underinsured for healthcare in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfe5",
+      "\ud83d\udeab"
+    ]
+  },
+  {
+    "id": "f8a9b0c1-3e4f-4a5b-5c6d-8e9f0a1b2c3d",
+    "text": "The global private equity market was worth $4.5 trillion in 2023.",
+    "category": "Finance",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udcbc",
+      "\ud83d\udcb0"
+    ]
+  },
+  {
+    "id": "250e2895-dc4d-4c1d-b2e2-6235095dae15",
+    "text": "World War II caused the deaths of over 70 million people worldwide.",
+    "category": "World History",
+    "createdAt": "2025-08-03T02:14:26.685770Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udca3",
+      "\ud83e\udea6"
+    ]
+  },
+  {
+    "id": "ceaff06b-a3b5-4eb3-be30-c10fc9737538",
+    "text": "The Roman Empire, at its peak, covered 2.2 million square miles.",
+    "category": "World History",
+    "createdAt": "2025-08-03T02:14:26.685971Z",
+    "emojis": [
+      "\ud83c\uddee\ud83c\uddf9",
+      "\ud83c\udfdb\ufe0f",
+      "\ud83d\uddfa\ufe0f"
+    ]
+  },
+  {
+    "id": "5ed7e082-4de1-4a00-85fe-4c90482bbf19",
+    "text": "The Great Fire of London in 1666 destroyed over 13,000 homes.",
+    "category": "World History",
+    "createdAt": "2025-08-03T02:14:26.684631Z",
+    "emojis": [
+      "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
+      "\ud83d\udd25",
+      "\ud83c\udfe0"
+    ]
+  },
+  {
+    "id": "2eea8d5e-6f52-4f87-9fa0-03a5c4630efe",
+    "text": "More than 1 million people died during the Irish Potato Famine.",
+    "category": "World History",
+    "createdAt": "2025-08-03T02:14:26.685924Z",
+    "emojis": [
+      "\ud83c\uddee\ud83c\uddea",
+      "\ud83e\udd54",
+      "\ud83e\udea6"
+    ]
+  },
+  {
+    "id": "c4f1e275-e4a2-46fe-93e6-6177cabac952",
+    "text": "Genghis Khan's empire was larger than the Roman Empire by over 3 million square miles.",
+    "category": "World History",
+    "createdAt": "2025-08-03T02:14:26.684724Z",
+    "emojis": [
+      "\ud83c\uddf2\ud83c\uddf3",
+      "\u2694\ufe0f",
+      "\ud83d\uddfa\ufe0f"
+    ]
+  },
+  {
+    "id": "62aee50e-3109-403e-b88b-a0339672b04c",
+    "text": "The Cold War lasted for 45 years, from 1947 to 1991.",
+    "category": "World History",
+    "createdAt": "2025-08-03T02:14:26.684822Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udee1\ufe0f",
+      "\u2694\ufe0f"
+    ]
+  },
+  {
+    "id": "d41d1729-0f92-4d08-99d9-fb0b5630ae72",
+    "text": "Over 20 million people were imprisoned in the Soviet Gulag system.",
+    "category": "World History",
+    "createdAt": "2025-08-03T02:14:26.685242Z",
+    "emojis": [
+      "\ud83c\uddf7\ud83c\uddfa",
+      "\u26d3\ufe0f",
+      "\ud83c\udfed"
+    ]
+  },
+  {
+    "id": "b98ab736-d6ed-4589-aba4-a28b99579584",
+    "text": "The Transatlantic Slave Trade forcibly moved over 12 million Africans.",
+    "category": "World History",
+    "createdAt": "2025-08-03T02:14:26.685577Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\u26d3\ufe0f",
+      "\ud83d\udea2"
+    ]
+  },
+  {
+    "id": "3b676ea3-26d5-4e7f-8840-138c2c558fb6",
+    "text": "The Berlin Wall stood for 28 years, dividing families and ideologies.",
+    "category": "World History",
+    "createdAt": "2025-08-03T02:14:26.685876Z",
+    "emojis": [
+      "\ud83c\udde9\ud83c\uddea",
+      "\ud83e\uddf1",
+      "\ud83c\udf0d"
+    ]
+  },
+  {
+    "id": "854194bc-7abc-44f3-bc7c-5a4349249aa4",
+    "text": "The Black Death killed roughly 30% of Europe\u2019s population in the 14th century.",
+    "category": "World History",
+    "createdAt": "2025-08-03T02:14:26.685677Z",
+    "emojis": [
+      "\ud83c\uddea\ud83c\uddfa",
+      "\ud83d\udc80",
+      "\ud83e\udda0"
+    ]
+  },
+  {
+    "id": "926ba4fa-95ca-4202-afd4-018c05e68759",
+    "text": "The Napoleonic Wars caused over 3500 thousand military and civilian deaths.",
+    "category": "World History",
+    "createdAt": "2025-08-03T02:16:21.424501Z",
+    "emojis": [
+      "\ud83c\uddeb\ud83c\uddf7",
+      "\u2694\ufe0f",
+      "\ud83e\udea6"
+    ]
+  },
+  {
+    "id": "a9b0c1d2-5e6f-6a7b-7c8d-9e0f1a2b3c4d",
+    "text": "The Great Wall of China spans over 21,000 kilometers.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\uddf3",
+      "\ud83e\uddf1",
+      "\ud83c\udfef"
+    ]
+  },
+  {
+    "id": "b0c1d2e3-6f7a-7b8c-8d9e-0f1a2b3c4d5e",
+    "text": "The French Revolution lasted from 1789 to 1799.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddeb\ud83c\uddf7",
+      "\u2696\ufe0f",
+      "\ud83d\udde1\ufe0f"
+    ]
+  },
+  {
+    "id": "c1d2e3f4-7a8b-8c9d-9e0f-1a2b3c4d5e6f",
+    "text": "The Industrial Revolution began in Britain in the 1760s.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
+      "\ud83c\udfed",
+      "\u2699\ufe0f"
+    ]
+  },
+  {
+    "id": "d2e3f4a5-8b9c-9d0e-0f1a-2b3c4d5e6f7a",
+    "text": "The Mongol Empire covered 24 million square kilometers at its peak.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf2\ud83c\uddf3",
+      "\ud83d\udc0e",
+      "\ud83d\uddfa\ufe0f"
+    ]
+  },
+  {
+    "id": "e3f4a5b6-9c0d-0e1f-1a2b-3c4d5e6f7a8b",
+    "text": "The American Civil War resulted in 620,000 deaths from 1861 to 1865.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\u2694\ufe0f",
+      "\ud83e\udea6"
+    ]
+  },
+  {
+    "id": "f4a5b6c7-0d1e-1f2a-2b3c-4d5e6f7a8b9c",
+    "text": "The Magna Carta was signed in 1215.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
+      "\ud83d\udcdc",
+      "\u2696\ufe0f"
+    ]
+  },
+  {
+    "id": "a5b6c7d8-1e2f-2a3b-3c4d-5e6f7a8b9c0d",
+    "text": "The Spanish Inquisition executed over 3,000 people from 1478 to 1834.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddea\ud83c\uddf8",
+      "\u2696\ufe0f",
+      "\ud83e\udea6"
+    ]
+  },
+  {
+    "id": "b6c7d8e9-2f3a-3b4c-4d5e-6f7a8b9c0d1e",
+    "text": "The Battle of Stalingrad killed over 1.8 million people from 1942 to 1943.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf7\ud83c\uddfa",
+      "\u2694\ufe0f",
+      "\ud83e\udea6"
+    ]
+  },
+  {
+    "id": "c7d8e9f0-3a4b-4c5d-5e6f-7a8b9c0d1e2f",
+    "text": "The Silk Road operated for over 1,500 years.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udee4\ufe0f",
+      "\ud83d\udc2b"
+    ]
+  },
+  {
+    "id": "d8e9f0a1-4b5c-5d6e-6f7a-8b9c0d1e2f3a",
+    "text": "The Hundred Years\u2019 War lasted 116 years from 1337 to 1453.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddeb\ud83c\uddf7",
+      "\u2694\ufe0f",
+      "\ud83c\udff0"
+    ]
+  },
+  {
+    "id": "e9f0a1b2-5c6d-6e7f-7a8b-9c0d1e2f3a4b",
+    "text": "The Ottoman Empire ruled for over 600 years from 1299 to 1922.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf9\ud83c\uddf7",
+      "\ud83d\udc51",
+      "\ud83d\uddfa\ufe0f"
+    ]
+  },
+  {
+    "id": "f0a1b2c3-6d7e-7f8a-8b9c-0d1e2f3a4b5c",
+    "text": "The Crusades spanned from 1096 to 1291.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddea\ud83c\uddfa",
+      "\u2694\ufe0f",
+      "\u271d\ufe0f"
+    ]
+  },
+  {
+    "id": "a1b2c3d4-7e8f-8a9b-9c0d-1e2f3a4b5c6d",
+    "text": "The Rwandan Genocide killed about 800,000 people in 1994.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf7\ud83c\uddfc",
+      "\ud83e\udea6",
+      "\ud83d\ude14"
+    ]
+  },
+  {
+    "id": "b2c3d4e5-8f9a-9b0c-0d1e-2f3a4b5c6d7e",
+    "text": "The Treaty of Versailles was signed in 1919.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddeb\ud83c\uddf7",
+      "\ud83d\udcdc",
+      "\ud83d\udd4a\ufe0f"
+    ]
+  },
+  {
+    "id": "c3d4e5f6-9a0b-0c1d-1e2f-3a4b5c6d7e8f",
+    "text": "The Egyptian pyramids were built around 2630 BCE.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddea\ud83c\uddec",
+      "\ud83e\udea8",
+      "\ud83c\udfdb\ufe0f"
+    ]
+  },
+  {
+    "id": "d4e5f6a7-0b1c-1d2e-2f3a-4b5c6d7e8f9a",
+    "text": "The Black Death spread via trade routes from Asia to Europe.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83e\udda0",
+      "\ud83d\udee4\ufe0f"
+    ]
+  },
+  {
+    "id": "e5f6a7b8-1c2d-2e3f-3a4b-5c6d7e8f9a0b",
+    "text": "The Fall of Constantinople occurred in 1453.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf9\ud83c\uddf7",
+      "\ud83c\udff0",
+      "\u2694\ufe0f"
+    ]
+  },
+  {
+    "id": "f6a7b8c9-2d3e-3f4a-4b5c-6d7e8f9a0b1c",
+    "text": "The American Revolution lasted from 1775 to 1783.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\uddfd",
+      "\u2694\ufe0f"
+    ]
+  },
+  {
+    "id": "a7b8c9d0-3e4f-4a5b-5c6d-7e8f9a0b1c2d",
+    "text": "The Taiping Rebellion caused 20\u201330 million deaths from 1850 to 1864.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\uddf3",
+      "\u2694\ufe0f",
+      "\ud83e\udea6"
+    ]
+  },
+  {
+    "id": "b8c9d0e1-4f5a-5b6c-6d7e-8f9a0b1c2d3e",
+    "text": "The first manned moon landing was in 1969.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf11",
+      "\ud83d\ude80"
+    ]
+  },
+  {
+    "id": "c9d0e1f2-5a6b-6c7d-7e8f-9a0b1c2d3e4f",
+    "text": "The Berlin Airlift delivered 2.3 million tons of supplies from 1948 to 1949.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udde9\ud83c\uddea",
+      "\u2708\ufe0f",
+      "\ud83d\udce6"
+    ]
+  },
+  {
+    "id": "d0e1f2a3-6b7c-7d8e-8f9a-0b1c2d3e4f5a",
+    "text": "The Viking Age lasted from 793 to 1066.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf3\ud83c\uddf4",
+      "\ud83d\udee1\ufe0f",
+      "\u26f5"
+    ]
+  },
+  {
+    "id": "e1f2a3b4-7c8d-8e9f-9a0b-1c2d3e4f5a6b",
+    "text": "The Spanish Armada was defeated in 1588.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddea\ud83c\uddf8",
+      "\u26f5",
+      "\u2694\ufe0f"
+    ]
+  },
+  {
+    "id": "f2a3b4c5-8d9e-9f0a-0b1c-2d3e4f5a6b7c",
+    "text": "The Meiji Restoration in Japan began in 1868.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddef\ud83c\uddf5",
+      "\ud83d\udc51",
+      "\ud83c\udf05"
+    ]
+  },
+  {
+    "id": "a3b4c5d6-9e0f-0a1b-1c2d-3e4f5a6b7c8d",
+    "text": "The Haitian Revolution freed 500,000 slaves from 1791 to 1804.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udded\ud83c\uddf9",
+      "\u26d3\ufe0f",
+      "\ud83d\uddfd"
+    ]
+  },
+  {
+    "id": "b4c5d6e7-0f1a-1b2c-2d3e-4f5a6b7c8d9e",
+    "text": "The Opium Wars involved over 60,000 troops from 1839 to 1860.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\uddf3",
+      "\u2694\ufe0f",
+      "\ud83d\udea2"
+    ]
+  },
+  {
+    "id": "c5d6e7f8-1a2b-2c3d-3e4f-5a6b7c8d9e0f",
+    "text": "The Great Depression began with the 1929 stock market crash.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcc9",
+      "\ud83d\ude14"
+    ]
+  },
+  {
+    "id": "d6e7f8a9-2b3c-3d4e-4f5a-6b7c8d9e0f1a",
+    "text": "The Suez Crisis occurred in 1956.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddea\ud83c\uddec",
+      "\ud83d\udea2",
+      "\u2694\ufe0f"
+    ]
+  },
+  {
+    "id": "e7f8a9b0-3c4d-4e5f-5a6b-7c8d9e0f1a2b",
+    "text": "The Roman Colosseum could seat 50,000 people.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddee\ud83c\uddf9",
+      "\ud83c\udfdf\ufe0f",
+      "\ud83d\udc65"
+    ]
+  },
+  {
+    "id": "f8a9b0c1-4d5e-5f6a-6b7c-8d9e0f1a2b3c",
+    "text": "The Battle of Waterloo ended Napoleon\u2019s rule in 1815.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udde7\ud83c\uddea",
+      "\u2694\ufe0f",
+      "\ud83d\udc51"
+    ]
+  },
+  {
+    "id": "0695c4bd-cf9f-449a-817a-8aff5ba4eacf",
+    "text": "The Russian Revolution of 1917 led to the Soviet Union\u2019s formation.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf7\ud83c\uddfa",
+      "\u2692\ufe0f",
+      "\ud83c\udf0d"
+    ]
+  },
+  {
+    "id": "f4052413-fa43-483d-932f-63bbb971d7ad",
+    "text": "The Zulu Kingdom resisted British colonization in 1879.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddff\ud83c\udde6",
+      "\ud83d\udee1\ufe0f",
+      "\u2694\ufe0f"
+    ]
+  },
+  {
+    "id": "2800f4ca-021b-44e6-8b50-7ea432e0f182",
+    "text": "The Wright brothers\u2019 first flight was in 1903.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\u2708\ufe0f",
+      "\ud83d\udee0\ufe0f"
+    ]
+  },
+  {
+    "id": "bd0f96aa-c0ff-44f6-b24b-9c8c37be35d7",
+    "text": "The Partition of India displaced 14 million people in 1947.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddee\ud83c\uddf3",
+      "\ud83d\uddfa\ufe0f",
+      "\ud83d\udc65"
+    ]
+  },
+  {
+    "id": "57b3114a-60bf-4c4a-86e3-3f281d55ab21",
+    "text": "The Khmer Rouge killed about 2 million in Cambodia from 1975 to 1979.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf0\ud83c\udded",
+      "\ud83e\udea6",
+      "\ud83d\ude14"
+    ]
+  },
+  {
+    "id": "28951bc1-a1cb-4de0-abf3-75e868b4228f",
+    "text": "The Han Dynasty ruled China for over 400 years.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\uddf3",
+      "\ud83d\udc51",
+      "\ud83d\uddfa\ufe0f"
+    ]
+  },
+  {
+    "id": "013d8c2d-8130-4876-9e44-7f7b844bb3be",
+    "text": "The Battle of Thermopylae involved 300 Spartans in 480 BCE.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddec\ud83c\uddf7",
+      "\u2694\ufe0f",
+      "\ud83d\udee1\ufe0f"
+    ]
+  },
+  {
+    "id": "8c4b8029-4916-46b4-b822-c9479478e2f6",
+    "text": "The Renaissance began in Italy in the 14th century.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddee\ud83c\uddf9",
+      "\ud83c\udfa8",
+      "\ud83d\udcda"
+    ]
+  },
+  {
+    "id": "652bfb7f-5eed-4f12-99b8-758d2b82c4bd",
+    "text": "The Hiroshima bombing killed about 140,000 people in 1945.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddef\ud83c\uddf5",
+      "\ud83d\udca3",
+      "\ud83e\udea6"
+    ]
+  },
+  {
+    "id": "089c195b-ee81-46e3-a9c9-4f9d8b2f3ccc",
+    "text": "The Incan Empire covered 2 million square kilometers at its peak in 1533.",
+    "category": "World History",
+    "createdAt": "2025-08-04T00:00:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf5\ud83c\uddea",
+      "\ud83c\udfd4\ufe0f",
+      "\ud83d\uddfa\ufe0f"
+    ]
+  },
+  {
+    "id": "512b7566-99b0-4b9b-a1af-025350032f10",
+    "text": "Russia spans 11 time zones and covers over 6.6 million square miles.",
+    "category": "Geography",
+    "createdAt": "2025-08-03T02:14:26.685737Z",
+    "emojis": [
+      "\ud83c\uddf7\ud83c\uddfa",
+      "\ud83d\uddfa\ufe0f",
+      "\u23f0"
+    ]
+  },
+  {
+    "id": "260cb905-afd4-4c3d-8ed7-8532e815c422",
+    "text": "Over 90% of the world\u2019s population lives in the Northern Hemisphere.",
+    "category": "Geography",
+    "createdAt": "2025-08-03T02:14:26.685614Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udc65",
+      "\ud83e\udded"
+    ]
+  },
+  {
+    "id": "037f60db-95fc-4a4e-b5f9-2a821ba3aac4",
+    "text": "The Amazon River discharges over 200,000 cubic meters of water per second.",
+    "category": "Geography",
+    "createdAt": "2025-08-03T02:14:26.685640Z",
+    "emojis": [
+      "\ud83c\udde7\ud83c\uddf7",
+      "\ud83c\udf0a",
+      "\ud83c\udfde\ufe0f"
+    ]
+  },
+  {
+    "id": "7b8c9d0e-1f2a-3b4c-5d6e-7f8a9b0c1d2e",
+    "text": "The double-slit experiment, a cornerstone of quantum mechanics, reveals the bizarre nature of reality: particles like electrons behave as both particles and waves. When fired through two slits, they create an interference pattern on a screen, as if each particle passes through both slits simultaneously. Stranger still, if you observe which slit the particle goes through, the pattern vanishes, and it acts like a particle. This implies that the act of measurement alters reality, suggesting the universe might be fundamentally probabilistic and that observation shapes outcomes, challenging our intuitive understanding of existence.",
+    "category": "Science",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udd2c",
+      "\ud83c\udf0a"
+    ]
+  },
+  {
+    "id": "8c9d0e1f-2a3b-4c5d-6e7f-8a9b0c1d2e3f",
+    "text": "In 1932, Australia waged war against emus, flightless birds wreaking havoc on Western Australian farms. The 'Emu War' saw soldiers armed with machine guns attempt to cull the emu population. Despite their firepower, the emus proved elusive, scattering quickly and outrunning bullets. After weeks of effort, the military managed to kill fewer than 1,000 of the estimated 20,000 emus, while the birds continued to devastate crops. The campaign was abandoned, leaving the emus victorious and cementing their place in history as unlikely adversaries in a war humans lost.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udde6\ud83c\uddfa",
+      "\ud83d\udc26",
+      "\u2694\ufe0f"
+    ]
+  },
+  {
+    "id": "9d0e1f2a-3b4c-5d6e-7f8a-9b0c1d2e3f4a",
+    "text": "During the Chernobyl disaster in 1986, a second explosion was narrowly averted that could have rendered much of Europe uninhabitable. After the initial reactor meltdown, a pool of molten radioactive material threatened to burn through the reactor floor into a water reservoir below, potentially triggering a steam explosion. Brave volunteers, known as the 'liquidators,' drained the water under deadly radiation levels, preventing a catastrophe that could have spread fallout across the continent. Their sacrifice limited the disaster\u2019s scope, though the region remains scarred to this day.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\udde6",
+      "\u2622\ufe0f",
+      "\ud83e\uddb8"
+    ]
+  },
+  {
+    "id": "0e1f2a3b-4c5d-6e7f-8a9b-0c1d2e3f4a5b",
+    "text": "The shortest war in history lasted 38 minutes. In 1896, Britain declared war on Zanzibar after a new sultan took power without British approval. A British naval fleet bombarded the sultan\u2019s palace, setting it ablaze and forcing a surrender in under an hour. The conflict, known as the Anglo-Zanzibar War, ended with the installation of a British-approved ruler. This lightning-fast war showcases the overwhelming military disparity of colonial powers and remains a quirky footnote in global history.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf9\ud83c\uddff",
+      "\u2694\ufe0f",
+      "\u23f0"
+    ]
+  },
+  {
+    "id": "1f2a3b4c-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
+    "text": "Octopuses have three hearts and can change color to blend into their surroundings, making them nature\u2019s master illusionists. Two hearts pump blood to the gills for oxygen, while the third sends it to the body. When an octopus swims, its body-heart stops, which is why they prefer crawling\u2014it\u2019s less taxing. Their camouflage ability stems from specialized skin cells called chromatophores, which shift colors and patterns in milliseconds. This combination of biological oddities makes octopuses one of the ocean\u2019s most alien-like and intelligent creatures.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udc19",
+      "\ud83c\udfa8"
+    ]
+  },
+  {
+    "id": "2a3b4c5d-6e7f-8a9b-0c1d-2e3f4a5b6c7d",
+    "text": "In 1958, the U.S. Air Force accidentally dropped a nuclear bomb on Mars Bluff, South Carolina. The unarmed Mark 6 bomb fell from a B-47 during a training mission, landing in a family\u2019s backyard and creating a 50-foot crater. No one was killed, but the explosion destroyed a house and injured several people. The incident, caused by a faulty bomb lock, highlighted the precarious nature of early nuclear weapons handling and remains a chilling reminder of Cold War risks.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udca3",
+      "\ud83c\udfe1"
+    ]
+  },
+  {
+    "id": "3b4c5d6e-7f8a-9b0c-1d2e-3f4a5b6c7d8e",
+    "text": "The Voyager 1 spacecraft, launched in 1977, carries a golden record containing sounds and images of Earth, intended for any extraterrestrial life that might find it. The record includes music from Bach to Chuck Berry, greetings in 55 languages, and natural sounds like whale songs and thunderstorms. Now over 15 billion miles away, Voyager 1 is the farthest human-made object from Earth, still sending data despite its aging systems, embodying humanity\u2019s hope to communicate with the cosmos.",
+    "category": "Space",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\ude80",
+      "\ud83c\udfb5"
+    ]
+  },
+  {
+    "id": "4c5d6e7f-8a9b-0c1d-2e3f-4a5b6c7d8e9f",
+    "text": "The placebo effect can be so powerful that it sometimes outperforms actual drugs. In clinical trials, patients given sugar pills often show improvements in conditions like depression or pain, purely because they believe they\u2019re receiving treatment. This phenomenon, driven by the brain\u2019s expectation of healing, can alter neurotransmitter levels and even reduce physical symptoms. It\u2019s so significant that drug trials must account for it, highlighting the mysterious interplay between mind and body in medical science.",
+    "category": "Medicine",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udc8a",
+      "\ud83e\udde0"
+    ]
+  },
+  {
+    "id": "5d6e7f8a-9b0c-1d2e-2e3f-4a5b6c7d8e0a",
+    "text": "In 1916, a shark terrorized the New Jersey coast, killing four people in 12 days. The attacks, which inspired the novel *Jaws*, occurred along beaches and even in a creek miles inland. At the time, scientists doubted sharks could be responsible, as their danger to humans was poorly understood. The spree ended when a great white was caught with human remains in its stomach, reshaping public fear of the ocean and sparking fascination with these apex predators.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83e\udd88",
+      "\ud83c\udfd6\ufe0f"
+    ]
+  },
+  {
+    "id": "6e7f8a9b-0c1d-2e3f-3a4b-5c6d7e8f9a0b",
+    "text": "The shortest known war song, composed during World War I, is just 11 seconds long. Titled \u2018Oh! It\u2019s a Lovely War,\u2019 it was a satirical British tune sung by soldiers to mock the grim realities of trench warfare. Its brief, catchy melody belied the horrors of the front lines, where millions died. The song\u2019s brevity and dark humor encapsulate the absurdity of war, making it a haunting artifact of human resilience in dire times.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
+      "\ud83c\udfb5",
+      "\u2694\ufe0f"
+    ]
+  },
+  {
+    "id": "7f8a9b0c-1d2e-2e3f-4a5b-6c7d8e9f0a1c",
+    "text": "Tardigrades, microscopic creatures nicknamed \u2018water bears,\u2019 can survive extreme conditions that would kill most lifeforms. They endure temperatures from -328\u00b0F to 300\u00b0F, radiation levels 1,000 times higher than humans can tolerate, and even the vacuum of space. In a state called cryptobiosis, they dry out and halt their metabolism, reviving when conditions improve. Discovered in 1773, these resilient critters challenge our understanding of life\u2019s limits and are studied for insights into surviving extraterrestrial environments.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udd2c",
+      "\ud83d\udc3b"
+    ]
+  },
+  {
+    "id": "8a9b0c1d-2e3f-3a4b-5c6d-7e8f9a0b1c2d",
+    "text": "In 1983, a Soviet officer named Stanislav Petrov single-handedly prevented a potential nuclear war. When a satellite system falsely reported incoming U.S. missiles, Petrov, on duty at a command center, judged it a glitch rather than an attack. His decision to wait, despite protocol urging retaliation, saved the world from catastrophe. Later investigations confirmed the system\u2019s error was caused by sunlight reflecting off clouds. Petrov\u2019s calm judgment under pressure remains a testament to human intuition averting disaster.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf7\ud83c\uddfa",
+      "\ud83d\udee1\ufe0f",
+      "\ud83c\udf0d"
+    ]
+  },
+  {
+    "id": "9b0c1d2e-3f4a-4b5c-6d7e-8f9a0b1c2d3e",
+    "text": "The shortest scientific paper ever published was one sentence long. In 1974, physicist William G. Unruh submitted a paper to *Physical Review Letters* stating, \u2018The probability of a black hole emitting a particle with energy E is proportional to the Fermi-Dirac distribution.\u2019 This concise statement advanced quantum mechanics by linking black holes to particle emission, later tied to Hawking radiation. Its brevity proves that profound insights don\u2019t always require lengthy explanations, revolutionizing how we view black holes.",
+    "category": "Science",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udcdc",
+      "\ud83c\udf0c"
+    ]
+  },
+  {
+    "id": "0c1d2e3f-4a5b-5c6d-6e7f-9a0b1c2d3e4f",
+    "text": "The Great Molasses Flood of 1919 in Boston killed 21 people when a 2.3-million-gallon tank of molasses burst, sending a 25-foot wave of sticky syrup through the streets at 35 mph. The flood destroyed buildings, trapped horses, and left a lingering sweet smell for weeks. Caused by poor tank construction and warm weather increasing pressure, the disaster led to stricter industrial regulations. It\u2019s a bizarre reminder that even seemingly harmless substances can turn deadly under the right conditions.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf6f",
+      "\ud83c\udfd9\ufe0f"
+    ]
+  },
+  {
+    "id": "1d2e3f4a-5b6c-6d7e-7f8a-0b1c2d3e4f5a",
+    "text": "Crows are so intelligent they can recognize human faces and hold grudges for years. Studies show they remember people who harm or help them, even teaching their offspring to avoid specific humans. They also use tools, like bending sticks to fish out food, and can solve complex puzzles rivaling the cognitive abilities of a 7-year-old child. This remarkable intelligence, paired with their social nature, makes crows one of the animal kingdom\u2019s most fascinating problem-solvers.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udc26",
+      "\ud83e\udde0"
+    ]
+  },
+  {
+    "id": "2e3f4a5b-6c7d-7e8f-8a9b-1c2d3e4f5a6b",
+    "text": "In 1960, the U.S. Navy\u2019s Trieste submersible descended to the Mariana Trench\u2019s Challenger Deep, the deepest point on Earth at nearly 36,000 feet. Pilots Jacques Piccard and Don Walsh spent 20 minutes on the ocean floor, spotting fish and shrimp in a realm thought lifeless. The pressure was so intense it could crush most submarines, yet Trieste\u2019s reinforced hull held. This daring dive revealed life thrives even in Earth\u2019s most extreme environments, expanding our view of biology\u2019s limits.",
+    "category": "Exploration",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf0a",
+      "\ud83d\udea4"
+    ]
+  },
+  {
+    "id": "3f4a5b6c-7d8e-8f9a-9b0c-2d3e4f5a6b7c",
+    "text": "The Fermi Paradox questions why we haven\u2019t found alien life despite the universe\u2019s vastness. With billions of stars in our galaxy alone, many likely host planets capable of supporting life. Yet, no confirmed extraterrestrial signals have been detected. Possible explanations include life being rare, intelligent life being even rarer, or advanced civilizations self-destructing. The paradox, named after physicist Enrico Fermi, fuels speculation about our place in the cosmos and whether we\u2019re truly alone.",
+    "category": "Science",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udc7d",
+      "\ud83c\udf0c"
+    ]
+  },
+  {
+    "id": "4a5b6c7d-8e9f-9a0b-0c1d-3e4f5a6b7c8d",
+    "text": "In 1971, a man known as D.B. Cooper hijacked a plane in the U.S., demanded $200,000 and parachutes, then jumped out mid-flight over Washington state, never to be found. Despite an extensive FBI investigation, his identity and fate remain unknown, making it the only unsolved air piracy case in U.S. history. The daring heist, executed with calm precision, has inspired countless theories and pop culture references, cementing Cooper\u2019s legend as a mysterious outlaw.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\u2708\ufe0f",
+      "\ud83e\ude82"
+    ]
+  },
+  {
+    "id": "5b6c7d8e-9f0a-0b1c-1d2e-4f5a6b7c8d9e",
+    "text": "The shortest book in the world, *The Dinosaur* by Augusto Monterroso, is a single sentence: \u2018When he woke up, the dinosaur was still there.\u2019 Written in 1959, this micro-story sparks endless interpretations about time, extinction, or surreal persistence. Its brevity challenges traditional storytelling, proving a single line can evoke as much wonder as a novel. The story\u2019s enigmatic nature has made it a cult favorite among literary enthusiasts and philosophers alike.",
+    "category": "Literature",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddec\ud83c\uddf9",
+      "\ud83d\udcd6",
+      "\ud83e\udd96"
+    ]
+  },
+  {
+    "id": "6c7d8e9f-0a1b-1c2d-2e3f-5a6b7c8d9e0f",
+    "text": "The immortal jellyfish, *Turritopsis dohrnii*, can cheat death by reverting to its juvenile form after reaching maturity. When stressed or old, it transforms back into a polyp, restarting its life cycle indefinitely. Discovered in the Mediterranean, this tiny creature theoretically could live forever unless eaten or diseased. Its unique biology fascinates scientists studying aging, offering clues to cellular regeneration and challenging our understanding of mortality in the animal kingdom.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddee\ud83c\uddf9",
+      "\ud83d\udc19",
+      "\ud83d\udd04"
+    ]
+  },
+  {
+    "id": "7d8e9f0a-1b2c-2d3e-3f4a-6b7c8d9e0f1a",
+    "text": "In 2004, a single computer worm called Sasser caused over $18 billion in damages by infecting millions of PCs worldwide. Created by a German teenager, it exploited a Windows vulnerability, crashing systems and disrupting airlines, banks, and hospitals. The worm spread so fast it infected 10% of the internet in hours. Its creator, Sven Jaschan, was caught and sentenced to probation, highlighting how a lone coder could wreak global havoc in the early digital age.",
+    "category": "Technology",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udde9\ud83c\uddea",
+      "\ud83d\udcbb",
+      "\ud83e\udda0"
+    ]
+  },
+  {
+    "id": "8e9f0a1b-2c3d-3e4f-4a5b-7c8d9e0f1a2b",
+    "text": "The shortest-lived country, the Republic of Crimea, existed for one day in 2014. Declared independent from Ukraine on March 17, it joined Russia the next day after a controversial referendum. Its fleeting existence, driven by geopolitical tensions, underscores how rapidly borders and sovereignties can shift. The event remains a flashpoint in international relations, with Crimea\u2019s status still disputed, making it a curious case of a nation that blinked into and out of existence.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\udde6",
+      "\ud83c\udf0d",
+      "\u2696\ufe0f"
+    ]
+  },
+  {
+    "id": "9f0a1b2c-3d4e-4f5a-5b6c-8d9e0f1a2b3c",
+    "text": "The pistol shrimp snaps its claw so fast it creates a cavitation bubble that collapses with a sound reaching 218 decibels, louder than a rocket launch. This snap stuns prey and can break small glass jars. The bubble also emits a flash of light via sonoluminescence, a rare phenomenon where sound generates light. Found in tropical oceans, this tiny shrimp\u2019s superpower showcases nature\u2019s ability to produce extreme physics in the most unexpected creatures.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0a",
+      "\ud83e\udd90",
+      "\ud83d\udca5"
+    ]
+  },
+  {
+    "id": "0a1b2c3d-4e5f-5a6b-6c7d-9e0f1a2b3c4d",
+    "text": "In 1848, a railroad worker named Phineas Gage survived a 13-pound iron rod blasting through his skull, destroying much of his frontal lobe. Remarkably, he lived for 12 more years, but his personality changed drastically, becoming impulsive and aggressive. His case became a landmark in neuroscience, revealing the frontal lobe\u2019s role in personality and decision-making. Gage\u2019s story, both gruesome and fascinating, continues to inform our understanding of the brain\u2019s complex wiring.",
+    "category": "Medicine",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83e\udde0",
+      "\u2692\ufe0f"
+    ]
+  },
+  {
+    "id": "1b2c3d4e-5f6a-6b7c-7d8e-0f1a2b3c4d5e",
+    "text": "The shortest recorded reign of a monarch lasted 20 minutes. In 1830, King Louis XIX of France abdicated moments after accepting the throne during a revolutionary upheaval. His brief rule, prompted by his father\u2019s abdication and political chaos, ended when he fled to avoid capture. This fleeting moment in history highlights the fragility of power during turbulent times and remains a quirky record in the annals of royalty.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddeb\ud83c\uddf7",
+      "\ud83d\udc51",
+      "\ud83c\udfc3"
+    ]
+  },
+  {
+    "id": "2c3d4e5f-6a7b-7c8d-8e9f-1a2b3c4d5e6f",
+    "text": "The fastest animal on Earth, the black marlin, can swim at speeds up to 82 mph. Found in tropical oceans, it uses its spear-like bill to stun prey. Its speed comes from a streamlined body and powerful tail, making it a top predator. Unlike land animals like cheetahs, which tire quickly, marlins sustain high speeds over long distances, showcasing the ocean\u2019s unique evolutionary arms race and the raw power of aquatic life.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0a",
+      "\ud83d\udc1f",
+      "\u26a1"
+    ]
+  },
+  {
+    "id": "3d4e5f6a-7b8c-8d9e-9f0a-2b3c4d5e6f7a",
+    "text": "In 1967, a Soviet cosmonaut named Vladimir Komarov died when his Soyuz 1 spacecraft crashed after a parachute failure. Despite knowing the craft had over 200 design flaws, he flew to avoid political repercussions. His last words, transmitted to ground control, were a furious rant against the engineers. Komarov\u2019s tragic mission, driven by Cold War pressures, underscores the human cost of space race ambition and remains a somber chapter in exploration history.",
+    "category": "Space",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf7\ud83c\uddfa",
+      "\ud83d\ude80",
+      "\ud83d\ude22"
+    ]
+  },
+  {
+    "id": "4e5f6a7b-8c9d-9e0f-0a1b-3c4d5e6f7a8b",
+    "text": "The shortest Oscar acceptance speech was 11 words long, delivered by Alfred Hitchcock in 1960: \u2018Thank you\u2026 very much indeed.\u2019 Accepting an honorary award, the master of suspense kept it characteristically brief, letting his films speak louder than words. This succinct moment contrasts with today\u2019s often lengthy speeches and highlights Hitchcock\u2019s enigmatic persona, making it a memorable anecdote in Hollywood history.",
+    "category": "Entertainment",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddec\ud83c\udde7",
+      "\ud83c\udfa5",
+      "\ud83c\udfc6"
+    ]
+  },
+  {
+    "id": "5f6a7b8c-9d0e-0f1a-1b2c-4d5e6f7a8b9c",
+    "text": "The Atacama Desert in Chile is so dry that some weather stations have never recorded rain. Spanning 41,000 square miles, it\u2019s one of Earth\u2019s most arid places, with some areas going centuries without precipitation. Yet, life persists\u2014microbes and cacti survive in extreme conditions, and ancient mummies have been preserved by the dryness. The Atacama\u2019s otherworldly landscape is used to simulate Mars, making it a hotspot for astrobiology research.",
+    "category": "Geography",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\uddf1",
+      "\ud83c\udfdc\ufe0f",
+      "\ud83d\udd2d"
+    ]
+  },
+  {
+    "id": "6a7b8c9d-0e1f-1a2b-2c3d-5e6f7a8b9c0d",
+    "text": "In 2003, a single lightning bolt in Oklahoma was recorded as the longest ever, stretching 199.5 miles. It zigzagged across the sky, connecting clouds over an unprecedented distance. Lightning like this can carry 1 billion volts and heat the air to 54,000\u00b0F, five times hotter than the sun\u2019s surface. This record-breaking bolt, detected by advanced weather tracking, underscores the raw power of nature and the beauty of atmospheric phenomena.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\u26a1",
+      "\ud83c\udf29\ufe0f"
+    ]
+  },
+  {
+    "id": "7b8c9d0e-1f2a-2b3c-3d4e-6f7a8b9c0d1e",
+    "text": "The shortest war novel, *The Old Man and the Sea* by Ernest Hemingway, is just 27,000 words but won the Pulitzer Prize in 1953. The story of an aging fisherman\u2019s battle with a giant marlin captures themes of struggle, resilience, and nature\u2019s power in sparse prose. Its brevity contrasts with its profound impact, proving that a compact narrative can carry immense emotional weight and cementing its place as a literary classic.",
+    "category": "Literature",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcda",
+      "\ud83d\udc20"
+    ]
+  },
+  {
+    "id": "8c9d0e1f-2a3b-3c4d-4e5f-7a8b9c0d1e2f",
+    "text": "The Greenland shark is the longest-living vertebrate, with some individuals estimated to be over 400 years old. These slow-moving giants, found in Arctic waters, grow only a centimeter per year and reach maturity around age 150. Their longevity is linked to a sluggish metabolism and cold environment. Studying their DNA could unlock secrets to aging, but their remote habitat makes them elusive, adding to their mystique as ocean elders.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddec\ud83c\uddf1",
+      "\ud83e\udd88",
+      "\ud83d\udd70\ufe0f"
+    ]
+  },
+  {
+    "id": "9d0e1f2a-3b4c-4d5e-5f6a-8b9c0d1e2f3a",
+    "text": "In 1977, the Wow! Signal, a 72-second radio burst, was detected by astronomer Jerry Ehman. It was so striking that he circled it on the printout and wrote \u2018Wow!\u2019 Its narrow frequency and strength suggested a non-natural origin, possibly from an alien civilization. Despite extensive searches, it was never detected again. The signal remains one of astronomy\u2019s greatest mysteries, fueling debates about extraterrestrial communication and humanity\u2019s place in the universe.",
+    "category": "Space",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0c",
+      "\ud83d\udce1",
+      "\ud83d\udc7d"
+    ]
+  },
+  {
+    "id": "0e1f2a3b-4c5d-5e6f-6a7b-9c0d1e2f3a4b",
+    "text": "The shortest opera, *The Deliverance of Theseus* by Darius Milhaud, lasts just 7 minutes. Composed in 1928, it condenses a Greek myth into a frenetic performance with five singers and a small orchestra. Its breakneck pace and avant-garde style make it a unique artifact in music history, proving that even grand art forms like opera can be distilled into fleeting, intense experiences.",
+    "category": "Music",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddeb\ud83c\uddf7",
+      "\ud83c\udfad",
+      "\ud83c\udfb6"
+    ]
+  },
+  {
+    "id": "1f2a3b4c-5d6e-6f7a-7b8c-0d1e2f3a4b5c",
+    "text": "In 1927, a dance marathon in New York lasted 22 days, with couples dancing until exhaustion for cash prizes. Participants shuffled through sleep deprivation, blisters, and collapses, as spectators bet on who\u2019d outlast. These grueling events, popular during the Great Depression, reflected economic desperation and human endurance. The record-breaking marathon ended when organizers stopped it for safety, leaving a legacy of bizarre cultural fads born from hard times.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udc83",
+      "\ud83c\udfc5"
+    ]
+  },
+  {
+    "id": "2a3b4c5d-6e7f-7a8b-8c9d-1e2f3a4b5c6d",
+    "text": "The vampire bat is the only mammal that feeds exclusively on blood. Found in Central and South America, it uses razor-sharp teeth to make small cuts in sleeping animals, lapping up blood with its tongue. Its saliva contains an anticoagulant, aptly named \u2018draculin,\u2019 to keep blood flowing. These bats can starve in just two days without feeding, making their stealthy, nocturnal hunts a matter of survival, and their eerie reputation a biological marvel.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udde7\ud83c\uddf7",
+      "\ud83e\udd87",
+      "\ud83e\ude78"
+    ]
+  },
+  {
+    "id": "3b4c5d6e-7f8a-8b9c-9d0e-2f3a4b5c6d7e",
+    "text": "In 2011, a Japanese macaque was photographed taking selfies with a stolen camera, sparking a legal battle over copyright. The monkey, part of a study in Indonesia, snapped clear self-portraits, which went viral. The photographer claimed ownership, but animal rights groups argued the monkey should hold the rights. Courts ruled humans must own copyrights, but the case raised questions about creativity, animal intelligence, and the blurry line between human and non-human art in the digital age.",
+    "category": "Technology",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddee\ud83c\udde9",
+      "\ud83d\udcf8",
+      "\ud83d\udc12"
+    ]
+  },
+  {
+    "id": "4c5d6e7f-8a9b-9c0d-0e1f-3a4b5c6d7e8f",
+    "text": "The shortest river in the world, the Roe River in Montana, is just 201 feet long. Despite its brevity, it flows year-round, fed by a spring, and supports fish like trout. It\u2019s so short you could walk its length in under a minute, yet it\u2019s officially recognized as a river. This pint-sized waterway challenges our notions of what defines a river and adds a quirky charm to geographic records.",
+    "category": "Geography",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf0a",
+      "\ud83d\udc1f"
+    ]
+  },
+  {
+    "id": "5d6e7f8a-9b0c-0d1e-1f2a-4b5c6d7e8f9a",
+    "text": "The paradox of Schr\u00f6dinger\u2019s cat, proposed by Erwin Schr\u00f6dinger in 1935, illustrates quantum superposition. A cat in a sealed box with a radioactive trigger is both alive and dead until observed. This thought experiment highlights how quantum states remain undefined until measured, defying classical logic. While no cats are harmed in reality, the paradox has shaped debates about quantum mechanics, making a feline the unlikely mascot of one of physics\u2019 deepest mysteries.",
+    "category": "Science",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udde6\ud83c\uddf9",
+      "\ud83d\udc31",
+      "\u269b\ufe0f"
+    ]
+  },
+  {
+    "id": "6e7f8a9b-0c1d-1e2f-2a3b-5c6d7e8f9a0b",
+    "text": "In 1986, a Soviet submarine, K-219, nearly caused a nuclear disaster off Bermuda when it caught fire and sank. The crew manually shut down the reactors, preventing a meltdown, but radiation leaked into the Atlantic. Four sailors died, and the sub\u2019s missiles and warheads remained on the ocean floor. The incident, kept secret for years, underscores the hidden risks of Cold War naval operations and the bravery of those who averted a worse outcome.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udde7\ud83c\uddf2",
+      "\ud83d\udea2",
+      "\u2622\ufe0f"
+    ]
+  },
+  {
+    "id": "7f8a9b0c-1d2e-2f3a-3b4c-6d7e8f9a0b1c",
+    "text": "The shortest film to win an Oscar, *The Dot and the Line* (1965), is a 10-minute animated tale of a line wooing a dot. Directed by Chuck Jones, it uses minimalist shapes to tell a romantic story with mathematical flair. Its charm lies in turning abstract geometry into a heartfelt narrative, proving that even simple visuals can captivate audiences and earn critical acclaim in a competitive field.",
+    "category": "Entertainment",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfac",
+      "\u2764\ufe0f"
+    ]
+  },
+  {
+    "id": "8a9b0c1d-2e3f-3a4b-4c5d-7e8f9a0b1c2d",
+    "text": "The leafcutter ant can carry up to 50 times its body weight, equivalent to a human lifting a car. These ants, found in South America, cut leaves to cultivate fungus, their primary food source. A single colony can strip a tree bare in a day, moving with military precision. Their strength and complex farming system, evolved over millions of years, make them one of nature\u2019s most impressive engineers.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udde7\ud83c\uddf7",
+      "\ud83d\udc1c",
+      "\ud83c\udf43"
+    ]
+  },
+  {
+    "id": "9b0c1d2e-3f4a-4b5c-5d6e-8f9a0b1c2d3e",
+    "text": "In 1811, a series of earthquakes in Missouri\u2019s New Madrid fault briefly made the Mississippi River flow backward. The quakes, among the strongest in U.S. history, created temporary waterfalls and sank islands. Locals reported the ground rippling like waves, and the effects were felt as far as Boston. This rare geological event reshaped the landscape and remains a reminder of the Earth\u2019s unpredictable power in an otherwise quiet region.",
+    "category": "Geology",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf0d",
+      "\ud83c\udf0a"
+    ]
+  },
+  {
+    "id": "a6a907a6-cf7e-4c26-a432-6e2ebf636bb7",
+    "text": "The shortest war poem, \u2018The Soldier\u2019 by Rupert Brooke, is 14 lines long and was written during World War I. Its patriotic tone belies the grim reality of the trenches, where Brooke died in 1915. The poem\u2019s concise beauty captures a fleeting moment of idealism, making it a poignant snapshot of a generation\u2019s sacrifice and a staple in war literature, despite its brevity.",
+    "category": "Literature",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddec\ud83c\udde7",
+      "\ud83d\udcdc",
+      "\u2694\ufe0f"
+    ]
+  },
+  {
+    "id": "99ce9318-fd47-4ca5-99a6-6fc2ce010b7f",
+    "text": "The corpse flower, native to Sumatra, is the world\u2019s smelliest plant, emitting a stench like rotting flesh to attract pollinators. Blooming once every few years for just 24-48 hours, it can grow up to 12 feet tall. Its odor, a mix of garlic, sweaty feet, and decay, draws crowds to botanical gardens despite the gag-inducing smell. This bizarre plant showcases nature\u2019s knack for using extreme traits to ensure survival.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddee\ud83c\udde9",
+      "\ud83c\udf38",
+      "\ud83e\udd22"
+    ]
+  },
+  {
+    "id": "1d3240b3-1339-45be-b2c9-61f313a2ae77",
+    "text": "In 1975, a Japanese climber named Junko Tabei became the first woman to summit Mount Everest. Facing avalanches, frostbite, and skepticism in a male-dominated field, she led an all-female team to the 29,032-foot peak. Her achievement shattered gender barriers in mountaineering and inspired generations. Tabei\u2019s grit, climbing without modern gear in harsh conditions, remains a testament to human determination and the pull of Earth\u2019s highest point.",
+    "category": "Exploration",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddef\ud83c\uddf5",
+      "\u26f0\ufe0f",
+      "\ud83d\udeb6\u200d\u2640\ufe0f"
+    ]
+  },
+  {
+    "id": "fba2090c-dafc-4cc2-94e5-8c84c5eb16f6",
+    "text": "The shortest-lived element, francium, has a half-life of just 22 minutes. Discovered in 1939, it\u2019s so rare that only about 30 grams exist naturally on Earth at any time. Its extreme radioactivity makes it nearly impossible to study, as it decays into other elements rapidly. Found in trace amounts in uranium ores, francium\u2019s fleeting existence challenges scientists and highlights the bizarre ephemerality of the periodic table\u2019s heaviest alkali metal.",
+    "category": "Science",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddeb\ud83c\uddf7",
+      "\u2697\ufe0f",
+      "\u23f3"
+    ]
+  },
+  {
+    "id": "fcc438f1-d436-488a-b443-34bd337f778b",
+    "text": "In 1947, a ship carrying 2,000 tons of ammonium nitrate exploded in Texas City, Texas, killing 581 people. The blast, one of the largest non-nuclear explosions in history, leveled buildings, ignited fires, and triggered a 15-foot tidal wave. Poor safety regulations and improper storage caused the disaster, which led to major reforms in chemical handling. The event remains a stark reminder of the destructive power lurking in everyday industrial materials.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udca5",
+      "\ud83d\udea2"
+    ]
+  },
+  {
+    "id": "bef2aa73-ffaa-40fe-bdd6-30a74c7589d4",
+    "text": "The shortest distance between Russia and the U.S. is just 2.4 miles across the Bering Strait, separating Siberia from Alaska. On clear days, you can see one country from the other. The Diomede Islands, split between the two nations, are so close that the International Date Line runs between them, making one island a day ahead of the other. This geographic quirk highlights how arbitrary borders can be in the natural world.",
+    "category": "Geography",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf7\ud83c\uddfa",
+      "\ud83c\udf0e",
+      "\ud83d\udd70\ufe0f"
+    ]
+  },
+  {
+    "id": "48aac769-94c9-4536-9112-61ddfb07c892",
+    "text": "The candiru fish, found in the Amazon, is infamous for allegedly swimming up human urethras. This tiny, parasitic catfish is attracted to urine and can lodge itself in the body, requiring surgical removal. Though rare, documented cases exist, fueling its terrifying reputation. The candiru\u2019s bizarre behavior underscores the Amazon\u2019s wild ecosystem, where even the smallest creatures can pose outsized threats to unsuspecting humans.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:41:00.000000Z",
+    "emojis": [
+      "\ud83c\udde7\ud83c\uddf7",
+      "\ud83d\udc1f",
+      "\ud83d\ude31"
+    ]
+  },
+  {
+    "id": "5dcd86b7-92a4-40b1-93b1-4009dad506f4",
+    "text": "The shortest manned spaceflight lasted 15 minutes. In 1961, Alan Shepard\u2019s Freedom 7 mission made him the first American in space, reaching an altitude of 116 miles before splashing down in the Atlantic. The brief suborbital flight, part of the Mercury program, proved the U.S. could compete in the space race. Shepard\u2019s calm under pressure, despite the experimental nature of the mission, paved the way for longer flights and remains a landmark in space exploration.",
+    "category": "Space",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\ude80",
+      "\ud83c\udf0c"
+    ]
+  },
+  {
+    "id": "6bbaa66b-2bb1-4d91-8ad6-76f6321ef15e",
+    "text": "The praying mantis is the only insect known to turn its head 180 degrees to observe its surroundings. This predator uses its swivel neck and keen eyesight to spot prey, striking with lightning-fast forelegs. Some species even mimic flowers to lure victims. Their eerie, almost alien-like behavior has fascinated humans for centuries, and in some cultures, they\u2019re seen as omens of good luck or spiritual guides, blending biology with mystique.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udc1c",
+      "\ud83d\udc40"
+    ]
+  },
+  {
+    "id": "bc8834ea-089a-4f5d-8f08-5820b615d54a",
+    "text": "In 1945, a chicken named Mike lived for 18 months without a head. After a botched beheading on a Colorado farm, Mike survived because his brainstem remained intact, allowing him to walk, cluck, and even attempt to preen. His owner fed him with an eyedropper, and Mike became a sideshow sensation, drawing crowds until his death in 1947. This bizarre case highlights the surprising resilience of basic biological functions in animals.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udc14",
+      "\ud83c\udfaa"
+    ]
+  },
+  {
+    "id": "bd5fc349-71cf-4c4b-9adb-67d943734962",
+    "text": "The Great Stink of 1858 paralyzed London when a heatwave caused the Thames River, filled with raw sewage, to emit an unbearable stench. Parliament was forced to adjourn, and the crisis spurred the construction of a modern sewer system under engineer Joseph Bazalgette. The project, completed over decades, saved countless lives by reducing cholera outbreaks. This smelly saga transformed urban sanitation and remains a pungent chapter in public health history.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddec\ud83c\udde7",
+      "\ud83d\udebd",
+      "\ud83e\udd22"
+    ]
+  },
+  {
+    "id": "7cfbc07b-aeb3-4d95-8c5b-f9dff5d28b90",
+    "text": "The fastest recorded sneeze propelled droplets at 100 mph. Sneezes, triggered by irritants in the nasal passages, are the body\u2019s explosive way of clearing airways. A single sneeze can release 40,000 droplets, spreading germs up to 30 feet. This high-speed reflex, studied using high-frame-rate cameras, underscores why covering your mouth is critical during flu season and highlights the body\u2019s surprising power in everyday actions.",
+    "category": "Medicine",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83e\udd27",
+      "\ud83d\udca8"
+    ]
+  },
+  {
+    "id": "7b6b62eb-d44c-47d2-bf55-344211638a12",
+    "text": "In 1970, a Soviet lunar probe, Luna 16, became the first to return moon soil to Earth. The robotic mission scooped 101 grams of lunar material and sent it back without human intervention. Beating NASA\u2019s Apollo program to automated sample return, it marked a major coup in the space race. The mission\u2019s success showed robots could explore extraterrestrial surfaces, paving the way for modern rovers like Mars\u2019 Perseverance.",
+    "category": "Space",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf7\ud83c\uddfa",
+      "\ud83c\udf11",
+      "\ud83e\udd16"
+    ]
+  },
+  {
+    "id": "d965fb02-218e-4cd0-99cb-f56972db816d",
+    "text": "The mimic octopus can impersonate over 15 different marine creatures, including venomous sea snakes and lionfish, to deter predators. Found in Southeast Asian waters, it changes color and shape in seconds, even mimicking swimming patterns. Discovered in 1998, this shape-shifter stunned scientists with its intelligence and adaptability, offering a glimpse into the evolutionary arms race of deception in the ocean\u2019s depths.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddee\ud83c\udde9",
+      "\ud83d\udc19",
+      "\ud83c\udfad"
+    ]
+  },
+  {
+    "id": "a1d9475f-6f9f-46c4-888e-fca33ddf4641",
+    "text": "In 1816, the \u2018Year Without a Summer\u2019 caused global famine due to a volcanic eruption in Indonesia. Mount Tambora\u2019s massive blast in 1815 ejected ash that blocked sunlight, dropping temperatures worldwide. Crops failed, snow fell in June, and starvation spread across Europe and North America. This climatic anomaly inspired Mary Shelley to write *Frankenstein* during a gloomy vacation, showing how natural disasters can shape culture and history.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddee\ud83c\udde9",
+      "\ud83c\udf0b",
+      "\u2744\ufe0f"
+    ]
+  },
+  {
+    "id": "4f1f1a4f-be62-47ab-b2a7-fe4b93f54f87",
+    "text": "The shortest chess game to reach a checkmate takes two moves, known as the Fool\u2019s Mate. White moves a pawn to open the king, and Black delivers checkmate with the queen. While rare in serious play, it\u2019s a humorous lesson in chess vulnerability. Dating back centuries, this quick defeat reminds players that even a game of infinite complexity can end in seconds with a single misstep.",
+    "category": "Games",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\u265f\ufe0f",
+      "\ud83d\udc51"
+    ]
+  },
+  {
+    "id": "a3bc16a9-9fd1-45c7-91cd-3b68cd1433a8",
+    "text": "The first computer \u2018bug\u2019 was an actual insect. In 1947, engineers at Harvard found their Mark II computer malfunctioning because a moth was stuck in a relay. They removed it, taped it into the logbook, and labeled it the \u2018first actual case of a bug being found.\u2019 This quirky moment gave rise to the term \u2018debugging\u2019 in programming, blending literal and metaphorical problem-solving in tech history.",
+    "category": "Technology",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcbb",
+      "\ud83d\udc1e"
+    ]
+  },
+  {
+    "id": "e6e2c020-55b2-4766-88e9-a834a4afae8f",
+    "text": "The shortest war cry, used by Spartan warriors, was a single syllable: \u2018A!\u2019 Shouted before battle, it was meant to intimidate foes and rally troops. Its brevity reflected Sparta\u2019s minimalist culture, where actions spoke louder than words. This primal yell, recorded in ancient texts, evokes the raw intensity of ancient warfare and the disciplined ethos of one of history\u2019s fiercest societies.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddec\ud83c\uddf7",
+      "\u2694\ufe0f",
+      "\ud83d\udde3\ufe0f"
+    ]
+  },
+  {
+    "id": "9bd84a1d-b181-42de-b981-38ced6669284",
+    "text": "The Venus flytrap can count to catch its prey. This carnivorous plant snaps shut only after two of its trigger hairs are touched within 20 seconds, ensuring it doesn\u2019t waste energy on false alarms. Native to North Carolina\u2019s wetlands, it digests insects over days, using enzymes like a stomach. This primitive \u2018brain\u2019 in a plant challenges our understanding of intelligence and shows nature\u2019s ingenious predatory strategies.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf31",
+      "\ud83d\udc1c"
+    ]
+  },
+  {
+    "id": "36d5260f-045c-4dcf-9e7c-627d40019a27",
+    "text": "In 1969, a fire on Ohio\u2019s Cuyahoga River, fueled by industrial pollution, sparked national outrage and helped launch the U.S. environmental movement. The river was so polluted with oil and chemicals that it had caught fire multiple times before. This incident led to the creation of the EPA and the Clean Water Act, proving that even a burning river could ignite positive change in environmental policy.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udd25",
+      "\ud83c\udf0a"
+    ]
+  },
+  {
+    "id": "5310161c-9f78-4182-af8a-8ca98aae2162",
+    "text": "The shortest time to solve a Rubik\u2019s Cube is 3.13 seconds, set by Max Park in 2023. Using lightning-fast fingerwork and memorized algorithms, speedcubers like Park turn a puzzle with 43 quintillion combinations into a solvable challenge in seconds. The feat, recorded at a World Cube Association event, showcases human dexterity and the obsessive dedication of a global subculture fixated on twisting plastic cubes.",
+    "category": "Games",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83e\udde9",
+      "\u23f1\ufe0f"
+    ]
+  },
+  {
+    "id": "9bfbccef-22c7-43c9-8c41-50cb26cf3f8b",
+    "text": "The star-nosed mole has the fastest reaction time in the animal kingdom, identifying and eating prey in 120 milliseconds. Its bizarre, 22-tentacled nose detects vibrations and scents, acting like a supercharged sensory organ. Found in North American wetlands, this mole can forage in total darkness, making it a marvel of evolutionary adaptation and a reminder of nature\u2019s weirdly effective designs.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udc00",
+      "\ud83d\udc43"
+    ]
+  },
+  {
+    "id": "fd01b220-949c-4f1c-821d-796dd86b74b0",
+    "text": "In 1988, a CD outsold vinyl records for the first time, marking a seismic shift in music history. The compact disc\u2019s crystal-clear sound and durability made it a sensation, with over 200 billion sold worldwide since. However, vinyl\u2019s recent resurgence among audiophiles shows nostalgia can trump technology. This transition reflects how innovation reshapes culture, only for old formats to find new life in unexpected ways.",
+    "category": "Technology",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udcbf",
+      "\ud83c\udfb5"
+    ]
+  },
+  {
+    "id": "93256a39-5203-431a-b323-988922529b07",
+    "text": "The shortest marathon ever run was 26 miles, 385 yards, standardized after the 1908 London Olympics. A British royal requested the race start at Windsor Castle, adding extra distance to the traditional 26 miles. This quirky adjustment became the official marathon length, turning a logistical whim into a global standard that tests runners\u2019 endurance to this day.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddec\ud83c\udde7",
+      "\ud83c\udfc3",
+      "\ud83c\udfc5"
+    ]
+  },
+  {
+    "id": "1944c902-82e1-4799-87db-42729f4f979b",
+    "text": "The immortal jellyfish\u2019s cousin, the hydra, can regenerate its entire body from a tiny fragment. This freshwater polyp, named after the mythical creature, has no brain or heart but can rebuild itself indefinitely, potentially living forever. Its stem cells continuously renew, making it a darling of aging research. Discovered in the 1700s, the hydra\u2019s simplicity hides a biological superpower that could unlock secrets to human longevity.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83e\udeb8",
+      "\ud83d\udd04"
+    ]
+  },
+  {
+    "id": "75472727-d1b1-4e23-be62-e4a183eab3e7",
+    "text": "In 1910, a Japanese samurai named Toshimichi Okubo\u2019s sword was stolen and used in a bank robbery in London. The thief, a British criminal, was caught, but the sword\u2019s journey across continents baffled historians. Returned to Japan, it remains a relic of a strange cultural collision, blending samurai honor with Edwardian crime in a tale that feels ripped from a pulp novel.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddef\ud83c\uddf5",
+      "\u2694\ufe0f",
+      "\ud83d\udcb0"
+    ]
+  },
+  {
+    "id": "301a6d6e-38e6-4783-b315-9c427674bb72",
+    "text": "The shortest time to crack an Enigma code during World War II was under an hour, thanks to Alan Turing\u2019s team at Bletchley Park. Their \u2018bombe\u2019 machine deciphered Nazi messages, turning the tide of the war. Each code was reset daily, making speed critical. This intellectual triumph, kept secret for decades, saved countless lives and laid the groundwork for modern computing.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddec\ud83c\udde7",
+      "\ud83d\udd0d",
+      "\ud83d\udcbb"
+    ]
+  },
+  {
+    "id": "9b6ea295-d8c9-4251-86ec-c9fc5d635a1c",
+    "text": "The archerfish shoots jets of water to knock insects off branches, hitting targets up to 6 feet away with pinpoint accuracy. Found in Southeast Asian mangroves, it adjusts its aim for light refraction at the water\u2019s surface, a feat requiring complex physics calculations done instinctively. This sharpshooting fish, a natural sniper, shows how evolution can turn a simple creature into a precision predator.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddee\ud83c\udde9",
+      "\ud83d\udc1f",
+      "\ud83c\udfaf"
+    ]
+  },
+  {
+    "id": "f28c17d1-3a7c-4726-91d6-c8ae8b08cd84",
+    "text": "In 1923, a horse named Zev won the Kentucky Derby in 2 minutes, 5 seconds, one of the fastest times in the race\u2019s early history. His victory came during a rain-soaked race, with mud flying and jockeys struggling. Zev\u2019s speed and grit made him a legend, and his record stood for years, highlighting how animals can become cultural icons through sheer athletic prowess.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udc0e",
+      "\ud83c\udfc7"
+    ]
+  },
+  {
+    "id": "e3f4a5b6-7c8d-9e0f-1a2b-3c4d5e6f7a8b",
+    "text": "The shortest radio broadcast to circle the globe was a 1924 signal from England, taking 0.08 seconds to travel via shortwave. Sent by the Marconi Company, it bounced off the ionosphere, a feat that stunned early radio pioneers. This milestone proved global communication was possible, laying the foundation for today\u2019s instant connectivity and showing how a fleeting signal could change the world.",
+    "category": "Technology",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddec\ud83c\udde7",
+      "\ud83d\udcfb",
+      "\ud83c\udf0d"
+    ]
+  },
+  {
+    "id": "f4a5b6c7-8d9e-0f1a-2b3c-4d5e6f7a8b9c",
+    "text": "The shortest-lived empire, the Central African Empire, lasted from 1976 to 1979. Declared by Jean-B\u00e9del Bokassa, it was a lavish but brutal regime marked by his self-coronation, costing millions while his people starved. Overthrown by French-backed forces, it collapsed as quickly as it rose. Bokassa\u2019s bizarre reign, complete with a diamond-encrusted throne, remains a cautionary tale of ego and excess in politics.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\uddeb",
+      "\ud83d\udc51",
+      "\ud83d\udc8e"
+    ]
+  },
+  {
+    "id": "a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d",
+    "text": "The bombardier beetle sprays boiling chemicals from its abdomen to deter predators. Mixing two compounds in a specialized chamber, it creates a 212\u00b0F jet that pops like gunfire. Found worldwide, this insect\u2019s defense is so effective it can repel spiders and frogs. Its chemical warfare, evolved over millions of years, is a stunning example of nature\u2019s ingenuity in crafting tiny but formidable weapons.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udc1e",
+      "\ud83d\udca5"
+    ]
+  },
+  {
+    "id": "b6c7d8e9-0f1a-2b3c-4d5e-6f7a8b9c0d1e",
+    "text": "In 1888, the first vending machine dispensed postcards in London. Invented by Percival Everitt, it accepted coins and spit out cards, a novelty that delighted Victorians. This simple device sparked a revolution in automated retail, leading to today\u2019s ubiquitous snack and soda machines. Its debut showed how small innovations could reshape daily life, turning a mundane purchase into a mechanical marvel.",
+    "category": "Technology",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddec\ud83c\udde7",
+      "\ud83d\uddbc\ufe0f",
+      "\ud83e\ude99"
+    ]
+  },
+  {
+    "id": "c7d8e9f0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+    "text": "The shortest distance ever walked by a robot on Mars was 6 feet, by NASA\u2019s Sojourner rover in 1997. The tiny rover, the size of a microwave, rolled off its lander onto the Martian surface, testing mobility in alien terrain. Its brief journey proved robots could explore other planets, paving the way for larger rovers. Sojourner\u2019s small steps were a giant leap for planetary science.",
+    "category": "Space",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83e\udd16",
+      "\ud83c\udf15"
+    ]
+  },
+  {
+    "id": "d8e9f0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+    "text": "The sloth bear\u2019s long snout sucks up termites like a vacuum cleaner. Native to India, it uses its mobile lips and claws to break open nests, slurping insects with a sound audible from 300 feet away. Unlike other bears, it\u2019s built for bug-eating, with a diet that\u2019s 90% termites and honey. This quirky adaptation makes it a unique player in the bear family, blending oddity with efficiency.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddee\ud83c\uddf3",
+      "\ud83d\udc3b",
+      "\ud83c\udf6f"
+    ]
+  },
+  {
+    "id": "e9f0a1b2-3c4d-5e6f-7a8b-9c0d1e2f3a4b",
+    "text": "In 1893, a Ferris wheel debuted at the Chicago World\u2019s Fair, carrying 38,000 passengers daily at 50 cents a ride. Designed by George Ferris, the 264-foot wheel was a marvel, dwarfing all previous amusement rides. It ran flawlessly for six months, proving engineering could blend thrill with safety. The wheel\u2019s success birthed a fairground icon, changing how we experience fun and spectacle worldwide.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfa1",
+      "\ud83c\udf9f\ufe0f"
+    ]
+  },
+  {
+    "id": "f0a1b2c3-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
+    "text": "The shortest solar eclipse, lasting 1 second, occurred in 1995 over the North Pole. Caused by the moon barely grazing the sun, it was visible only to a handful of researchers. Eclipses this brief are rare due to the precise alignment needed. This fleeting cosmic event reminds us how delicate and transient the dance of celestial bodies can be, even at Earth\u2019s extremes.",
+    "category": "Space",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83c\udf11",
+      "\u23f1\ufe0f"
+    ]
+  },
+  {
+    "id": "58d8d6ef-6e63-4fc8-876c-bdcf27ec072b",
+    "text": "The electric eel can generate 860 volts, enough to stun prey or deter predators. Found in South American rivers, it uses electric pulses to navigate murky waters and communicate. A single shock can incapacitate a horse, though it rarely kills humans. This living battery, evolved over millions of years, showcases nature\u2019s ability to harness electricity long before humans invented circuits.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde7\ud83c\uddf7",
+      "\ud83d\udc0d",
+      "\u26a1"
+    ]
+  },
+  {
+    "id": "d3f13743-ad0d-4c2a-89fd-b54c5238466e",
+    "text": "In 1903, the first Tour de France bike race covered 1,500 miles over 19 days. Riders faced unpaved roads, sabotage, and exhaustion, with some stages lasting 17 hours. Maurice Garin won, averaging 15 mph with no modern gear. The grueling event, born to boost a newspaper\u2019s sales, became a global phenomenon, testing human endurance and turning cyclists into legends.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddeb\ud83c\uddf7",
+      "\ud83d\udeb4",
+      "\ud83c\udfc6"
+    ]
+  },
+  {
+    "id": "a3489d8f-e2f6-4a65-ac5e-d0d928d2d12a",
+    "text": "The shortest poem in the English language, \u2018Lines on the Antiquity of Microbes\u2019 by Strickland Gillilan, reads: \u2018Adam / Had \u2019em.\u2019 This two-word rhyme humorously claims microbes are Earth\u2019s oldest lifeforms. Written in the early 20th century, it\u2019s a witty nod to evolution, proving poetry can pack a scientific punch in just four syllables, delighting readers with its clever brevity.",
+    "category": "Literature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcdc",
+      "\ud83e\udda0"
+    ]
+  },
+  {
+    "id": "97c25f79-3a63-4d66-8e71-c26dbacfb52c",
+    "text": "The vampire squid, living 3,000 feet deep in the ocean, ejects glowing mucus to confuse predators. Its name comes from its dark, cloak-like webbing, not blood-sucking. When threatened, it flips inside-out, exposing spiny projections. Discovered in 1903, this deep-sea oddity thrives in low-oxygen zones, showing how life adapts to Earth\u2019s harshest environments with theatrical flair.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83e\udd91",
+      "\ud83c\udf0c"
+    ]
+  },
+  {
+    "id": "6ef8f258-1879-4645-ad96-743f15a9579b",
+    "text": "In 1959, a U.S. military project proposed nuking the moon to intimidate the Soviet Union. Project A119, a Cold War brainstorm, aimed to detonate a nuclear bomb on the lunar surface, creating a visible flash. Scrapped due to ethical and scientific concerns, it revealed the era\u2019s reckless ambition. Declassified in 2000, it\u2019s a wild reminder of how far humans went to flex power in the space race.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf11",
+      "\ud83d\udca5"
+    ]
+  },
+  {
+    "id": "a19c65bb-a838-421c-8860-9482bf25674a",
+    "text": "The shortest symphony, Havergal Brian\u2019s Symphony No. 32, lasts 8 minutes. Composed in 1968, it packs intense emotion into a single movement, defying the sprawling length of traditional symphonies. Brian, a little-known British composer, wrote 32 symphonies, many discovered posthumously. This tiny masterpiece shows how music can convey grandeur in a fleeting form, challenging orchestral norms.",
+    "category": "Music",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddec\ud83c\udde7",
+      "\ud83c\udfbb",
+      "\u23f1\ufe0f"
+    ]
+  },
+  {
+    "id": "717c07db-0fe4-44fc-948c-ab10415097d4",
+    "text": "The trap-jaw ant\u2019s mandibles snap shut at 140 mph, the fastest movement in the animal kingdom. Found in Central America, it uses this jaw-dropping speed to catch prey or fling itself backward to escape threats. The force is so strong it can launch the ant several inches. This tiny predator\u2019s mechanical marvel, studied with high-speed cameras, highlights nature\u2019s knack for extreme engineering.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\uddf7",
+      "\ud83d\udc1c",
+      "\u26a1"
+    ]
+  },
+  {
+    "id": "712557a6-d64f-4489-9658-02e80d1238eb",
+    "text": "In 1962, the U.S. conducted a high-altitude nuclear test called Starfish Prime, detonating a 1.4-megaton bomb 250 miles above the Pacific. The explosion created an artificial aurora, knocked out satellites, and disrupted power grids in Hawaii. Its electromagnetic pulse revealed the fragility of early electronics, shaping Cold War defense strategies and showing how a single blast could ripple through modern technology.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udca5",
+      "\ud83c\udf0c"
+    ]
+  },
+  {
+    "id": "9bea49b3-0d6e-44b2-945f-8cf68069c0fd",
+    "text": "The shortest national anthem, Japan\u2019s \u2018Kimigayo,\u2019 lasts about 40 seconds. Its lyrics, from a 9th-century poem, pray for the emperor\u2019s long reign. Despite its brevity, it\u2019s sparked debate over its imperial associations. Performed at sumo matches and global events, it\u2019s a minimalist yet profound symbol of national identity, showing how a few notes can carry centuries of history.",
+    "category": "Culture",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddef\ud83c\uddf5",
+      "\ud83c\udfb6",
+      "\ud83d\udc51"
+    ]
+  },
+  {
+    "id": "eb0d0308-522d-4176-aacb-3a442c87efef",
+    "text": "The peacock spider, a tiny Australian arachnid, performs a dazzling dance to attract mates. Males wave colorful, fan-like abdomens in synchronized moves, resembling a Broadway show. If the female isn\u2019t impressed, she may eat him. These inch-long performers, discovered in the 19th century, show how even spiders use artful displays to survive, blending beauty with the brutal stakes of reproduction.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde6\ud83c\uddfa",
+      "\ud83d\udd77\ufe0f",
+      "\ud83d\udc83"
+    ]
+  },
+  {
+    "id": "aca056e6-668d-4815-9c65-d3a12d89012e",
+    "text": "In 1869, the first professional baseball game was played, with the Cincinnati Red Stockings defeating a rival 45-9. Paid to play, the team went undefeated that year, traveling 11,000 miles. Their success popularized professional sports, turning baseball into America\u2019s pastime. This game, played with no gloves or helmets, marked a cultural shift, blending athleticism with entertainment in a new era.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\u26be",
+      "\ud83c\udfdf\ufe0f"
+    ]
+  },
+  {
+    "id": "921eacad-d80a-41a5-b26a-8216c400ccb5",
+    "text": "The shortest time to detect a new particle was 3 years, for the Higgs boson, confirmed in 2012 at CERN. Theorized in 1964, it was found using the Large Hadron Collider, smashing protons at near-light speed. The particle gives others mass, a cornerstone of physics. Its discovery, after decades of searching, reshaped our understanding of the universe\u2019s fundamental building blocks.",
+    "category": "Science",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\udded",
+      "\u269b\ufe0f",
+      "\ud83d\udd2c"
+    ]
+  },
+  {
+    "id": "9baaa45f-4673-41c5-be87-e50915776907",
+    "text": "The coconut crab, the largest land crab, can lift 66 pounds and crack coconuts with its claws. Found on Pacific islands, it climbs trees and lives in burrows, growing up to 3 feet long. Its strength and size earned it the nickname \u2018robber crab\u2019 for stealing shiny objects. This giant crustacean, a relative of hermit crabs, shows how evolution can turn a small creature into a tropical titan.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf5\ud83c\uddeb",
+      "\ud83e\udd80",
+      "\ud83e\udd65"
+    ]
+  },
+  {
+    "id": "aeb10303-a76f-4d85-a699-1904847dbbe7",
+    "text": "In 1912, a Japanese cherry blossom gift to the U.S. sparked a diplomatic tradition. Japan sent 3,020 trees to Washington, D.C., symbolizing friendship. The trees, still blooming annually, draw millions to the Tidal Basin. This gesture, rooted in a 1910 request by a U.S. botanist, shows how nature can bridge nations, creating a living legacy of beauty and goodwill.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddef\ud83c\uddf5",
+      "\ud83c\udf38",
+      "\ud83e\udd1d"
+    ]
+  },
+  {
+    "id": "6d266c62-f44a-43ff-b1cf-349472ef9d4e",
+    "text": "The shortest flight ever recorded lasted 47 seconds, covering 1 mile between two Scottish islands in 1967. Loganair\u2019s Britten-Norman Islander carried passengers between Westray and Papa Westray, a route still operating today. The brief hop, barely long enough to serve coffee, showcases aviation\u2019s ability to connect remote places and holds a quirky record in travel history.",
+    "category": "Travel",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddec\ud83c\udde7",
+      "\u2708\ufe0f",
+      "\u23f1\ufe0f"
+    ]
+  },
+  {
+    "id": "d0ae9dd4-2351-426d-a90b-778fff8763e6",
+    "text": "The axolotl, a Mexican salamander, can regrow limbs, organs, and even parts of its brain. Unlike most amphibians, it stays aquatic its entire life, retaining gills and a larval form. Found in Mexico City\u2019s canals, it\u2019s critically endangered but a lab favorite for studying regeneration. Its \u2018superpower\u2019 could unlock medical breakthroughs, making this smiling creature a symbol of hope and biological wonder.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf2\ud83c\uddfd",
+      "\ud83e\udd8e",
+      "\ud83e\ude7a"
+    ]
+  },
+  {
+    "id": "32dc51a7-b3bc-4f5a-9d88-bfa22632f791",
+    "text": "In 1980, Mount St. Helens erupted, killing 57 people and leveling 230 square miles of forest. The blast, equivalent to 1,600 Hiroshima bombs, sent ash circling the globe. A landslide triggered by the eruption exposed the volcano\u2019s molten core, causing a lateral explosion. This cataclysm reshaped volcanology, showing how unpredictable and powerful Earth\u2019s geology can be, with effects still studied today.",
+    "category": "Geology",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf0b",
+      "\ud83d\udca5"
+    ]
+  },
+  {
+    "id": "eb290301-e7b4-43c7-a76a-c1859acb63e5",
+    "text": "The shortest TV show episode to win an Emmy was 12 minutes long, from *Sesame Street* in 1970. The segment taught counting with vibrant puppets and catchy songs, revolutionizing children\u2019s education. Its concise brilliance beat longer competitors, proving short-form content could have lasting impact. *Sesame Street*\u2019s legacy endures, shaping generations with quick, memorable lessons wrapped in fun.",
+    "category": "Entertainment",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcfa",
+      "\ud83c\udfc6"
+    ]
+  },
+  {
+    "id": "aba95a8d-8184-4cad-9fcf-c02752e89f17",
+    "text": "The pistol shrimp\u2019s claw snap creates a bubble so hot it reaches 8,000\u00b0F, nearly the sun\u2019s surface temperature. This cavitation bubble collapses with a sound louder than a gunshot, stunning prey. Found in tropical reefs, its tiny size belies its power, producing light via sonoluminescence. This shrimp\u2019s extreme physics makes it a natural wonder, blending sound, heat, and light in a split-second attack.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0a",
+      "\ud83e\udd90",
+      "\ud83d\udd25"
+    ]
+  },
+  {
+    "id": "b645d7f4-3327-428c-adda-f2be0fe90b0f",
+    "text": "In 1974, a Hungarian architect invented the Rubik\u2019s Cube, which became a global craze with 350 million sold. Erno Rubik designed it to teach 3D geometry, not expecting its addictive appeal. Solving it requires navigating 43 quintillion combinations, yet speedcubers do it in seconds. The cube\u2019s enduring popularity shows how a simple toy can captivate minds and spark a cultural phenomenon.",
+    "category": "Culture",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udded\ud83c\uddfa",
+      "\ud83e\udde9",
+      "\ud83e\udde0"
+    ]
+  },
+  {
+    "id": "b3a459da-83ee-4e84-a431-2269618f4387",
+    "text": "The shortest time to circumnavigate the globe by hot air balloon was 11 days, set by Steve Fossett in 2002. His solo flight covered 20,000 miles, battling storms and jet streams. The balloon, Spirit of Freedom, relied on precise weather predictions and Fossett\u2019s endurance. This record-breaking journey showed human tenacity could conquer the skies, blending adventure with meteorological science.",
+    "category": "Exploration",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf88",
+      "\ud83c\udf0d"
+    ]
+  },
+  {
+    "id": "3327e4ff-f35b-4053-bb91-a7efdee9d5a4",
+    "text": "The leaf-tailed gecko of Madagascar blends into trees so perfectly it\u2019s nearly invisible. Its flat tail mimics a leaf, complete with vein-like patterns, fooling predators and prey. Active at night, it hunts with stealth, using its camouflage to ambush insects. This master of disguise, evolved over millions of years, shows how nature crafts art-like adaptations for survival in dense jungles.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf2\ud83c\uddec",
+      "\ud83e\udd8e",
+      "\ud83c\udf43"
+    ]
+  },
+  {
+    "id": "afc2700e-b782-46f7-854f-fad55cff5779",
+    "text": "In 1901, the first Nobel Prizes were awarded, with each winner receiving $40,000, a fortune at the time. Funded by Alfred Nobel\u2019s dynamite wealth, the prizes honored breakthroughs in physics, chemistry, medicine, literature, and peace. The first physics prize went to Wilhelm R\u00f6ntgen for discovering X-rays. This tradition, born from a single man\u2019s vision, continues to celebrate humanity\u2019s greatest achievements annually.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf8\ud83c\uddea",
+      "\ud83c\udfc5",
+      "\ud83d\udd2c"
+    ]
+  },
+  {
+    "id": "9ce7114d-c12c-4b7d-87dc-288266afadc3",
+    "text": "The frilled shark, a living fossil from the Cretaceous, has 300 teeth in 25 rows. Found in deep oceans, it swallows prey whole, using its eel-like body to lunge. Rarely seen, it\u2019s been called a \u2018serpent shark\u2019 for its prehistoric look. This deep-sea relic, unchanged for 80 million years, reminds us that ancient creatures still lurk in Earth\u2019s unexplored corners.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83e\udd88",
+      "\ud83e\uddb4"
+    ]
+  },
+  {
+    "id": "1ef42ba9-2c2d-4a09-9bef-c57cc59b48e9",
+    "text": "In 1938, a coelacanth, a fish thought extinct for 66 million years, was caught off South Africa. Its discovery stunned scientists, as it was a \u2018living fossil\u2019 from the dinosaur era. With lobed fins and a primitive lung, it\u2019s a link to vertebrates\u2019 water-to-land transition. The coelacanth\u2019s survival in deep oceans shows how life can persist in hidden refuges, defying extinction.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddff\ud83c\udde6",
+      "\ud83d\udc1f",
+      "\ud83e\udd96"
+    ]
+  },
+  {
+    "id": "9c717f4a-232e-4202-8a9d-b65c480bfe65",
+    "text": "The shortest time to cross the English Channel by swim was 6 hours, 55 minutes, set by Trent Grimsey in 2012. Battling cold water and strong currents, swimmers face a 21-mile challenge. Grimsey\u2019s record, aided by perfect tides, highlights human endurance and the allure of conquering nature\u2019s barriers. The Channel remains a bucket-list feat for swimmers worldwide.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddec\ud83c\udde7",
+      "\ud83c\udfca",
+      "\ud83c\udf0a"
+    ]
+  },
+  {
+    "id": "2f4291c0-3ac4-4f7e-80d8-0786b824b615",
+    "text": "In 1845, a naval officer named John Franklin led an expedition to find the Northwest Passage, but his two ships vanished with 129 men. Decades of searches uncovered wrecks in Arctic waters, revealing the crew resorted to cannibalism before succumbing to cold and starvation. The mystery, solved only in 2014, captivated Victorian England and remains a chilling tale of exploration gone wrong.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\udde6",
+      "\ud83d\udea2",
+      "\u2744\ufe0f"
+    ]
+  },
+  {
+    "id": "ea6b19ef-11b2-468e-977c-44a013aa700f",
+    "text": "The shortest sci-fi novel to win a Hugo Award, *This Is How You Lose the Time War*, is 200 pages long. Written by Amal El-Mohtar and Max Gladstone in 2019, it\u2019s a poetic tale of time-traveling agents in a cosmic war. Its brevity belies its emotional depth, proving compact stories can rival epics in impact and innovation within the genre.",
+    "category": "Literature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udcd6",
+      "\u23f0"
+    ]
+  },
+  {
+    "id": "8860ce7a-dd76-479e-a9c8-9ca0597877c5",
+    "text": "The horned lizard squirts blood from its eyes to scare predators. Found in North American deserts, it builds pressure in its sinuses to shoot a foul-tasting stream up to 5 feet. This gruesome defense, paired with its spiky armor, deters snakes and hawks. Evolved over millennia, this lizard\u2019s bizarre tactic shows nature\u2019s creativity in crafting survival strategies that shock and awe.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83e\udd8e",
+      "\ud83e\ude78"
+    ]
+  },
+  {
+    "id": "f70d529d-0a45-419b-b436-b13913ce3ad8",
+    "text": "In 1966, the first internet-like network, ARPANET, sent its first message: \u2018LO.\u2019 Meant to be \u2018LOGIN,\u2019 it crashed after two letters. This shaky start, funded by the U.S. military, laid the foundation for the modern internet. The accidental brevity of that first transmission, sent between UCLA and Stanford, marks a humble beginning for a technology that transformed the world.",
+    "category": "Technology",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcbb",
+      "\ud83c\udf10"
+    ]
+  },
+  {
+    "id": "eef23018-b317-4be9-9890-db2044496ff5",
+    "text": "The shortest time to climb Everest\u2019s summit from base camp was 8 hours, 10 minutes, by Pemba Dorje Sherpa in 2004. Racing against weather and oxygen limits, he shattered records on the 29,032-foot peak. His feat, verified by Nepal\u2019s mountaineering board, showcases Sherpa strength and the extreme limits of human performance in one of Earth\u2019s harshest environments.",
+    "category": "Exploration",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf3\ud83c\uddf5",
+      "\u26f0\ufe0f",
+      "\ud83c\udfc3"
+    ]
+  },
+  {
+    "id": "57588a43-c088-4b24-80ec-9eaeef67a637",
+    "text": "The narwhal\u2019s tusk, a spiraled tooth up to 9 feet long, is actually a sensory organ packed with nerves. Found in Arctic waters, male narwhals use it to detect water chemistry, possibly aiding navigation or mate attraction. Once thought to be unicorn horns, these tusks fueled medieval myths. The narwhal\u2019s \u2018unicorn of the sea\u2019 nickname hides a biological marvel that blends function with fable.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\udde6",
+      "\ud83e\udd84",
+      "\ud83c\udf0a"
+    ]
+  },
+  {
+    "id": "6988834e-6809-42dd-8339-5737a211eace",
+    "text": "In 1883, the Krakatoa eruption was so loud it was heard 3,000 miles away, the farthest sound ever recorded. The volcanic blast, in Indonesia, killed 36,000 people and produced shockwaves that circled the Earth. Its ash painted global sunsets red for years. This cataclysm, one of history\u2019s deadliest, showed how a single event could reshape climates and awe the world.",
+    "category": "Geology",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddee\ud83c\udde9",
+      "\ud83c\udf0b",
+      "\ud83d\udd0a"
+    ]
+  },
+  {
+    "id": "fe1766ed-520e-4bae-9635-e4e04f979b4b",
+    "text": "The shortest Broadway show, *The Pee-wee Herman Show* in 2010, ran for 90 minutes. Paul Reubens\u2019 quirky performance, blending childlike humor with surreal comedy, sold out theaters. Its brevity didn\u2019t dim its impact, reviving a cult character and proving short runs can leave a lasting mark. The show\u2019s success showed how nostalgia and oddity can captivate modern audiences.",
+    "category": "Entertainment",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfad",
+      "\ud83d\ude02"
+    ]
+  },
+  {
+    "id": "f35ff659-c8f5-439a-89ff-4ae8fef4d9dd",
+    "text": "In 1927, the first successful transatlantic telephone call was made between New York and London. The call, costing $75 for three minutes, connected two continents in real-time, revolutionizing global communication. This breakthrough paved the way for modern telecommunications, shrinking the world long before the internet.",
+    "category": "Technology",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcde",
+      "\ud83c\udf0d"
+    ]
+  },
+  {
+    "id": "1a8fecd1-00ac-4ab4-82dc-0763bd4cdcd6",
+    "text": "The Atacama Desert in Chile, one of the driest places on Earth, receives less than 1 mm of rain annually in some areas. Its barren, Mars-like landscape is used to test rovers for space missions. Fossils and ancient human remains found here reveal a rich prehistoric past despite its harsh conditions.",
+    "category": "Geology",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\uddf1",
+      "\ud83c\udfdc\ufe0f",
+      "\ud83d\ude80"
+    ]
+  },
+  {
+    "id": "cf0f9725-7d7b-44f6-b7c0-773e37d77497",
+    "text": "In 1969, the Apollo 11 mission landed humans on the moon, with Neil Armstrong\u2019s first step watched by millions. The mission, costing $25.4 billion in today\u2019s dollars, collected 47.5 pounds of lunar material. This historic leap showcased human ingenuity and sparked dreams of cosmic exploration.",
+    "category": "Exploration",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udf11",
+      "\ud83d\udc68\u200d\ud83d\ude80"
+    ]
+  },
+  {
+    "id": "90e92b59-48fa-49ed-bde7-7cb49a788202",
+    "text": "The giant panda, native to China, survives almost entirely on bamboo, eating up to 80 pounds daily. Once endangered, conservation efforts have boosted their population to over 1,800 in the wild. Their black-and-white fur and playful demeanor make them a global symbol of wildlife preservation.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\uddf3",
+      "\ud83d\udc3c",
+      "\ud83c\udf8b"
+    ]
+  },
+  {
+    "id": "3d99592e-2eaa-4ec3-a7c2-b3f9c3bd480a",
+    "text": "In 1439, Johannes Gutenberg invented the printing press in Germany, revolutionizing knowledge dissemination. His movable-type system produced books faster and cheaper, sparking the Renaissance and Reformation. By 1500, millions of books circulated, transforming literacy and culture across Europe.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde9\ud83c\uddea",
+      "\ud83d\udcda",
+      "\ud83d\udda8\ufe0f"
+    ]
+  },
+  {
+    "id": "c41181bd-6dc1-4f06-b3c4-162430679816",
+    "text": "The shortest war in history lasted 38 minutes. In 1896, Britain defeated Zanzibar\u2019s sultan after he refused to step down. The British navy bombarded the palace, forcing surrender. This brief conflict, known as the Anglo-Zanzibar War, shows how swiftly power could shift in the colonial era.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf9\ud83c\uddff",
+      "\u2694\ufe0f",
+      "\u23f1\ufe0f"
+    ]
+  },
+  {
+    "id": "d5e231e5-4b95-46a6-8922-693dea6ecc4a",
+    "text": "The blue whale, found in oceans worldwide, is the largest animal ever, reaching 100 feet and 200 tons. Its heart alone weighs as much as a car. Despite its size, it feeds on tiny krill, consuming up to 4 tons daily, showcasing nature\u2019s balance of scale and efficiency.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83d\udc33",
+      "\ud83d\udccf"
+    ]
+  },
+  {
+    "id": "a879024e-78b3-4e65-a2e5-f0ceceb961e9",
+    "text": "In 2003, Japan\u2019s Hayabusa mission became the first to return asteroid samples to Earth. Launched to Itokawa, it collected microscopic grains despite technical failures. This mission proved asteroids could be studied up close, opening new frontiers in understanding our solar system\u2019s origins.",
+    "category": "Exploration",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddef\ud83c\uddf5",
+      "\ud83e\ude90",
+      "\ud83d\udef0\ufe0f"
+    ]
+  },
+  {
+    "id": "2b7bc336-0b89-4984-9af0-8521e52c06b9",
+    "text": "The Great Barrier Reef, off Australia\u2019s coast, is the world\u2019s largest coral system, stretching 1,400 miles. Home to 1,500 fish species, it faces threats from climate change and bleaching. Its vibrant ecosystem remains a global treasure, drawing millions to its underwater spectacle.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde6\ud83c\uddfa",
+      "\ud83d\udc20",
+      "\ud83c\udf0a"
+    ]
+  },
+  {
+    "id": "1420b723-84a9-452d-a50c-0302587f7fd4",
+    "text": "In 1911, Roald Amundsen of Norway reached the South Pole first, beating Britain\u2019s Robert Scott by 34 days. His team used sled dogs, covering 1,860 miles in 99 days. This race to the Antarctic highlighted human resilience and the drive to conquer Earth\u2019s extremes.",
+    "category": "Exploration",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf3\ud83c\uddf4",
+      "\ud83d\udc15",
+      "\u2744\ufe0f"
+    ]
+  },
+  {
+    "id": "132146fb-0d68-48a3-a003-fdd8dc4f1a73",
+    "text": "The Terracotta Army, discovered in China in 1974, guards Emperor Qin Shi Huang\u2019s tomb. Over 8,000 life-sized clay soldiers, each unique, were crafted around 210 BCE. This archaeological marvel reveals ancient China\u2019s artistry and obsession with immortality.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\uddf3",
+      "\ud83d\uddff",
+      "\u2694\ufe0f"
+    ]
+  },
+  {
+    "id": "c22a6f3e-9dee-46d8-9fee-c10ae445e29f",
+    "text": "In 2015, the Paris Agreement was signed by 196 countries to combat climate change. Hosted in France, it set goals to limit global warming to below 2\u00b0C. This landmark accord reflects humanity\u2019s united effort to protect the planet\u2019s future.",
+    "category": "Environment",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddeb\ud83c\uddf7",
+      "\ud83c\udf0d",
+      "\ud83c\udf31"
+    ]
+  },
+  {
+    "id": "5d9975f0-01ee-4d97-b4c5-3d18a55d13b7",
+    "text": "The fastest land animal, the cheetah, native to Africa, can run up to 60 mph in short bursts. Its lightweight body and specialized claws give it unmatched speed. This predator\u2019s grace and power make it a symbol of the wild\u2019s raw beauty.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddff\ud83c\udde6",
+      "\ud83d\udc06",
+      "\ud83d\udca8"
+    ]
+  },
+  {
+    "id": "39d25c49-a4e0-4ea1-b07b-da828e7f4096",
+    "text": "In 1953, New Zealand\u2019s Edmund Hillary and Sherpa Tenzing Norgay became the first to summit Everest. Their climb, enduring extreme cold and thin air, took seven weeks. This triumph cemented Everest as the ultimate test of human endurance.",
+    "category": "Exploration",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf3\ud83c\uddff",
+      "\u26f0\ufe0f",
+      "\ud83c\udfc6"
+    ]
+  },
+  {
+    "id": "4ceb0138-de40-4587-b11a-5678b5b47690",
+    "text": "The Amazon Rainforest, spanning Brazil and eight other countries, produces 20% of the world\u2019s oxygen. Home to 400 billion trees and 2.5 million insect species, it\u2019s Earth\u2019s most biodiverse region. Deforestation threatens its vital role in global ecosystems.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde7\ud83c\uddf7",
+      "\ud83c\udf33",
+      "\ud83e\udd8b"
+    ]
+  },
+  {
+    "id": "51b4646c-583a-4ba1-804e-c8e3cb5422d6",
+    "text": "In 1947, India gained independence from British rule after decades of struggle. Led by figures like Gandhi, nonviolent resistance shaped the movement. This historic shift marked the end of colonial empires and inspired global freedom movements.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddee\ud83c\uddf3",
+      "\u270a",
+      "\ud83d\udd4a\ufe0f"
+    ]
+  },
+  {
+    "id": "7de88ab5-02fb-448a-beca-8a2229bcc84c",
+    "text": "The shortest Olympic marathon record is 2:02:57, set by Kenya\u2019s Kelvin Kiptum in 2023. Running 26.2 miles in Chicago, he shattered the previous record by 34 seconds. His feat highlights East Africa\u2019s dominance in long-distance running.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf0\ud83c\uddea",
+      "\ud83c\udfc3\u200d\u2642\ufe0f",
+      "\ud83c\udfc5"
+    ]
+  },
+  {
+    "id": "ae957855-8fef-47f6-bd73-aedaf369d6b6",
+    "text": "The Large Hadron Collider, located in Switzerland, is the world\u2019s largest particle accelerator, stretching 17 miles underground. Built by CERN, it discovered the Higgs boson in 2012, unlocking secrets of the universe\u2019s fundamental structure.",
+    "category": "Science",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\udded",
+      "\ud83d\udd2c",
+      "\u269b\ufe0f"
+    ]
+  },
+  {
+    "id": "f4c647fd-a962-4809-99e9-298703160a57",
+    "text": "The monarch butterfly migrates up to 3,000 miles from Canada to Mexico each year. Weighing less than a gram, millions converge in Oyamel forests, creating a stunning natural spectacle. Their journey is one of nature\u2019s most remarkable feats of endurance.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf2\ud83c\uddfd",
+      "\ud83e\udd8b",
+      "\ud83c\udf32"
+    ]
+  },
+  {
+    "id": "0743284d-f54b-47d3-a7dc-096f02762724",
+    "text": "In 1989, the Berlin Wall fell, reuniting East and West Germany after 28 years. Built in 1961 to stop defections, it symbolized Cold War division. Its collapse marked a turning point, leading to Germany\u2019s reunification and the end of Soviet influence.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde9\ud83c\uddea",
+      "\ud83e\uddf1",
+      "\ud83e\udd1d"
+    ]
+  },
+  {
+    "id": "d3a223a0-7109-43be-8e3b-9a33884e38d6",
+    "text": "The fastest recorded dive by a peregrine falcon, native to every continent except Antarctica, reaches 240 mph. Its aerodynamic body and keen eyesight make it a supreme hunter. This bird\u2019s speed and precision embody nature\u2019s engineering at its finest.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udf0d",
+      "\ud83e\udd85",
+      "\ud83d\udca8"
+    ]
+  },
+  {
+    "id": "dec4c9c5-fa06-43ad-9b1b-61debeb1d6f2",
+    "text": "In 2009, Usain Bolt of Jamaica set the 100-meter world record at 9.58 seconds. Running in Berlin, his speed peaked at 27.8 mph. This record, still unbroken, cements Bolt as the fastest human and a global sports icon.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddef\ud83c\uddf2",
+      "\ud83c\udfc3\u200d\u2642\ufe0f",
+      "\u26a1"
+    ]
+  },
+  {
+    "id": "d52e743b-18a1-482a-83c6-c0dc09806566",
+    "text": "The Sahara Desert, covering much of North Africa, spans 3.6 million square miles. Its dunes can reach 590 feet high, shaped by relentless winds. Ancient rock art found here reveals a once-green landscape teeming with life thousands of years ago.",
+    "category": "Geology",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddea\ud83c\uddec",
+      "\ud83c\udfdc\ufe0f",
+      "\ud83d\udd8c\ufe0f"
+    ]
+  },
+  {
+    "id": "cd74a30a-8da7-4247-acaa-5556ef007146",
+    "text": "In 1977, NASA\u2019s Voyager 1 launched from the U.S., carrying a golden record with Earth\u2019s sounds and images. Now over 15 billion miles away, it\u2019s the farthest human-made object from Earth, still sending data from interstellar space.",
+    "category": "Exploration",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udef0\ufe0f",
+      "\ud83c\udfb5"
+    ]
+  },
+  {
+    "id": "c4ea1cd9-3502-4195-9a00-154a269c05b2",
+    "text": "The Komodo dragon, found in Indonesia, is the largest lizard, growing up to 10 feet and 300 pounds. Its venomous bite can kill prey in hours. This apex predator\u2019s raw power and ancient lineage make it a living relic of the dinosaur age.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddee\ud83c\udde9",
+      "\ud83e\udd8e",
+      "\ud83e\uddb7"
+    ]
+  },
+  {
+    "id": "ec8c8389-0c5c-42dd-8d7b-53c8aa3781d8",
+    "text": "In 1791, Mozart\u2019s *The Magic Flute* premiered in Austria, blending fairy-tale themes with profound symbolism. Composed in his final year, it remains a cornerstone of opera. Its universal appeal lies in its mix of humor, mystery, and musical genius.",
+    "category": "Entertainment",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde6\ud83c\uddf9",
+      "\ud83c\udfb6",
+      "\ud83c\udfad"
+    ]
+  },
+  {
+    "id": "8cec488c-58c0-439a-bed6-764a12ffe225",
+    "text": "The Dead Sea, bordering Jordan and Israel, is Earth\u2019s lowest point on land at 1,410 feet below sea level. Its extreme salinity lets people float effortlessly. Ancient manuscripts found nearby reveal its historical significance as a cultural crossroads.",
+    "category": "Geology",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddef\ud83c\uddf4",
+      "\ud83c\udf0a",
+      "\ud83d\udcdc"
+    ]
+  },
+  {
+    "id": "0e22a680-b0ca-479e-bdbd-68d53f0ad264",
+    "text": "In 2004, Facebook was founded in the U.S. by Mark Zuckerberg, initially for Harvard students. Now with over 3 billion users, it redefined social interaction. Its global reach and controversies highlight the power and perils of digital connectivity.",
+    "category": "Technology",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcf1",
+      "\ud83c\udf10"
+    ]
+  },
+  {
+    "id": "70f4b154-340e-4cf4-8083-f195b769bc28",
+    "text": "The Gal\u00e1pagos Islands, off Ecuador\u2019s coast, inspired Darwin\u2019s theory of evolution. Home to unique species like giant tortoises, they host 9,000 species across 21 islands. Their isolation fosters biodiversity, making them a living laboratory of natural selection.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddea\ud83c\udde8",
+      "\ud83d\udc22",
+      "\ud83d\udd2c"
+    ]
+  },
+  {
+    "id": "a5f57104-f5b5-4500-8f2f-b2cb5f5af275",
+    "text": "In 1945, Japan\u2019s Hiroshima was struck by the first atomic bomb used in warfare. The blast killed 80,000 instantly and tens of thousands later from radiation. This tragic event reshaped global politics and underscored the devastating power of nuclear weapons.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddef\ud83c\uddf5",
+      "\ud83d\udca5",
+      "\u262e\ufe0f"
+    ]
+  },
+  {
+    "id": "81faa81e-ba3f-41c0-8a4e-885d6a1bd163",
+    "text": "The shortest chess world championship match lasted 10 games in 1975. Bobby Fischer of the U.S. forfeited to Anatoly Karpov of the USSR, ending without play. This Cold War-era clash reflected chess\u2019s role as a proxy for global tensions.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\u265f\ufe0f",
+      "\ud83c\udfc6"
+    ]
+  },
+  {
+    "id": "fab7f8d4-836a-4129-9fb2-62d4a774a69f",
+    "text": "The aurora australis, visible in Australia\u2019s southern skies, is caused by solar particles hitting Earth\u2019s magnetic field. Its colorful displays rival the northern lights. This natural light show captivates viewers, blending science with celestial beauty.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde6\ud83c\uddfa",
+      "\ud83c\udf0c",
+      "\u2728"
+    ]
+  },
+  {
+    "id": "48b6defe-6d10-4b04-add7-e1202e30dad3",
+    "text": "In 1815, Indonesia\u2019s Mount Tambora erupted, the largest volcanic event in recorded history. Killing 71,000 and cooling the globe, it caused the \u2018Year Without a Summer.\u2019 Its impact reshaped agriculture and migration patterns worldwide.",
+    "category": "Geology",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddee\ud83c\udde9",
+      "\ud83c\udf0b",
+      "\ud83c\udf21\ufe0f"
+    ]
+  },
+  {
+    "id": "142cf76d-5ae9-40b5-a765-b528c3e83728",
+    "text": "The Nobel Prize for Literature was first awarded in 1901 to France\u2019s Sully Prudhomme. Honoring poetic mastery, it sparked controversy for overlooking Tolstoy. The prize, funded by Alfred Nobel, remains a pinnacle of literary achievement.",
+    "category": "Literature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddeb\ud83c\uddf7",
+      "\ud83d\udcdc",
+      "\ud83c\udfc5"
+    ]
+  },
+  {
+    "id": "61eeb247-b034-4df8-89a3-a172b30748b6",
+    "text": "The shortest film to win an Oscar, *The Dot and the Line* (1965), runs 10 minutes. Produced in the U.S., its abstract animation tells a love story between geometric shapes. Its win proves concise storytelling can triumph in cinema.",
+    "category": "Entertainment",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83c\udfac",
+      "\u2764\ufe0f"
+    ]
+  },
+  {
+    "id": "74a95558-3d80-4953-85fc-7344ea5d3a69",
+    "text": "The Great Wall of China, built over centuries, stretches 13,171 miles. Begun in 221 BCE to fend off invaders, it\u2019s a UNESCO World Heritage Site. Its scale and endurance symbolize China\u2019s historical strength and ingenuity.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\uddf3",
+      "\ud83d\uddfb",
+      "\ud83c\udfef"
+    ]
+  },
+  {
+    "id": "07c46df0-c817-4b03-8a0d-0e8750febaba",
+    "text": "The fastest recorded tennis serve, by Australia\u2019s Sam Groth in 2012, hit 163 mph. Delivered in a Challenger tournament, it showcased raw power. Tennis\u2019s blend of speed and strategy continues to push human athletic limits.",
+    "category": "Sports",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde6\ud83c\uddfa",
+      "\ud83c\udfbe",
+      "\ud83d\udca8"
+    ]
+  },
+  {
+    "id": "7121bc0d-6998-4d27-ade5-2f3f27bb7fbc",
+    "text": "The Mariana Trench, in the Pacific near Guam, is Earth\u2019s deepest point at 36,070 feet. Only three humans have reached its floor, facing pressures 1,000 times atmospheric. Its mysteries fuel deep-sea exploration and scientific discovery.",
+    "category": "Geology",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddec\ud83c\uddfa",
+      "\ud83c\udf0a",
+      "\ud83d\udd0d"
+    ]
+  },
+  {
+    "id": "672b7d9f-5d48-4562-a139-805f42bd1fe1",
+    "text": "In 1995, the Hubble Space Telescope, launched by the U.S., captured the \u2018Pillars of Creation\u2019 image. Showing star-forming gas clouds in the Eagle Nebula, it reshaped our view of the cosmos. Its images continue to inspire awe and research.",
+    "category": "Science",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udd2d",
+      "\u2b50"
+    ]
+  },
+  {
+    "id": "87257feb-a902-4f87-8fe6-eb1c8d9fdaaf",
+    "text": "The Arctic tern, migrating from Arctic to Antarctic regions, travels 25,000 miles annually, the longest migration of any animal. Its journey, spanning Greenland to Antarctica, showcases incredible endurance. This bird\u2019s life is a testament to nature\u2019s navigational marvels.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddec\ud83c\uddf1",
+      "\ud83e\udd85",
+      "\ud83c\udf0d"
+    ]
+  },
+  {
+    "id": "f3fdefeb-2915-439d-96fe-c5d3488e4227",
+    "text": "In 1869, the Suez Canal opened in Egypt, connecting the Mediterranean and Red Seas. Stretching 120 miles, it cut global shipping routes by thousands of miles. This engineering feat transformed trade and remains a vital economic artery.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddea\ud83c\uddec",
+      "\ud83d\udea2",
+      "\ud83c\udf0d"
+    ]
+  },
+  {
+    "id": "5730d928-80fe-4c5c-bfb7-25aaea1d67ba",
+    "text": "The shortest papal reign lasted 13 days when Pope John Paul I died in 1978. Elected in Italy, his sudden death shocked the world. His brief tenure remains a poignant chapter in Vatican history, sparking intrigue and reform.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfb\ud83c\udde6",
+      "\u26ea",
+      "\u23f3"
+    ]
+  },
+  {
+    "id": "728a0378-bcfa-49ef-a682-b5161d793973",
+    "text": "The leafcutter ant, found in South America, carries leaves 50 times its weight to farm fungus. Colonies of millions work in harmony, cutting paths through forests. Their complex societies mirror human agriculture, evolved over millions of years.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde7\ud83c\uddf7",
+      "\ud83d\udc1c",
+      "\ud83c\udf43"
+    ]
+  },
+  {
+    "id": "0f80b830-2b48-4188-a953-c087703df226",
+    "text": "In 2012, the Higgs boson was confirmed at CERN in Switzerland, explaining how particles gain mass. Dubbed the \u2018God particle,\u2019 its discovery completed the Standard Model of physics. This breakthrough reshaped our understanding of the universe\u2019s building blocks.",
+    "category": "Science",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\udded",
+      "\u269b\ufe0f",
+      "\ud83d\udd2c"
+    ]
+  },
+  {
+    "id": "44cfe1c5-68c4-421a-9057-34ae8a43c38e",
+    "text": "The Bolshoi Ballet, founded in Russia in 1776, is one of the world\u2019s oldest and most prestigious dance companies. Its performances, like *Swan Lake*, blend athleticism and artistry. It remains a global symbol of cultural excellence and tradition.",
+    "category": "Entertainment",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf7\ud83c\uddfa",
+      "\ud83e\ude70",
+      "\ud83c\udfad"
+    ]
+  },
+  {
+    "id": "e9ccbf8c-d356-44ab-af4e-48a087ced93b",
+    "text": "The fastest recorded sailfish, found in tropical oceans like those near Costa Rica, can swim 68 mph. Its spear-like bill and sleek body make it a top predator. This speedster\u2019s agility highlights the ocean\u2019s dynamic food chain.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde8\ud83c\uddf7",
+      "\ud83d\udc1f",
+      "\ud83d\udca8"
+    ]
+  },
+  {
+    "id": "0aa48361-33ca-4b90-8d37-6609dceffc4f",
+    "text": "In 1895, Wilhelm R\u00f6ntgen discovered X-rays in Germany, revolutionizing medical imaging. His accidental find, earning a Nobel Prize, allowed doctors to see inside the body. This breakthrough transformed diagnostics and saved countless lives.",
+    "category": "Science",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\udde9\ud83c\uddea",
+      "\ud83e\ude7a",
+      "\u2622\ufe0f"
+    ]
+  },
+  {
+    "id": "bbbac600-8957-4b85-bb91-cd3a211e0c6c",
+    "text": "The Panama Canal, completed in 1914, connects the Atlantic and Pacific Oceans. Stretching 50 miles, it handles 14,000 ships annually. Built by the U.S., its locks system is an engineering marvel, vital to global trade.",
+    "category": "History",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf5\ud83c\udde6",
+      "\ud83d\udea2",
+      "\ud83d\udd27"
+    ]
+  },
+  {
+    "id": "d7c2aad7-f69a-4381-8354-c154bf5f732f",
+    "text": "The shortest novel to win the Booker Prize, *Pnin* by Vladimir Nabokov, spans 144 pages. Published in 1957, its humorous take on a Russian professor in America captivated readers. Its brevity proves compact narratives can leave lasting literary impacts.",
+    "category": "Literature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddfa\ud83c\uddf8",
+      "\ud83d\udcd6",
+      "\ud83d\ude02"
+    ]
+  },
+  {
+    "id": "53cb9f5e-69ea-43d5-9002-bff17733c0c4",
+    "text": "The baobab tree, native to Madagascar, can store 32,000 gallons of water in its trunk. Living up to 2,000 years, its upside-down appearance earned it the nickname \u2018tree of life.\u2019 Its resilience thrives in harsh African savannas.",
+    "category": "Nature",
+    "createdAt": "2025-08-03T02:52:00.000000Z",
+    "emojis": [
+      "\ud83c\uddf2\ud83c\uddec",
+      "\ud83c\udf33",
+      "\ud83d\udca7"
+    ]
+  }
+]

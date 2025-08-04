@@ -46,7 +46,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     private func setupUI() {
-        view.backgroundColor = UIColor.systemGroupedBackground
+        view.backgroundColor = UIColor.systemBackground
         
         // Setup fact card view
         factCardView.backgroundColor = UIColor.systemBackground
@@ -73,6 +73,8 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
         
         // Setup comment field container
         let commentContainerView = UIView()
@@ -268,17 +270,52 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
             .getDocuments { [weak self] snapshot, error in
                 if let documents = snapshot?.documents {
                     print("📊 Found \(documents.count) comments for factID: \(self?.factID ?? "unknown")")
-                    self?.comments = documents.compactMap {
-                        try? $0.data(as: Comment.self)
-                    }
-                    DispatchQueue.main.async {
-                        self?.tableView.reloadData()
-                        self?.updateCommentCount()
+                    
+                    // Load comments and their like status
+                    self?.loadCommentsWithLikeStatus(documents: documents) { comments in
+                        DispatchQueue.main.async {
+                            self?.comments = comments
+                            self?.tableView.reloadData()
+                            self?.updateCommentCount()
+                        }
                     }
                 } else if let error = error {
                     print("❌ Error fetching comments: \(error)")
                 }
             }
+    }
+    
+    private func loadCommentsWithLikeStatus(documents: [QueryDocumentSnapshot], completion: @escaping ([Comment]) -> Void) {
+        let group = DispatchGroup()
+        var commentsWithLikes: [Comment] = []
+        let currentUserID = Auth.auth().currentUser?.uid
+        
+        for document in documents {
+            group.enter()
+            
+            do {
+                var comment = try document.data(as: Comment.self)
+                
+                // Check if current user liked this comment
+                let likesRef = document.reference.collection("likes")
+                let userLikeRef = likesRef.document(currentUserID ?? "")
+                
+                userLikeRef.getDocument { likeSnapshot, _ in
+                    comment.likedByCurrentUser = likeSnapshot?.exists ?? false
+                    commentsWithLikes.append(comment)
+                    group.leave()
+                }
+            } catch {
+                print("❌ Error decoding comment: \(error)")
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: .main) {
+            // Sort comments by timestamp (newest first)
+            let sortedComments = commentsWithLikes.sorted { $0.timestamp > $1.timestamp }
+            completion(sortedComments)
+        }
     }
     
     private func updateCommentCount() {

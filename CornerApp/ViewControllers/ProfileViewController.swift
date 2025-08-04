@@ -283,10 +283,7 @@ class ProfileViewController: UIViewController {
         dislikedFactsTableView.reloadData()
     }
     
-    // MARK: - Enhanced Search Functionality
-    // MARK: - Enhanced Search Functionality
-    // MARK: - Enhanced Search Functionality
-    // MARK: - Enhanced Search Functionality
+  
     // MARK: - Enhanced Search Functionality
     private func searchFactsByEmoji(_ searchText: String) {
         // Extract emojis from search text

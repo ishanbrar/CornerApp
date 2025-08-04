@@ -401,6 +401,11 @@ class AuthenticationViewController: UIViewController {
                 switch result {
                 case .success:
                     print("✅ Sign up successful - dismissing auth screen")
+                    
+                    // Play success sound and haptic feedback
+                    SoundManager.shared.playSuccessSound()
+                    SoundManager.shared.playSuccessHaptic()
+                    
                     if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                        let keyWindow = windowScene.windows.first,
                        let rootVC = keyWindow.rootViewController {
