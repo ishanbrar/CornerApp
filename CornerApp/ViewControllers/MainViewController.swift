@@ -1,5 +1,6 @@
 import UIKit
-
+import FirebaseFirestore
+import FirebaseFirestoreCombineSwift
 class MainViewController: UIViewController {
 
     private var cornerButton: UIButton!
@@ -13,6 +14,7 @@ class MainViewController: UIViewController {
     private var undoButton: UIButton!
     private var currentFact: Fact?
     private let firebaseManager = FirebaseManager.shared
+    private var commentBadgeLabel: UILabel!
     private var hasCheckedAuth = false
     private var emojiLabel: UILabel!
 
@@ -44,6 +46,7 @@ class MainViewController: UIViewController {
         undoButton = UIButton(type: .system)
         commentButton = UIButton(type: .system)
         emojiLabel = UILabel()
+        commentBadgeLabel = UILabel()
 
         emojiLabel.textAlignment = .center
         emojiLabel.font = UIFont.systemFont(ofSize: 28)
@@ -59,6 +62,14 @@ class MainViewController: UIViewController {
         cornerButton.layer.cornerRadius = 25
         cornerButton.addTarget(self, action: #selector(cornerButtonTapped), for: .touchUpInside)
 
+        // Comment Badge
+        commentBadgeLabel.backgroundColor = UIColor.systemRed
+        commentBadgeLabel.textColor = UIColor.white
+        commentBadgeLabel.font = UIFont.systemFont(ofSize: 10, weight: .bold)
+        commentBadgeLabel.textAlignment = .center
+        commentBadgeLabel.layer.cornerRadius = 8
+        commentBadgeLabel.layer.masksToBounds = true
+        commentBadgeLabel.isHidden = true
         // Fact Label
         factLabel.numberOfLines = 0
         factLabel.textAlignment = .center
@@ -72,9 +83,10 @@ class MainViewController: UIViewController {
         setupActionButton(profileButton, systemName: "person.circle", color: .systemIndigo, action: #selector(profileButtonTapped))
         setupActionButton(undoButton, systemName: "arrow.uturn.left", color: .systemOrange, action: #selector(undoButtonTapped))
         setupActionButton(commentButton, systemName: "bubble.left.and.bubble.right", color: .systemTeal, action: #selector(openComments))
+        
 
         // Add to view
-        [cornerButton, factLabel, likeButton, dislikeButton, shareButton, profileButton, undoButton, commentButton].forEach {
+        [cornerButton, factLabel, likeButton, dislikeButton, shareButton, profileButton, undoButton, commentButton,commentBadgeLabel].forEach {
             view.addSubview($0)
         }
 
@@ -91,7 +103,7 @@ class MainViewController: UIViewController {
     }
 
     private func setupConstraints() {
-        [cornerButton, factLabel, likeButton, dislikeButton, shareButton, profileButton, undoButton, commentButton, emojiLabel].forEach {
+        [cornerButton, factLabel, likeButton, dislikeButton, shareButton, profileButton, undoButton, commentButton, commentBadgeLabel, emojiLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
 
@@ -113,7 +125,13 @@ class MainViewController: UIViewController {
             undoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             undoButton.widthAnchor.constraint(equalToConstant: 50),
             undoButton.heightAnchor.constraint(equalToConstant: 50),
-
+            
+            // Comment badge
+            commentBadgeLabel.topAnchor.constraint(equalTo: commentButton.topAnchor, constant: -5),
+            commentBadgeLabel.trailingAnchor.constraint(equalTo: commentButton.trailingAnchor, constant: 5),
+            commentBadgeLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 16),
+            commentBadgeLabel.heightAnchor.constraint(equalToConstant: 16),
+            
             dislikeButton.bottomAnchor.constraint(equalTo: cornerButton.topAnchor, constant: -20),
             dislikeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             dislikeButton.widthAnchor.constraint(equalToConstant: 50),
@@ -171,6 +189,7 @@ class MainViewController: UIViewController {
         factLabel.text = currentFact?.text ?? "Tap Corner to get a fact!"
         emojiLabel.text = currentFact?.emojis?.joined(separator: " ") ?? ""
         updateButtonStates()
+        updateCommentCount()
     }
 
     private func updateButtonStates() {
@@ -194,6 +213,30 @@ class MainViewController: UIViewController {
             dislikeButton.backgroundColor = UIColor.systemGray6
         }
     }
+    private func updateCommentCount() {
+        guard let fact = currentFact else { return }
+        
+        let db = Firestore.firestore()
+        db.collection("comments")
+            .document(fact.id)
+            .collection("userComments")
+            .getDocuments { [weak self] snapshot, error in
+                DispatchQueue.main.async {
+                    if let documents = snapshot?.documents {
+                        let count = documents.count
+                        if count > 0 {
+                            self?.commentBadgeLabel.text = count > 99 ? "99+" : "\(count)"
+                            self?.commentBadgeLabel.isHidden = false
+                        } else {
+                            self?.commentBadgeLabel.isHidden = true
+                        }
+                    } else {
+                        self?.commentBadgeLabel.isHidden = true
+                    }
+                }
+            }
+    }
+    
 
     // MARK: - Actions
     @objc private func cornerButtonTapped(_ sender: UIButton) {
@@ -242,6 +285,7 @@ class MainViewController: UIViewController {
         factLabel.text = currentFact?.text
         emojiLabel.text = currentFact?.emojis?.joined(separator: " ") ?? ""
         updateButtonStates()
+        updateCommentCount()
     }
 
     @objc private func shareButtonTapped(_ sender: UIButton) {
@@ -273,6 +317,7 @@ extension MainViewController: ProfileViewControllerDelegate {
         factLabel.text = fact.text
         emojiLabel.text = fact.emojis?.joined(separator: " ") ?? ""
         updateButtonStates()
+        updateCommentCount()
     }
     func didSearchForEmoji(_ emoji: String) {  // ← NEW
             // This method is called when a user searches for an emoji in the profile
