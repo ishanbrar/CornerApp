@@ -26,7 +26,7 @@ class FirebaseManager: ObservableObject {
         setupAuthListener()
         //loadSampleFacts()
         loadFactsFromFirebaseStorage()
-
+        
     }
     
     private func setupAuthListener() {
@@ -43,18 +43,18 @@ class FirebaseManager: ObservableObject {
         let storage = Storage.storage()
         let path = "f1.json" // Adjust based on your file name in Firebase Storage
         let storageRef = storage.reference(withPath: path)
-
+        
         storageRef.getData(maxSize: 5 * 1024 * 1024) { [weak self] data, error in
             if let error = error {
                 print("❌ Failed to download facts JSON: \(error)")
                 return
             }
-
+            
             guard let data = data else {
                 print("❌ No data received from Firebase Storage.")
                 return
             }
-
+            
             do {
                 let facts = try JSONDecoder().decode([Fact].self, from: data)
                 DispatchQueue.main.async {
@@ -66,7 +66,7 @@ class FirebaseManager: ObservableObject {
             }
         }
     }
-
+    
     private func loadSampleFacts() {
         // Sample facts - you can replace this with loading from Firebase Storage
         facts = [
@@ -200,18 +200,23 @@ class FirebaseManager: ObservableObject {
             completion?()
         }
     }
-
     
-    func dislikeFact(_ factId: String) {
+    
+    func dislikeFact(_ factId: String, completion: (() -> Void)? = nil) {
         guard var profile = userProfile else { return }
         if !profile.dislikedFacts.contains(factId) {
             profile.dislikedFacts.append(factId)
             profile.likedFacts.removeAll { $0 == factId }
-            saveUserProfile(profile) { _ in }
+            saveUserProfile(profile) { _ in
+                completion?()
+            }
+        } else {
+            completion?()
         }
     }
-    
-    func getRandomFact() -> Fact? {
-        return facts.randomElement()
+        
+        func getRandomFact() -> Fact? {
+            return facts.randomElement()
+        }
     }
-}
+

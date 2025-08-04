@@ -175,8 +175,24 @@ class MainViewController: UIViewController {
 
     private func updateButtonStates() {
         guard let fact = currentFact, let profile = firebaseManager.userProfile else { return }
-        likeButton.tintColor = profile.likedFacts.contains(fact.id) ? .systemRed : .systemGray
-        dislikeButton.tintColor = profile.dislikedFacts.contains(fact.id) ? .systemGray : .systemGray2
+        
+        // Like button: filled red when liked, gray outline when not liked
+        if profile.likedFacts.contains(fact.id) {
+            likeButton.tintColor = .systemRed
+            likeButton.backgroundColor = UIColor.systemRed.withAlphaComponent(0.2)
+        } else {
+            likeButton.tintColor = .systemGray
+            likeButton.backgroundColor = UIColor.systemGray6
+        }
+        
+        // Dislike button: filled red when disliked, gray outline when not disliked
+        if profile.dislikedFacts.contains(fact.id) {
+            dislikeButton.tintColor = .systemRed
+            dislikeButton.backgroundColor = UIColor.systemRed.withAlphaComponent(0.2)
+        } else {
+            dislikeButton.tintColor = .systemGray
+            dislikeButton.backgroundColor = UIColor.systemGray6
+        }
     }
 
     // MARK: - Actions
@@ -214,8 +230,9 @@ class MainViewController: UIViewController {
     @objc private func dislikeButtonTapped(_ sender: UIButton) {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         guard let fact = currentFact else { return }
-        firebaseManager.dislikeFact(fact.id)
-        updateButtonStates()
+        firebaseManager.dislikeFact(fact.id) {
+                    DispatchQueue.main.async { self.updateButtonStates() }
+                }
     }
 
     @objc private func undoButtonTapped(_ sender: UIButton) {
