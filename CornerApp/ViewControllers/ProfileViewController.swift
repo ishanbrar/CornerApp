@@ -283,22 +283,90 @@ class ProfileViewController: UIViewController {
         notSignedInLabel.isHidden = false
     }
     
+    private var isLoadingProfileData = false
+    
     private func loadUserData() {
         guard let profile = firebaseManager.userProfile else { return }
+        
+        // Prevent duplicate loading calls
+        guard !isLoadingProfileData else {
+            print("⚠️ Profile data loading already in progress, skipping")
+            return
+        }
+        
+        isLoadingProfileData = true
         
         emailLabel.text = "👤 \(profile.username) (\(profile.email))"
         cornerTapsLabel.text = "🎯 Corners: \(profile.cornerButtonTaps)"
         
-        // Load liked and disliked facts
-        likedFacts = firebaseManager.facts.filter { profile.likedFacts.contains($0.id) }
-        dislikedFacts = firebaseManager.facts.filter { profile.dislikedFacts.contains($0.id) }
+        // Show loading indicator for profile data
+        let loadingAlert = UIAlertController(title: "Loading Profile", message: "Loading your liked and disliked facts from all fact packs...", preferredStyle: .alert)
         
-        // Update header labels with counts
-        likedFactsHeaderLabel.text = "❤️ Liked Facts (\(likedFacts.count))"
-        dislikedFactsHeaderLabel.text = "👎 Disliked Facts (\(dislikedFacts.count))"
+        // Add a progress indicator
+        let progressView = UIProgressView(progressViewStyle: .default)
+        progressView.progress = 0.0
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        
+        loadingAlert.view.addSubview(progressView)
+        NSLayoutConstraint.activate([
+            progressView.topAnchor.constraint(equalTo: loadingAlert.view.topAnchor, constant: 60),
+            progressView.leadingAnchor.constraint(equalTo: loadingAlert.view.leadingAnchor, constant: 20),
+            progressView.trailingAnchor.constraint(equalTo: loadingAlert.view.trailingAnchor, constant: -20),
+            progressView.heightAnchor.constraint(equalToConstant: 2)
+        ])
+        
+        present(loadingAlert, animated: true)
+        
+        // Add a timeout for the loading operation
+        let timeoutWorkItem = DispatchWorkItem { [weak self] in
+            guard let self = self else { return }
+            
+            DispatchQueue.main.async {
+                self.isLoadingProfileData = false
+                loadingAlert.dismiss(animated: true) {
+                    // Show timeout message
+                    let timeoutAlert = UIAlertController(
+                        title: "Loading Timeout",
+                        message: "Loading took too long. Please try again or check your internet connection.",
+                        preferredStyle: .alert
+                    )
+                    timeoutAlert.addAction(UIAlertAction(title: "OK", style: .default))
+                    self.present(timeoutAlert, animated: true)
+                }
+            }
+        }
+        
+        // Set 45-second timeout
+        DispatchQueue.main.asyncAfter(deadline: .now() + 45, execute: timeoutWorkItem)
+        
+        // Load all facts from all fact packs for profile view
+        firebaseManager.loadAllFactsForProfile { [weak self] allFacts in
+            guard let self = self else { return }
+            
+            // Cancel timeout since we completed
+            timeoutWorkItem.cancel()
+            
+            DispatchQueue.main.async {
+                self.isLoadingProfileData = false
+                
+                // Dismiss loading indicator
+                loadingAlert.dismiss(animated: true) {
+                    // Load liked and disliked facts from all fact packs
+                    self.likedFacts = allFacts.filter { profile.likedFacts.contains($0.id) }
+                    self.dislikedFacts = allFacts.filter { profile.dislikedFacts.contains($0.id) }
+                    
+                    // Update header labels with counts
+                    self.likedFactsHeaderLabel.text = "❤️ Liked Facts (\(self.likedFacts.count))"
+                    self.dislikedFactsHeaderLabel.text = "👎 Disliked Facts (\(self.dislikedFacts.count))"
 
-        likedFactsTableView.reloadData()
-        dislikedFactsTableView.reloadData()
+                    self.likedFactsTableView.reloadData()
+                    self.dislikedFactsTableView.reloadData()
+                    
+                    // Log success
+                    print("✅ Profile loaded successfully with \(allFacts.count) total facts")
+                }
+            }
+        }
     }
     
   
@@ -500,17 +568,55 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             if likedFacts.isEmpty {
                 cell.configure(with: "No liked facts yet. Start exploring and like some facts!", isEmpty: true)
             } else {
-                cell.configure(with: likedFacts[indexPath.row].text, isEmpty: false)
+                let fact = likedFacts[indexPath.row]
+                let factPackName = getFactPackName(for: fact)
+                cell.configure(with: fact.text, factPack: factPackName, isEmpty: false)
             }
         } else {
             if dislikedFacts.isEmpty {
                 cell.configure(with: "No disliked facts yet.", isEmpty: true)
             } else {
-                cell.configure(with: dislikedFacts[indexPath.row].text, isEmpty: false)
+                let fact = dislikedFacts[indexPath.row]
+                let factPackName = getFactPackName(for: fact)
+                cell.configure(with: fact.text, factPack: factPackName, isEmpty: false)
             }
         }
         
         return cell
+    }
+    
+    private func getFactPackName(for fact: Fact) -> String {
+        // Use the factPack field if available
+        if let factPack = fact.factPack {
+            // Convert filename to readable name
+            let packName = factPack.replacingOccurrences(of: ".json", with: "")
+            return formatFactPackName(packName)
+        }
+        
+        // Fallback to emojis or category
+        if let emojis = fact.emojis, !emojis.isEmpty {
+            return emojis.joined(separator: " ")
+        } else {
+            return fact.category ?? "Unknown Pack"
+        }
+    }
+    
+    private func formatFactPackName(_ filename: String) -> String {
+        switch filename.lowercased() {
+        case "f1":
+            return "Main Facts"
+        case "f2":
+            return "Test Facts"
+        case "earth":
+            return "Earth Facts"
+        case "facts":
+            return "General Facts"
+        default:
+            return filename
+                .replacingOccurrences(of: "_", with: " ")
+                .replacingOccurrences(of: "-", with: " ")
+                .capitalized
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -525,6 +631,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
 // MARK: - Custom Table View Cell
 class FactTableViewCell: UITableViewCell {
     private let factLabel = UILabel()
+    private let factPackLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -540,21 +647,44 @@ class FactTableViewCell: UITableViewCell {
         factLabel.font = UIFont.systemFont(ofSize: 14)
         factLabel.textColor = UIColor.label
         
+        factPackLabel.numberOfLines = 1
+        factPackLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        factPackLabel.textColor = UIColor.systemBlue
+        factPackLabel.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.1)
+        factPackLabel.layer.cornerRadius = 4
+        factPackLabel.layer.masksToBounds = true
+        factPackLabel.textAlignment = .center
+        
         contentView.addSubview(factLabel)
+        contentView.addSubview(factPackLabel)
+        
         factLabel.translatesAutoresizingMaskIntoConstraints = false
+        factPackLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             factLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
             factLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             factLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            factLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12)
+            
+            factPackLabel.topAnchor.constraint(equalTo: factLabel.bottomAnchor, constant: 8),
+            factPackLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            factPackLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
+            factPackLabel.heightAnchor.constraint(equalToConstant: 20),
+            factPackLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 60)
         ])
     }
     
-    func configure(with text: String, isEmpty: Bool) {
+    func configure(with text: String, factPack: String? = nil, isEmpty: Bool) {
         factLabel.text = text
         factLabel.textColor = isEmpty ? UIColor.secondaryLabel : UIColor.label
         factLabel.font = isEmpty ? UIFont.italicSystemFont(ofSize: 14) : UIFont.systemFont(ofSize: 14)
         selectionStyle = isEmpty ? .none : .default
+        
+        if let factPack = factPack, !isEmpty {
+            factPackLabel.text = " \(factPack) "
+            factPackLabel.isHidden = false
+        } else {
+            factPackLabel.isHidden = true
+        }
     }
 }

@@ -21,6 +21,7 @@ class FirebaseManager: ObservableObject {
     @Published var currentUser: User?
     @Published var userProfile: UserProfile?
     @Published var facts: [Fact] = []
+    @Published var allFacts: [Fact] = [] // All facts from all packs for profile view
     
     private init() {
         setupAuthListener()
@@ -62,22 +63,100 @@ class FirebaseManager: ObservableObject {
                 return
             }
             
-            do {
-                let facts = try JSONDecoder().decode([Fact].self, from: data)
-                DispatchQueue.main.async {
-                    self?.facts = facts
-                    print("✅ Loaded \(facts.count) facts from fact pack: \(factPackName)")
+                            do {
+                    var facts = try JSONDecoder().decode([Fact].self, from: data)
                     
-                    // Debug: Print first few fact IDs to verify they're correct
-                    for (index, fact) in facts.prefix(5).enumerated() {
-                        print("📋 Fact \(index + 1): ID=\(fact.id), Text=\(fact.text.prefix(50))...")
+                    // Set the fact pack name for each fact
+                    for i in 0..<facts.count {
+                        facts[i].factPack = factPackName
                     }
                     
-                    completion(true)
-                }
-            } catch {
+                    DispatchQueue.main.async {
+                        self?.facts = facts
+                        print("✅ Loaded \(facts.count) facts from fact pack: \(factPackName)")
+                        
+                        // Debug: Print first few fact IDs to verify they're correct
+                        for (index, fact) in facts.prefix(5).enumerated() {
+                            print("📋 Fact \(index + 1): ID=\(fact.id), Text=\(fact.text.prefix(50))...")
+                        }
+                        
+                        completion(true)
+                    }
+                } catch {
                 print("❌ Failed to decode facts JSON from \(factPackName): \(error)")
                 completion(false)
+            }
+        }
+    }
+    
+    func loadAllFactsForProfile(completion: @escaping ([Fact]) -> Void) {
+        print("🔄 Loading all facts from all fact packs for profile...")
+        
+        // First, discover all fact packs
+        let factPackManager = FactPackManager.shared
+        factPackManager.discoverFactPacks { [weak self] factPacks in
+            let group = DispatchGroup()
+            var allFacts: [Fact] = []
+            var completedPacks = 0
+            let totalPacks = factPacks.count
+            
+            // Add timeout mechanism
+            let timeoutWorkItem = DispatchWorkItem {
+                print("⚠️ Timeout reached while loading facts for profile")
+                DispatchQueue.main.async {
+                    completion(allFacts) // Return what we have so far
+                }
+            }
+            
+            // Set 30-second timeout
+            DispatchQueue.main.asyncAfter(deadline: .now() + 30, execute: timeoutWorkItem)
+            
+            for factPack in factPacks {
+                group.enter()
+                
+                let storage = Storage.storage()
+                let storageRef = storage.reference(withPath: factPack)
+                
+                storageRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
+                    defer { 
+                        group.leave()
+                        completedPacks += 1
+                        print("📊 Progress: \(completedPacks)/\(totalPacks) fact packs loaded")
+                    }
+                    
+                    if let error = error {
+                        print("❌ Error loading \(factPack): \(error)")
+                        return
+                    }
+                    
+                    guard let data = data else {
+                        print("❌ No data for \(factPack)")
+                        return
+                    }
+                    
+                    do {
+                        var facts = try JSONDecoder().decode([Fact].self, from: data)
+                        
+                        // Set the fact pack name for each fact
+                        for i in 0..<facts.count {
+                            facts[i].factPack = factPack
+                        }
+                        
+                        allFacts.append(contentsOf: facts)
+                        print("✅ Loaded \(facts.count) facts from \(factPack)")
+                    } catch {
+                        print("❌ Error decoding \(factPack): \(error)")
+                    }
+                }
+            }
+            
+            group.notify(queue: .main) {
+                // Cancel timeout since we completed successfully
+                timeoutWorkItem.cancel()
+                
+                print("✅ Total facts loaded for profile: \(allFacts.count)")
+                self?.allFacts = allFacts
+                completion(allFacts)
             }
         }
     }

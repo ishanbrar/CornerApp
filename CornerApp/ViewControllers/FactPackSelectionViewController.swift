@@ -19,6 +19,32 @@ class FactPackSelectionViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .always
     }
     
+        override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        // Force dismiss any stuck alerts first
+        if let presentedVC = presentedViewController {
+            print("⚠️ Found stuck alert in viewDidAppear, dismissing")
+            presentedVC.dismiss(animated: false)
+        }
+
+        // Load fact packs if they haven't been loaded yet
+        if factPacks.isEmpty {
+            print("📱 Loading fact packs in viewDidAppear")
+            loadFactPacks()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Cancel any ongoing operations when leaving the view
+        print("📱 FactPackSelectionViewController will disappear")
+    }
+    
+    deinit {
+        print("🗑️ FactPackSelectionViewController deallocated")
+    }
+    
     private func setupUI() {
         view.backgroundColor = UIColor.systemBackground
         
@@ -28,6 +54,7 @@ class FactPackSelectionViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "FactPackCell")
         tableView.separatorStyle = .singleLine
+        tableView.rowHeight = 60
         
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -41,17 +68,132 @@ class FactPackSelectionViewController: UIViewController {
     }
     
     private func loadFactPacks() {
-        factPacks = factPackManager.getAvailableFactPacks()
+        // Check if view is loaded, but don't require window to be set yet
+        guard isViewLoaded else {
+            print("⚠️ View not loaded yet, will load fact packs in viewDidAppear")
+            return
+        }
+        
+        print("📱 Starting fact pack discovery...")
+        
+        // Show loading indicator only if view controller is properly in hierarchy
+        let loadingAlert = UIAlertController(title: "Loading Fact Packs", message: "Discovering available fact packs...", preferredStyle: .alert)
+        
+        // Check if we can safely present the alert
+        if isViewLoaded && view.window != nil {
+            present(loadingAlert, animated: true)
+        } else {
+            print("⚠️ View controller not in hierarchy, skipping alert presentation")
+            // Start discovery without showing alert
+            factPackManager.discoverFactPacks { [weak self] discoveredPacks in
+                DispatchQueue.main.async {
+                    self?.updateFactPacksList(discoveredPacks)
+                }
+            }
+            return
+        }
+        
+        // Add a timeout to force dismiss the alert if it gets stuck
+        let timeoutWorkItem = DispatchWorkItem { [weak self] in
+            guard let self = self else { return }
+            
+            DispatchQueue.main.async {
+                print("⚠️ Force dismissing loading alert due to timeout")
+                
+                // Try multiple ways to dismiss the alert
+                if let presentedVC = self.presentedViewController {
+                    presentedVC.dismiss(animated: false) {
+                        print("📱 Alert dismissed via presentedViewController")
+                    }
+                }
+                
+                // Also try to dismiss all presented view controllers
+                self.dismiss(animated: false) {
+                    print("📱 All presented view controllers dismissed")
+                }
+                
+                // Update fact packs list regardless
+                self.updateFactPacksList(["f1.json", "f2.json", "Earth.json"])
+            }
+        }
+        
+        // Set 5-second timeout as requested
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: timeoutWorkItem)
+        
+        factPackManager.discoverFactPacks { [weak self] discoveredPacks in
+            DispatchQueue.main.async {
+                print("📱 Fact pack discovery completed: \(discoveredPacks.count) packs found")
+                
+                // Cancel timeout since we completed successfully
+                timeoutWorkItem.cancel()
+                
+                // Check if we're still in the view hierarchy before dismissing
+                guard let self = self, self.isViewLoaded else {
+                    print("⚠️ View controller no longer loaded, skipping dismiss")
+                    return
+                }
+                
+                // Force dismiss the alert immediately
+                if self.presentedViewController == loadingAlert {
+                    loadingAlert.dismiss(animated: true) {
+                        print("📱 Loading alert dismissed successfully")
+                        self.updateFactPacksList(discoveredPacks)
+                    }
+                } else {
+                    print("⚠️ Loading alert not found, updating directly")
+                    self.updateFactPacksList(discoveredPacks)
+                }
+            }
+        }
+    }
+    
+    private func updateFactPacksList(_ discoveredPacks: [String]) {
+        print("📱 Updating fact packs list: \(discoveredPacks)")
+        factPacks = discoveredPacks
         tableView.reloadData()
+        
+        if discoveredPacks.isEmpty {
+            showNoFactPacksAlert()
+        } else {
+            print("✅ Fact packs loaded successfully: \(discoveredPacks)")
+        }
+    }
+    
+    private func showNoFactPacksAlert() {
+        // Check if we're still in the view hierarchy
+        guard isViewLoaded else {
+            print("⚠️ View controller not loaded, skipping alert")
+            return
+        }
+        
+        let alert = UIAlertController(
+            title: "No Fact Packs Found",
+            message: "No fact packs were found in Firebase Storage. Please ensure JSON files are uploaded.",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
     
     private func switchToFactPack(_ factPackName: String) {
+        // Check if we're still in the view hierarchy
+        guard isViewLoaded else {
+            print("⚠️ View controller not loaded, skipping fact pack switch")
+            return
+        }
+        
         // Show loading indicator
         let loadingAlert = UIAlertController(title: "Switching Fact Pack", message: "Loading \(factPackName)...", preferredStyle: .alert)
         present(loadingAlert, animated: true)
         
         factPackManager.switchToFactPack(factPackName) { [weak self] success in
             DispatchQueue.main.async {
+                // Check if we're still in the view hierarchy before dismissing
+                guard let self = self, self.isViewLoaded else {
+                    print("⚠️ View controller no longer loaded, skipping dismiss")
+                    return
+                }
+                
                 loadingAlert.dismiss(animated: true) {
                     if success {
                         // Show success message
@@ -61,9 +203,9 @@ class FactPackSelectionViewController: UIViewController {
                             preferredStyle: .alert
                         )
                         successAlert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
-                            self?.navigationController?.popViewController(animated: true)
+                            self.navigationController?.popViewController(animated: true)
                         })
-                        self?.present(successAlert, animated: true)
+                        self.present(successAlert, animated: true)
                     } else {
                         // Show error message
                         let errorAlert = UIAlertController(
@@ -72,7 +214,7 @@ class FactPackSelectionViewController: UIViewController {
                             preferredStyle: .alert
                         )
                         errorAlert.addAction(UIAlertAction(title: "OK", style: .default))
-                        self?.present(errorAlert, animated: true)
+                        self.present(errorAlert, animated: true)
                     }
                 }
             }
@@ -89,16 +231,43 @@ extension FactPackSelectionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FactPackCell", for: indexPath)
         let factPackName = factPacks[indexPath.row]
-        let factPackInfo = factPackManager.getFactPackInfo(factPackName)
         
-        cell.textLabel?.text = factPackInfo.name
-        cell.detailTextLabel?.text = factPackInfo.description
+        // Get fact pack info with count
+        factPackManager.getFactPackInfoWithCount(factPackName) { factPackInfo in
+            DispatchQueue.main.async {
+                // Configure cell with subtitle style
+                cell.textLabel?.text = factPackInfo.name
+                cell.detailTextLabel?.text = "\(factPackInfo.description) • \(factPackInfo.factCount) facts"
+                cell.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+                cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+                cell.detailTextLabel?.textColor = UIColor.secondaryLabel
+                
+                // Show checkmark for current fact pack
+                if factPackName == self.factPackManager.getCurrentFactPackName() {
+                    cell.accessoryType = .checkmark
+                    cell.textLabel?.textColor = UIColor.systemBlue
+                } else {
+                    cell.accessoryType = .none
+                    cell.textLabel?.textColor = UIColor.label
+                }
+            }
+        }
+        
+        // Set initial info while loading
+        let initialInfo = factPackManager.getFactPackInfo(factPackName)
+        cell.textLabel?.text = initialInfo.name
+        cell.detailTextLabel?.text = "\(initialInfo.description) • Loading..."
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        cell.detailTextLabel?.textColor = UIColor.secondaryLabel
         
         // Show checkmark for current fact pack
         if factPackName == factPackManager.getCurrentFactPackName() {
             cell.accessoryType = .checkmark
+            cell.textLabel?.textColor = UIColor.systemBlue
         } else {
             cell.accessoryType = .none
+            cell.textLabel?.textColor = UIColor.label
         }
         
         return cell
