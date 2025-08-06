@@ -48,7 +48,7 @@ class FactPackSelectionViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = UIColor.systemBackground
         
-        // Setup table view
+        // Setup table view with dark mode support
         tableView.backgroundColor = UIColor.systemBackground
         tableView.delegate = self
         tableView.dataSource = self
@@ -76,73 +76,12 @@ class FactPackSelectionViewController: UIViewController {
         
         print("📱 Starting fact pack discovery...")
         
-        // Show loading indicator only if view controller is properly in hierarchy
-        let loadingAlert = UIAlertController(title: "Loading Fact Packs", message: "Discovering available fact packs...", preferredStyle: .alert)
-        
-        // Check if we can safely present the alert
-        if isViewLoaded && view.window != nil {
-            present(loadingAlert, animated: true)
-        } else {
-            print("⚠️ View controller not in hierarchy, skipping alert presentation")
-            // Start discovery without showing alert
-            factPackManager.discoverFactPacks { [weak self] discoveredPacks in
-                DispatchQueue.main.async {
-                    self?.updateFactPacksList(discoveredPacks)
-                }
-            }
-            return
-        }
-        
-        // Add a timeout to force dismiss the alert if it gets stuck
-        let timeoutWorkItem = DispatchWorkItem { [weak self] in
-            guard let self = self else { return }
-            
-            DispatchQueue.main.async {
-                print("⚠️ Force dismissing loading alert due to timeout")
-                
-                // Try multiple ways to dismiss the alert
-                if let presentedVC = self.presentedViewController {
-                    presentedVC.dismiss(animated: false) {
-                        print("📱 Alert dismissed via presentedViewController")
-                    }
-                }
-                
-                // Also try to dismiss all presented view controllers
-                self.dismiss(animated: false) {
-                    print("📱 All presented view controllers dismissed")
-                }
-                
-                // Update fact packs list regardless
-                self.updateFactPacksList(["f1.json", "f2.json", "Earth.json"])
-            }
-        }
-        
-        // Set 5-second timeout as requested
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: timeoutWorkItem)
-        
         factPackManager.discoverFactPacks { [weak self] discoveredPacks in
             DispatchQueue.main.async {
                 print("📱 Fact pack discovery completed: \(discoveredPacks.count) packs found")
                 
-                // Cancel timeout since we completed successfully
-                timeoutWorkItem.cancel()
-                
-                // Check if we're still in the view hierarchy before dismissing
-                guard let self = self, self.isViewLoaded else {
-                    print("⚠️ View controller no longer loaded, skipping dismiss")
-                    return
-                }
-                
-                // Force dismiss the alert immediately
-                if self.presentedViewController == loadingAlert {
-                    loadingAlert.dismiss(animated: true) {
-                        print("📱 Loading alert dismissed successfully")
-                        self.updateFactPacksList(discoveredPacks)
-                    }
-                } else {
-                    print("⚠️ Loading alert not found, updating directly")
-                    self.updateFactPacksList(discoveredPacks)
-                }
+                guard let self = self else { return }
+                self.updateFactPacksList(discoveredPacks)
             }
         }
     }
@@ -182,40 +121,21 @@ class FactPackSelectionViewController: UIViewController {
             return
         }
         
-        // Show loading indicator
-        let loadingAlert = UIAlertController(title: "Switching Fact Pack", message: "Loading \(factPackName)...", preferredStyle: .alert)
-        present(loadingAlert, animated: true)
-        
         factPackManager.switchToFactPack(factPackName) { [weak self] success in
             DispatchQueue.main.async {
-                // Check if we're still in the view hierarchy before dismissing
-                guard let self = self, self.isViewLoaded else {
-                    print("⚠️ View controller no longer loaded, skipping dismiss")
-                    return
-                }
+                guard let self = self else { return }
                 
-                loadingAlert.dismiss(animated: true) {
-                    if success {
-                        // Show success message
-                        let successAlert = UIAlertController(
-                            title: "Fact Pack Switched",
-                            message: "Successfully switched to \(factPackName)",
-                            preferredStyle: .alert
-                        )
-                        successAlert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
-                            self.navigationController?.popViewController(animated: true)
-                        })
-                        self.present(successAlert, animated: true)
-                    } else {
-                        // Show error message
-                        let errorAlert = UIAlertController(
-                            title: "Error",
-                            message: "Failed to switch to \(factPackName). Please try again.",
-                            preferredStyle: .alert
-                        )
-                        errorAlert.addAction(UIAlertAction(title: "OK", style: .default))
-                        self.present(errorAlert, animated: true)
-                    }
+                if success {
+                    self.navigationController?.popViewController(animated: true)
+                } else {
+                    // Show error message
+                    let errorAlert = UIAlertController(
+                        title: "Error",
+                        message: "Failed to switch to \(factPackName). Please try again.",
+                        preferredStyle: .alert
+                    )
+                    errorAlert.addAction(UIAlertAction(title: "OK", style: .default))
+                    self.present(errorAlert, animated: true)
                 }
             }
         }

@@ -16,12 +16,13 @@ class ProfileViewController: UIViewController {
     private var contentView: UIView!
     private var emailLabel: UILabel!
     private var cornerTapsLabel: UILabel!
-    private var likedFactsTableView: UITableView!
-    private var dislikedFactsTableView: UITableView!
+    private var activeFactPackLabel: UILabel! // New label for active fact pack
+    private var selectFactPackButton: UIButton! // New button to select fact pack
+    private var appearanceButton: UIButton! // New button to toggle appearance
+
     private var authButton: UIButton! // Changed from signOutButton to authButton
-    private var factPackButton: UIButton! // New button for fact pack selection
-    private var likedFactsHeaderLabel: UILabel!
-    private var dislikedFactsHeaderLabel: UILabel!
+    private var likedFactsButton: UIButton! // Changed from label to button
+    private var dislikedFactsButton: UIButton! // Changed from label to button
     private var notSignedInLabel: UILabel! // New label for when user is not signed in
     private var searchBar: UISearchBar!  // ← NEW
     private let firebaseManager = FirebaseManager.shared
@@ -39,6 +40,7 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateUIForAuthState() // Update UI based on auth state when view appears
+        updateActiveFactPackLabel() // Update active fact pack label
     }
     
     private func setupUI() {
@@ -56,18 +58,19 @@ class ProfileViewController: UIViewController {
         contentView = UIView()
         emailLabel = UILabel()
         cornerTapsLabel = UILabel()
-        likedFactsHeaderLabel = UILabel()
-        dislikedFactsHeaderLabel = UILabel()
-        likedFactsTableView = UITableView()
-        dislikedFactsTableView = UITableView()
+        activeFactPackLabel = UILabel() // New active fact pack label
+        selectFactPackButton = UIButton(type: .system) // New select fact pack button
+        appearanceButton = UIButton(type: .system) // New appearance toggle button
+        likedFactsButton = UIButton(type: .system) // Changed from label to button
+        dislikedFactsButton = UIButton(type: .system) // Changed from label to button
+
         authButton = UIButton(type: .system) // Changed from signOutButton
-        factPackButton = UIButton(type: .system) // New fact pack button
         notSignedInLabel = UILabel() // New label
         
         //search bar
         searchBar = UISearchBar()  // ← NEW
 
-        // Search Bar setup
+        // Search Bar setup with dark mode support
         searchBar.placeholder = "Search by emoji(s)... 🔍 (e.g., 🇩🇪🎾)"  // ← UPDATED
         searchBar.delegate = self  // ← NEW
         searchBar.searchBarStyle = .minimal  // ← NEW
@@ -83,6 +86,34 @@ class ProfileViewController: UIViewController {
         cornerTapsLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         cornerTapsLabel.textColor = UIColor.secondaryLabel
         
+        // Active Fact Pack Label
+        activeFactPackLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        activeFactPackLabel.textColor = UIColor.systemBlue
+        activeFactPackLabel.textAlignment = .left
+        activeFactPackLabel.numberOfLines = 1
+        
+        // Enhanced Select Fact Pack Button
+        selectFactPackButton.setTitle("📚 Change Fact Pack", for: .normal)
+        selectFactPackButton.backgroundColor = UIColor.systemBlue
+        selectFactPackButton.setTitleColor(.white, for: .normal)
+        selectFactPackButton.layer.cornerRadius = 12
+        selectFactPackButton.layer.shadowColor = UIColor.black.cgColor
+        selectFactPackButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        selectFactPackButton.layer.shadowRadius = 4
+        selectFactPackButton.layer.shadowOpacity = 0.2
+        selectFactPackButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        selectFactPackButton.addTarget(self, action: #selector(selectFactPackButtonTapped), for: .touchUpInside)
+        
+        // Enhanced Appearance Toggle Button
+        updateAppearanceButton()
+        appearanceButton.layer.cornerRadius = 12
+        appearanceButton.layer.shadowColor = UIColor.black.cgColor
+        appearanceButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        appearanceButton.layer.shadowRadius = 4
+        appearanceButton.layer.shadowOpacity = 0.2
+        appearanceButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        appearanceButton.addTarget(self, action: #selector(appearanceButtonTapped), for: .touchUpInside)
+        
         // Not Signed In Label
         notSignedInLabel.text = "Please sign in to view your profile data"
         notSignedInLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
@@ -90,60 +121,60 @@ class ProfileViewController: UIViewController {
         notSignedInLabel.textAlignment = .center
         notSignedInLabel.numberOfLines = 0
         
-        // Header Labels
-        likedFactsHeaderLabel.text = "Liked Facts"
-        likedFactsHeaderLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        likedFactsHeaderLabel.textColor = UIColor.systemRed
+        // Liked Facts Button
+        likedFactsButton.setTitle("❤️ Liked Facts", for: .normal)
+        likedFactsButton.backgroundColor = UIColor.systemRed
+        likedFactsButton.setTitleColor(.white, for: .normal)
+        likedFactsButton.layer.cornerRadius = 12
+        likedFactsButton.layer.shadowColor = UIColor.black.cgColor
+        likedFactsButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        likedFactsButton.layer.shadowRadius = 4
+        likedFactsButton.layer.shadowOpacity = 0.2
+        likedFactsButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        likedFactsButton.addTarget(self, action: #selector(likedFactsButtonTapped), for: .touchUpInside)
         
-        dislikedFactsHeaderLabel.text = "Disliked Facts"
-        dislikedFactsHeaderLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        dislikedFactsHeaderLabel.textColor = UIColor.systemGray
+        // Disliked Facts Button
+        dislikedFactsButton.setTitle("👎 Disliked Facts", for: .normal)
+        dislikedFactsButton.backgroundColor = UIColor.systemGray
+        dislikedFactsButton.setTitleColor(.white, for: .normal)
+        dislikedFactsButton.layer.cornerRadius = 12
+        dislikedFactsButton.layer.shadowColor = UIColor.black.cgColor
+        dislikedFactsButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        dislikedFactsButton.layer.shadowRadius = 4
+        dislikedFactsButton.layer.shadowOpacity = 0.2
+        dislikedFactsButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        dislikedFactsButton.addTarget(self, action: #selector(dislikedFactsButtonTapped), for: .touchUpInside)
         
-        // Table Views
-        setupTableView(likedFactsTableView)
-        setupTableView(dislikedFactsTableView)
+
         
-        // Auth Button (will be configured based on auth state)
+        // Auth Button (will be configured based on auth state) with dark mode support
         authButton.layer.cornerRadius = 8
         authButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         authButton.addTarget(self, action: #selector(authButtonTapped), for: .touchUpInside)
         
-        // Fact Pack Button
-        factPackButton.setTitle("Change Fact Pack", for: .normal)
-        factPackButton.backgroundColor = UIColor.systemBlue
-        factPackButton.setTitleColor(.white, for: .normal)
-        factPackButton.layer.cornerRadius = 8
-        factPackButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        factPackButton.addTarget(self, action: #selector(factPackButtonTapped), for: .touchUpInside)
+        // Fact Pack Button with dark mode support - removed from bottom, now integrated with appearance button
         
         // Add to view hierarchy
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         
+        // Add all subviews to contentView
+        contentView.addSubview(searchBar)  // Search bar at the top
         contentView.addSubview(emailLabel)
         contentView.addSubview(cornerTapsLabel)
-        contentView.addSubview(searchBar)  // ← ADDED THIS LINE
+        contentView.addSubview(activeFactPackLabel)
+        contentView.addSubview(selectFactPackButton)
+        contentView.addSubview(appearanceButton)
         contentView.addSubview(notSignedInLabel)
-        contentView.addSubview(likedFactsHeaderLabel)
-        contentView.addSubview(likedFactsTableView)
-        contentView.addSubview(dislikedFactsHeaderLabel)
-        contentView.addSubview(dislikedFactsTableView)
-        contentView.addSubview(factPackButton)
+        contentView.addSubview(likedFactsButton)
+        contentView.addSubview(dislikedFactsButton)
         contentView.addSubview(authButton)
         
+        // Setup constraints after all views are added to hierarchy
         setupConstraints()
     }
     
-    private func setupTableView(_ tableView: UITableView) {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(FactTableViewCell.self, forCellReuseIdentifier: "FactCell")
-        tableView.backgroundColor = UIColor.systemGray6
-        tableView.layer.cornerRadius = 8
-        tableView.separatorStyle = .singleLine
-        tableView.isScrollEnabled = true // ✅ Must be true for independent scrolling
-        tableView.showsVerticalScrollIndicator = true
-    }
+
 
     
     private func setupConstraints() {
@@ -152,12 +183,12 @@ class ProfileViewController: UIViewController {
         emailLabel.translatesAutoresizingMaskIntoConstraints = false
         cornerTapsLabel.translatesAutoresizingMaskIntoConstraints = false
         notSignedInLabel.translatesAutoresizingMaskIntoConstraints = false
-        likedFactsHeaderLabel.translatesAutoresizingMaskIntoConstraints = false
-        likedFactsTableView.translatesAutoresizingMaskIntoConstraints = false
-        dislikedFactsHeaderLabel.translatesAutoresizingMaskIntoConstraints = false
-        dislikedFactsTableView.translatesAutoresizingMaskIntoConstraints = false
+        activeFactPackLabel.translatesAutoresizingMaskIntoConstraints = false
+        selectFactPackButton.translatesAutoresizingMaskIntoConstraints = false
+        appearanceButton.translatesAutoresizingMaskIntoConstraints = false
+        likedFactsButton.translatesAutoresizingMaskIntoConstraints = false
+        dislikedFactsButton.translatesAutoresizingMaskIntoConstraints = false
         authButton.translatesAutoresizingMaskIntoConstraints = false
-        factPackButton.translatesAutoresizingMaskIntoConstraints = false
         searchBar.translatesAutoresizingMaskIntoConstraints = false  // ← NEW
 
         NSLayoutConstraint.activate([
@@ -174,8 +205,14 @@ class ProfileViewController: UIViewController {
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
+            // Search Bar at the top
+            searchBar.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            searchBar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            searchBar.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            searchBar.heightAnchor.constraint(equalToConstant: 44),
+            
             // Email Label
-            emailLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            emailLabel.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 20),
             emailLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             emailLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
@@ -184,49 +221,42 @@ class ProfileViewController: UIViewController {
             cornerTapsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             cornerTapsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
-            // Search Bar
-            searchBar.topAnchor.constraint(equalTo: cornerTapsLabel.bottomAnchor, constant: 20),
-            searchBar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            searchBar.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            searchBar.heightAnchor.constraint(equalToConstant: 44),
+            // Active Fact Pack Label
+            activeFactPackLabel.topAnchor.constraint(equalTo: cornerTapsLabel.bottomAnchor, constant: 10),
+            activeFactPackLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            activeFactPackLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            
+            // Select Fact Pack Button
+            selectFactPackButton.topAnchor.constraint(equalTo: activeFactPackLabel.bottomAnchor, constant: 30),
+            selectFactPackButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            selectFactPackButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            selectFactPackButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            // Appearance Button
+            appearanceButton.topAnchor.constraint(equalTo: selectFactPackButton.bottomAnchor, constant: 20),
+            appearanceButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            appearanceButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            appearanceButton.heightAnchor.constraint(equalToConstant: 50),
             
             // Not Signed In Label
             notSignedInLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 60),
             notSignedInLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             notSignedInLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
-            // Liked Facts Header
-            likedFactsHeaderLabel.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 30),
-            likedFactsHeaderLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            likedFactsHeaderLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            // Liked Facts Button
+            likedFactsButton.topAnchor.constraint(equalTo: appearanceButton.bottomAnchor, constant: 30),
+            likedFactsButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            likedFactsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            likedFactsButton.heightAnchor.constraint(equalToConstant: 50),
             
-            // Liked Facts Table View
-            likedFactsTableView.topAnchor.constraint(equalTo: likedFactsHeaderLabel.bottomAnchor, constant: 10),
-            likedFactsTableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            likedFactsTableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            likedFactsTableView.heightAnchor.constraint(equalToConstant: 200),
-            // Currently fixed heights
-          
-            
-            // Disliked Facts Header
-            dislikedFactsHeaderLabel.topAnchor.constraint(equalTo: likedFactsTableView.bottomAnchor, constant: 30),
-            dislikedFactsHeaderLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            dislikedFactsHeaderLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            
-            // Disliked Facts Table View
-            dislikedFactsTableView.topAnchor.constraint(equalTo: dislikedFactsHeaderLabel.bottomAnchor, constant: 10),
-            dislikedFactsTableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            dislikedFactsTableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            dislikedFactsTableView.heightAnchor.constraint(equalToConstant: 200),
-
-            // Fact Pack Button
-            factPackButton.topAnchor.constraint(equalTo: dislikedFactsTableView.bottomAnchor, constant: 20),
-            factPackButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            factPackButton.widthAnchor.constraint(equalToConstant: 200),
-            factPackButton.heightAnchor.constraint(equalToConstant: 44),
+            // Disliked Facts Button
+            dislikedFactsButton.topAnchor.constraint(equalTo: likedFactsButton.bottomAnchor, constant: 20),
+            dislikedFactsButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            dislikedFactsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            dislikedFactsButton.heightAnchor.constraint(equalToConstant: 50),
             
             // Auth Button
-            authButton.topAnchor.constraint(equalTo: factPackButton.bottomAnchor, constant: 20),
+            authButton.topAnchor.constraint(equalTo: dislikedFactsButton.bottomAnchor, constant: 40),
             authButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             authButton.widthAnchor.constraint(equalToConstant: 200),
             authButton.heightAnchor.constraint(equalToConstant: 44),
@@ -262,24 +292,26 @@ class ProfileViewController: UIViewController {
     }
     
     private func showSignedInContent() {
+        searchBar.isHidden = false
         emailLabel.isHidden = false
         cornerTapsLabel.isHidden = false
-        searchBar.isHidden = false
-        likedFactsHeaderLabel.isHidden = false
-        likedFactsTableView.isHidden = false
-        dislikedFactsHeaderLabel.isHidden = false
-        dislikedFactsTableView.isHidden = false
+        activeFactPackLabel.isHidden = false
+        selectFactPackButton.isHidden = false
+        appearanceButton.isHidden = false
+        likedFactsButton.isHidden = false
+        dislikedFactsButton.isHidden = false
         notSignedInLabel.isHidden = true
     }
     
     private func hideSignedInContent() {
+        searchBar.isHidden = true
         emailLabel.isHidden = true
         cornerTapsLabel.isHidden = true
-        searchBar.isHidden = true
-        likedFactsHeaderLabel.isHidden = true
-        likedFactsTableView.isHidden = true
-        dislikedFactsHeaderLabel.isHidden = true
-        dislikedFactsTableView.isHidden = true
+        activeFactPackLabel.isHidden = true
+        selectFactPackButton.isHidden = true
+        appearanceButton.isHidden = true
+        likedFactsButton.isHidden = true
+        dislikedFactsButton.isHidden = true
         notSignedInLabel.isHidden = false
     }
     
@@ -296,75 +328,31 @@ class ProfileViewController: UIViewController {
         
         isLoadingProfileData = true
         
-        emailLabel.text = "👤 \(profile.username) (\(profile.email))"
-        cornerTapsLabel.text = "🎯 Corners: \(profile.cornerButtonTaps)"
+                        emailLabel.text = "👤 \(profile.username) (\(profile.email))"
+                cornerTapsLabel.text = "🎯 Corners: \(profile.cornerButtonTaps)"
+                
+                // Update active fact pack label
+                self.updateActiveFactPackLabel()
         
-        // Show loading indicator for profile data
-        let loadingAlert = UIAlertController(title: "Loading Profile", message: "Loading your liked and disliked facts from all fact packs...", preferredStyle: .alert)
-        
-        // Add a progress indicator
-        let progressView = UIProgressView(progressViewStyle: .default)
-        progressView.progress = 0.0
-        progressView.translatesAutoresizingMaskIntoConstraints = false
-        
-        loadingAlert.view.addSubview(progressView)
-        NSLayoutConstraint.activate([
-            progressView.topAnchor.constraint(equalTo: loadingAlert.view.topAnchor, constant: 60),
-            progressView.leadingAnchor.constraint(equalTo: loadingAlert.view.leadingAnchor, constant: 20),
-            progressView.trailingAnchor.constraint(equalTo: loadingAlert.view.trailingAnchor, constant: -20),
-            progressView.heightAnchor.constraint(equalToConstant: 2)
-        ])
-        
-        present(loadingAlert, animated: true)
-        
-        // Add a timeout for the loading operation
-        let timeoutWorkItem = DispatchWorkItem { [weak self] in
-            guard let self = self else { return }
-            
-            DispatchQueue.main.async {
-                self.isLoadingProfileData = false
-                loadingAlert.dismiss(animated: true) {
-                    // Show timeout message
-                    let timeoutAlert = UIAlertController(
-                        title: "Loading Timeout",
-                        message: "Loading took too long. Please try again or check your internet connection.",
-                        preferredStyle: .alert
-                    )
-                    timeoutAlert.addAction(UIAlertAction(title: "OK", style: .default))
-                    self.present(timeoutAlert, animated: true)
-                }
-            }
-        }
-        
-        // Set 45-second timeout
-        DispatchQueue.main.asyncAfter(deadline: .now() + 45, execute: timeoutWorkItem)
+
         
         // Load all facts from all fact packs for profile view
         firebaseManager.loadAllFactsForProfile { [weak self] allFacts in
             guard let self = self else { return }
             
-            // Cancel timeout since we completed
-            timeoutWorkItem.cancel()
-            
             DispatchQueue.main.async {
                 self.isLoadingProfileData = false
                 
-                // Dismiss loading indicator
-                loadingAlert.dismiss(animated: true) {
-                    // Load liked and disliked facts from all fact packs
-                    self.likedFacts = allFacts.filter { profile.likedFacts.contains($0.id) }
-                    self.dislikedFacts = allFacts.filter { profile.dislikedFacts.contains($0.id) }
-                    
-                    // Update header labels with counts
-                    self.likedFactsHeaderLabel.text = "❤️ Liked Facts (\(self.likedFacts.count))"
-                    self.dislikedFactsHeaderLabel.text = "👎 Disliked Facts (\(self.dislikedFacts.count))"
-
-                    self.likedFactsTableView.reloadData()
-                    self.dislikedFactsTableView.reloadData()
-                    
-                    // Log success
-                    print("✅ Profile loaded successfully with \(allFacts.count) total facts")
-                }
+                // Load liked and disliked facts from all fact packs
+                self.likedFacts = allFacts.filter { profile.likedFacts.contains($0.id) }
+                self.dislikedFacts = allFacts.filter { profile.dislikedFacts.contains($0.id) }
+                
+                // Update button titles with counts
+                self.likedFactsButton.setTitle("❤️ Liked Facts (\(self.likedFacts.count))", for: .normal)
+                self.dislikedFactsButton.setTitle("👎 Disliked Facts (\(self.dislikedFacts.count))", for: .normal)
+                
+                // Log success
+                print("✅ Profile loaded successfully with \(allFacts.count) total facts")
             }
         }
     }
@@ -476,9 +464,38 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    @objc private func factPackButtonTapped(_ sender: UIButton) {
-        let factPackVC = FactPackSelectionViewController()
-        navigationController?.pushViewController(factPackVC, animated: true)
+
+    
+    @objc private func likedFactsButtonTapped() {
+        let likedFactsVC = LikedFactsViewController()
+        navigationController?.pushViewController(likedFactsVC, animated: true)
+    }
+    
+    @objc private func dislikedFactsButtonTapped() {
+        let dislikedFactsVC = DislikedFactsViewController()
+        navigationController?.pushViewController(dislikedFactsVC, animated: true)
+    }
+    
+    @objc private func selectFactPackButtonTapped() {
+        let factPackSelectionVC = FactPackSelectionViewController()
+        navigationController?.pushViewController(factPackSelectionVC, animated: true)
+    }
+    
+    @objc private func appearanceButtonTapped() {
+        let currentStyle = traitCollection.userInterfaceStyle
+        let newStyle: UIUserInterfaceStyle = currentStyle == .dark ? .light : .dark
+        
+        // Update the window's user interface style
+        if let window = view.window {
+            window.overrideUserInterfaceStyle = newStyle
+        }
+        
+        // Update button appearance
+        updateAppearanceButton()
+        
+        // Show feedback
+        let feedback = UINotificationFeedbackGenerator()
+        feedback.notificationOccurred(.success)
     }
     
     private func showSignOutConfirmation() {
@@ -516,6 +533,37 @@ class ProfileViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
+    
+    private func updateActiveFactPackLabel() {
+        let factPackManager = FactPackManager.shared
+        let currentFactPack = factPackManager.getCurrentFactPackName()
+        let packInfo = factPackManager.getFactPackInfo(currentFactPack)
+        activeFactPackLabel.text = "📚 Active Fact Pack: \(packInfo.name)"
+    }
+    
+    private func updateAppearanceButton() {
+        let currentStyle = traitCollection.userInterfaceStyle
+        let isDark = currentStyle == .dark
+        
+        if isDark {
+            appearanceButton.setTitle("☀️ Light Mode", for: .normal)
+            appearanceButton.backgroundColor = UIColor.systemYellow
+            appearanceButton.setTitleColor(.black, for: .normal)
+        } else {
+            appearanceButton.setTitle("🌙 Dark Mode", for: .normal)
+            appearanceButton.backgroundColor = UIColor.systemIndigo
+            appearanceButton.setTitleColor(.white, for: .normal)
+        }
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        // Update appearance button when system appearance changes
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            updateAppearanceButton()
+        }
+    }
 }
 
 // MARK: - UISearchBarDelegate
@@ -533,100 +581,7 @@ extension ProfileViewController: UISearchBarDelegate {
     }
 }
 
-// MARK: - TableView DataSource and Delegate
-extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == likedFactsTableView {
-            return likedFacts.isEmpty ? 1 : likedFacts.count
-        } else {
-            return dislikedFacts.isEmpty ? 1 : dislikedFacts.count
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Check which table view was tapped
-        if tableView == likedFactsTableView {
-            // Don't allow selection if no liked facts
-            if likedFacts.isEmpty { return }
-            let fact = likedFacts[indexPath.row]
-            delegate?.didSelectFact(fact)
-            dismiss(animated: true)
-        } else if tableView == dislikedFactsTableView {
-            // Don't allow selection if no disliked facts
-            if dislikedFacts.isEmpty { return }
-            let fact = dislikedFacts[indexPath.row]
-            delegate?.didSelectFact(fact)
-            dismiss(animated: true)
-        }
-    }
 
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FactCell", for: indexPath) as! FactTableViewCell
-        
-        if tableView == likedFactsTableView {
-            if likedFacts.isEmpty {
-                cell.configure(with: "No liked facts yet. Start exploring and like some facts!", isEmpty: true)
-            } else {
-                let fact = likedFacts[indexPath.row]
-                let factPackName = getFactPackName(for: fact)
-                cell.configure(with: fact.text, factPack: factPackName, isEmpty: false)
-            }
-        } else {
-            if dislikedFacts.isEmpty {
-                cell.configure(with: "No disliked facts yet.", isEmpty: true)
-            } else {
-                let fact = dislikedFacts[indexPath.row]
-                let factPackName = getFactPackName(for: fact)
-                cell.configure(with: fact.text, factPack: factPackName, isEmpty: false)
-            }
-        }
-        
-        return cell
-    }
-    
-    private func getFactPackName(for fact: Fact) -> String {
-        // Use the factPack field if available
-        if let factPack = fact.factPack {
-            // Convert filename to readable name
-            let packName = factPack.replacingOccurrences(of: ".json", with: "")
-            return formatFactPackName(packName)
-        }
-        
-        // Fallback to emojis or category
-        if let emojis = fact.emojis, !emojis.isEmpty {
-            return emojis.joined(separator: " ")
-        } else {
-            return fact.category ?? "Unknown Pack"
-        }
-    }
-    
-    private func formatFactPackName(_ filename: String) -> String {
-        switch filename.lowercased() {
-        case "f1":
-            return "Main Facts"
-        case "f2":
-            return "Test Facts"
-        case "earth":
-            return "Earth Facts"
-        case "facts":
-            return "General Facts"
-        default:
-            return filename
-                .replacingOccurrences(of: "_", with: " ")
-                .replacingOccurrences(of: "-", with: " ")
-                .capitalized
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-    }
-}
 
 // MARK: - Custom Table View Cell
 class FactTableViewCell: UITableViewCell {

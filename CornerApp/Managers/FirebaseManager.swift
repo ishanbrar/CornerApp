@@ -318,5 +318,16 @@ class FirebaseManager: ObservableObject {
             }
             return fact
         }
+        
+        // MARK: - Like/Dislike Status Methods
+        func isFactLiked(_ factId: String) -> Bool {
+            guard let profile = userProfile else { return false }
+            return profile.likedFacts.contains(factId)
+        }
+        
+        func isFactDisliked(_ factId: String) -> Bool {
+            guard let profile = userProfile else { return false }
+            return profile.dislikedFacts.contains(factId)
+        }
     }
 
