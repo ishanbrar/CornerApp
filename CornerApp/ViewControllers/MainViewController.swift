@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
         setupUI()
         loadRandomFact()
         setupNotificationObserver()
+        setupSwipeGesture()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -316,6 +317,21 @@ class MainViewController: UIViewController {
     }
 
 
+    // MARK: - Swipe Gesture
+    private func setupSwipeGesture() {
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeToProfile))
+        swipeGesture.direction = .left
+        view.addGestureRecognizer(swipeGesture)
+    }
+    
+    @objc private func handleSwipeToProfile() {
+        // Same functionality as profile button tap
+        let profileVC = ProfileViewController()
+        profileVC.delegate = self
+        let navController = UINavigationController(rootViewController: profileVC)
+        present(navController, animated: true)
+    }
+    
     // MARK: - Notification Observer
     private func setupNotificationObserver() {
         NotificationCenter.default.addObserver(

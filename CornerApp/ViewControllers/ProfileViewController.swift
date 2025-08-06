@@ -347,9 +347,9 @@ class ProfileViewController: UIViewController {
                 self.likedFacts = allFacts.filter { profile.likedFacts.contains($0.id) }
                 self.dislikedFacts = allFacts.filter { profile.dislikedFacts.contains($0.id) }
                 
-                // Update button titles with counts
-                self.likedFactsButton.setTitle("❤️ Liked Facts (\(self.likedFacts.count))", for: .normal)
-                self.dislikedFactsButton.setTitle("👎 Disliked Facts (\(self.dislikedFacts.count))", for: .normal)
+                // Update button titles (without counts)
+                self.likedFactsButton.setTitle("❤️ Liked Facts", for: .normal)
+                self.dislikedFactsButton.setTitle("👎 Disliked Facts", for: .normal)
                 
                 // Log success
                 print("✅ Profile loaded successfully with \(allFacts.count) total facts")

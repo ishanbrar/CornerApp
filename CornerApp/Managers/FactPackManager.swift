@@ -196,25 +196,9 @@ class FactPackManager: ObservableObject {
     }
     
     private func formatFactPackName(_ filename: String) -> String {
-        // Handle common naming patterns
-        switch filename.lowercased() {
-        case "f1":
-            return "Main Facts"
-        case "f2":
-            return "Test Facts"
-        case "earth":
-            return "Earth Facts"
-        case "facts":
-            return "General Facts"
-        default:
-            // Convert filename to title case and replace underscores/dashes with spaces
-            let formatted = filename
-                .replacingOccurrences(of: "_", with: " ")
-                .replacingOccurrences(of: "-", with: " ")
-                .capitalized
-            
-            return formatted
-        }
+        // Simply replace underscores with spaces and keep original case
+        return filename
+            .replacingOccurrences(of: "_", with: " ")
     }
     
     private func generateDescription(for filename: String) -> String {
