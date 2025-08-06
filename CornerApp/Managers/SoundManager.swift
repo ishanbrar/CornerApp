@@ -20,6 +20,15 @@ class SoundManager {
         playSystemSound(.tap)
     }
     
+    func playInappropriateContentSound() {
+        // Play custom MP3 sound for inappropriate content
+        playCustomSound(named: "inappropriate_content", fileExtension: "mp3")
+        
+        // Add haptic feedback
+        let feedback = UINotificationFeedbackGenerator()
+        feedback.notificationOccurred(.warning)
+    }
+    
     // MARK: - System Sounds
     private func playSystemSound(_ soundType: SystemSoundType) {
         switch soundType {

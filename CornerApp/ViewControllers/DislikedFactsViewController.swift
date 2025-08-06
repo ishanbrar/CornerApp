@@ -184,6 +184,21 @@ extension DislikedFactsViewController: UITableViewDelegate {
         }
         return nil
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let selectedFact = filteredDislikedFacts[indexPath.row]
+        
+        // Dismiss the entire profile navigation stack to go back to main view
+        navigationController?.dismiss(animated: true) {
+            // Post notification to show the selected fact after dismissal
+            NotificationCenter.default.post(
+                name: NSNotification.Name("ShowSelectedFact"),
+                object: selectedFact
+            )
+        }
+    }
 }
 
 // MARK: - DislikedFactTableViewCell

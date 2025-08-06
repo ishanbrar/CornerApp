@@ -23,6 +23,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         loadRandomFact()
+        setupNotificationObserver()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -315,6 +316,29 @@ class MainViewController: UIViewController {
     }
 
 
+    // MARK: - Notification Observer
+    private func setupNotificationObserver() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleShowSelectedFact),
+            name: NSNotification.Name("ShowSelectedFact"),
+            object: nil
+        )
+    }
+    
+    @objc private func handleShowSelectedFact(_ notification: Notification) {
+        guard let fact = notification.object as? Fact else { return }
+        
+        // Set the selected fact as current
+        currentFact = fact
+        factLabel.text = fact.text
+        emojiLabel.text = fact.emojis?.joined(separator: " ") ?? ""
+        updateButtonStates()
+        updateCommentCount()
+        
+        print("📱 Showing selected fact from liked/disliked page: \(fact.id)")
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

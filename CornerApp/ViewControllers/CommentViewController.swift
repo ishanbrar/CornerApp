@@ -229,6 +229,13 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
             return
         }
         
+        // Check for inappropriate content
+        if containsInappropriateContent(text) {
+            SoundManager.shared.playInappropriateContentSound()
+            showInappropriateContentAlert()
+            return
+        }
+        
         print("📝 Posting comment to factID: \(factID)")
         print("📝 Fact text: \(factText ?? "Unknown")")
         
@@ -345,6 +352,38 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         sendComment()
         return true
+    }
+    
+    // MARK: - Content Filtering
+    private func containsInappropriateContent(_ text: String) -> Bool {
+        let lowercaseText = text.lowercased()
+        
+        // List of inappropriate words/phrases to filter
+        let inappropriateWords = [
+            "retard", "retarded", "retards",
+            // Add other words you want to filter
+            // You can expand this list as needed
+        ]
+        
+        for word in inappropriateWords {
+            if lowercaseText.contains(word) {
+                print("⚠️ Inappropriate content detected: \(word)")
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    private func showInappropriateContentAlert() {
+        let alert = UIAlertController(
+            title: "Inappropriate Content",
+            message: "Your comment contains language that may be offensive. Please revise your comment to be more respectful.",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
     
     deinit {
