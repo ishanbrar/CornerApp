@@ -29,7 +29,11 @@ class MainViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        checkAuthenticationStatus()
+        // Only check authentication if we're not coming from splash screen
+        if !hasCheckedAuth {
+            checkAuthenticationStatus()
+            hasCheckedAuth = true
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -258,6 +262,13 @@ class MainViewController: UIViewController {
 
     @objc private func openComments(_ sender: UIButton) {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+        
+        // Check if user is signed in
+        guard firebaseManager.currentUser != nil else {
+            showAuthenticationRequiredAlert()
+            return
+        }
+        
         guard let fact = currentFact else { 
             print("❌ Error: No current fact available")
             return 
@@ -274,6 +285,13 @@ class MainViewController: UIViewController {
 
     @objc private func likeButtonTapped(_ sender: UIButton) {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+        
+        // Check if user is signed in
+        guard firebaseManager.currentUser != nil else {
+            showAuthenticationRequiredAlert()
+            return
+        }
+        
         guard let fact = currentFact else { return }
         firebaseManager.likeFact(fact.id) {
             DispatchQueue.main.async { self.updateButtonStates() }
@@ -282,10 +300,17 @@ class MainViewController: UIViewController {
 
     @objc private func dislikeButtonTapped(_ sender: UIButton) {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+        
+        // Check if user is signed in
+        guard firebaseManager.currentUser != nil else {
+            showAuthenticationRequiredAlert()
+            return
+        }
+        
         guard let fact = currentFact else { return }
         firebaseManager.dislikeFact(fact.id) {
-                    DispatchQueue.main.async { self.updateButtonStates() }
-                }
+            DispatchQueue.main.async { self.updateButtonStates() }
+        }
     }
 
     @objc private func undoButtonTapped(_ sender: UIButton) {
@@ -314,6 +339,26 @@ class MainViewController: UIViewController {
         profileVC.delegate = self
         let navController = UINavigationController(rootViewController: profileVC)
         present(navController, animated: true)
+    }
+    
+    // MARK: - Authentication Helper
+    private func showAuthenticationRequiredAlert() {
+        let alert = UIAlertController(
+            title: "Sign In Required",
+            message: "You need to sign in to like, dislike, or comment on facts.",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Sign In", style: .default) { [weak self] _ in
+            // Open profile page for sign in
+            let profileVC = ProfileViewController()
+            profileVC.delegate = self
+            let navController = UINavigationController(rootViewController: profileVC)
+            self?.present(navController, animated: true)
+        })
+        
+        present(alert, animated: true)
     }
 
 

@@ -371,12 +371,9 @@ class AuthenticationViewController: UIViewController {
                     SoundManager.shared.playSuccessSound()
                     SoundManager.shared.playSuccessHaptic()
                     
-                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                       let keyWindow = windowScene.windows.first,
-                       let rootVC = keyWindow.rootViewController {
-                        rootVC.dismiss(animated: true) {
-                            print("✅ Auth screen dismissed to root")
-                        }
+                    // Dismiss this auth screen and let splash handle the transition
+                    self?.dismiss(animated: true) {
+                        print("✅ Auth screen dismissed - splash will handle transition")
                     }
                 case .failure(let error):
                     print("❌ Sign in failed: \(error.localizedDescription)")
@@ -416,12 +413,9 @@ class AuthenticationViewController: UIViewController {
                     SoundManager.shared.playSuccessSound()
                     SoundManager.shared.playSuccessHaptic()
                     
-                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                       let keyWindow = windowScene.windows.first,
-                       let rootVC = keyWindow.rootViewController {
-                        rootVC.dismiss(animated: true) {
-                            print("✅ Auth screen dismissed to root")
-                        }
+                    // Dismiss this auth screen and let splash handle the transition
+                    self?.dismiss(animated: true) {
+                        print("✅ Auth screen dismissed - splash will handle transition")
                     }
                 case .failure(let error):
                     print("❌ Sign up failed: \(error.localizedDescription)")

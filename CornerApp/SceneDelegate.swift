@@ -7,11 +7,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        let mainVC = MainViewController()
-        let navController = UINavigationController(rootViewController: mainVC)
-        window?.rootViewController = navController
+        let splashVC = SplashViewController()
+        window?.rootViewController = splashVC
         window?.makeKeyAndVisible()
-
     }
     
     // Keep the other default methods...

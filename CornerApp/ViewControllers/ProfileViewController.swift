@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController {
     private var activeFactPackLabel: UILabel! // New label for active fact pack
     private var selectFactPackButton: UIButton! // New button to select fact pack
     private var appearanceButton: UIButton! // New button to toggle appearance
-
+    private var statsButton: UIButton!
     private var authButton: UIButton! // Changed from signOutButton to authButton
     private var likedFactsButton: UIButton! // Changed from label to button
     private var dislikedFactsButton: UIButton! // Changed from label to button
@@ -63,6 +63,7 @@ class ProfileViewController: UIViewController {
         appearanceButton = UIButton(type: .system) // New appearance toggle button
         likedFactsButton = UIButton(type: .system) // Changed from label to button
         dislikedFactsButton = UIButton(type: .system) // Changed from label to button
+        statsButton = UIButton(type: .system) // New stats button
 
         authButton = UIButton(type: .system) // Changed from signOutButton
         notSignedInLabel = UILabel() // New label
@@ -70,12 +71,19 @@ class ProfileViewController: UIViewController {
         //search bar
         searchBar = UISearchBar()  // ← NEW
 
-        // Search Bar setup with dark mode support
-        searchBar.placeholder = "Search by emoji(s)... 🔍 (e.g., 🇩🇪🎾)"  // ← UPDATED
-        searchBar.delegate = self  // ← NEW
-        searchBar.searchBarStyle = .minimal  // ← NEW
-        searchBar.backgroundColor = UIColor.systemGray6  // ← NEW
-        searchBar.layer.cornerRadius = 8  // ← NEW
+        // Search Bar setup with emoji keyboard and character limit
+        searchBar.placeholder = "Search by emoji(s)..."  // Updated placeholder
+        searchBar.delegate = self
+        searchBar.searchBarStyle = .minimal
+        searchBar.backgroundColor = UIColor.systemGray6
+        searchBar.layer.cornerRadius = 8
+        
+        // Configure for emoji input
+        searchBar.keyboardType = .default  // This shows emoji keyboard by default
+        searchBar.autocorrectionType = .no
+        searchBar.autocapitalizationType = .none
+        searchBar.spellCheckingType = .no
+        searchBar.returnKeyType = .go  // Shows "Go" button on keyboard
         
         // Email Label
         emailLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
@@ -145,6 +153,18 @@ class ProfileViewController: UIViewController {
         dislikedFactsButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         dislikedFactsButton.addTarget(self, action: #selector(dislikedFactsButtonTapped), for: .touchUpInside)
         
+        // Stats Button
+        statsButton.setTitle("📊 Stats", for: .normal)
+        statsButton.backgroundColor = UIColor.systemPurple
+        statsButton.setTitleColor(.white, for: .normal)
+        statsButton.layer.cornerRadius = 12
+        statsButton.layer.shadowColor = UIColor.black.cgColor
+        statsButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        statsButton.layer.shadowRadius = 4
+        statsButton.layer.shadowOpacity = 0.2
+        statsButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        statsButton.addTarget(self, action: #selector(statsButtonTapped), for: .touchUpInside)
+        
 
         
         // Auth Button (will be configured based on auth state) with dark mode support
@@ -168,6 +188,7 @@ class ProfileViewController: UIViewController {
         contentView.addSubview(notSignedInLabel)
         contentView.addSubview(likedFactsButton)
         contentView.addSubview(dislikedFactsButton)
+        contentView.addSubview(statsButton)
         contentView.addSubview(authButton)
         
         // Setup constraints after all views are added to hierarchy
@@ -188,6 +209,7 @@ class ProfileViewController: UIViewController {
         appearanceButton.translatesAutoresizingMaskIntoConstraints = false
         likedFactsButton.translatesAutoresizingMaskIntoConstraints = false
         dislikedFactsButton.translatesAutoresizingMaskIntoConstraints = false
+        statsButton.translatesAutoresizingMaskIntoConstraints = false
         authButton.translatesAutoresizingMaskIntoConstraints = false
         searchBar.translatesAutoresizingMaskIntoConstraints = false  // ← NEW
 
@@ -255,8 +277,14 @@ class ProfileViewController: UIViewController {
             dislikedFactsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             dislikedFactsButton.heightAnchor.constraint(equalToConstant: 50),
             
+            // Stats Button
+            statsButton.topAnchor.constraint(equalTo: dislikedFactsButton.bottomAnchor, constant: 20),
+            statsButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            statsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            statsButton.heightAnchor.constraint(equalToConstant: 50),
+            
             // Auth Button
-            authButton.topAnchor.constraint(equalTo: dislikedFactsButton.bottomAnchor, constant: 40),
+            authButton.topAnchor.constraint(equalTo: statsButton.bottomAnchor, constant: 40),
             authButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             authButton.widthAnchor.constraint(equalToConstant: 200),
             authButton.heightAnchor.constraint(equalToConstant: 44),
@@ -300,6 +328,7 @@ class ProfileViewController: UIViewController {
         appearanceButton.isHidden = false
         likedFactsButton.isHidden = false
         dislikedFactsButton.isHidden = false
+        statsButton.isHidden = false
         notSignedInLabel.isHidden = true
     }
     
@@ -312,6 +341,7 @@ class ProfileViewController: UIViewController {
         appearanceButton.isHidden = true
         likedFactsButton.isHidden = true
         dislikedFactsButton.isHidden = true
+        statsButton.isHidden = true
         notSignedInLabel.isHidden = false
     }
     
@@ -476,6 +506,11 @@ class ProfileViewController: UIViewController {
         navigationController?.pushViewController(dislikedFactsVC, animated: true)
     }
     
+    @objc private func statsButtonTapped() {
+        let statsVC = StatsViewController()
+        navigationController?.pushViewController(statsVC, animated: true)
+    }
+    
     @objc private func selectFactPackButtonTapped() {
         let factPackSelectionVC = FactPackSelectionViewController()
         navigationController?.pushViewController(factPackSelectionVC, animated: true)
@@ -577,7 +612,16 @@ extension ProfileViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        // Optional: Add real-time search functionality here
+        // Limit input to 3 characters
+        if let text = searchBar.text, text.count > 3 {
+            searchBar.text = String(text.prefix(3))
+        }
+    }
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        // Ensure emoji keyboard is available
+        searchBar.keyboardType = .default
+        return true
     }
 }
 
