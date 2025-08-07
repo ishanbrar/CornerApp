@@ -29,6 +29,24 @@ class SoundManager {
         feedback.notificationOccurred(.warning)
     }
     
+    func playLoginSound() {
+        // Play custom MP3 sound for login
+        playCustomSound(named: "mw2_join_lobby", fileExtension: "mp3")
+        
+        // Add haptic feedback
+        let feedback = UINotificationFeedbackGenerator()
+        feedback.notificationOccurred(.success)
+    }
+    
+    func playSignOutSound() {
+        // Play custom MP3 sound for sign out
+        playCustomSound(named: "mw2_leave_lobby", fileExtension: "mp3")
+        
+        // Add haptic feedback
+        let feedback = UINotificationFeedbackGenerator()
+        feedback.notificationOccurred(.success)
+    }
+    
     // MARK: - System Sounds
     private func playSystemSound(_ soundType: SystemSoundType) {
         switch soundType {

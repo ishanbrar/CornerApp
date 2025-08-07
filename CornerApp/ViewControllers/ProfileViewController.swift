@@ -100,27 +100,26 @@ class ProfileViewController: UIViewController {
         activeFactPackLabel.textAlignment = .left
         activeFactPackLabel.numberOfLines = 1
         
-        // Enhanced Select Fact Pack Button
-        selectFactPackButton.setTitle("📚 Change Fact Pack", for: .normal)
-        selectFactPackButton.backgroundColor = UIColor.systemBlue
-        selectFactPackButton.setTitleColor(.white, for: .normal)
+        // Enhanced Select Deck Button
+        selectFactPackButton.setTitle("📚 Change Deck", for: .normal)
         selectFactPackButton.layer.cornerRadius = 12
         selectFactPackButton.layer.shadowColor = UIColor.black.cgColor
-        selectFactPackButton.layer.shadowOffset = CGSize(width: 0, height: 2)
-        selectFactPackButton.layer.shadowRadius = 4
-        selectFactPackButton.layer.shadowOpacity = 0.2
+        selectFactPackButton.layer.shadowOffset = CGSize(width: 0, height: 4)
+        selectFactPackButton.layer.shadowRadius = 8
+        selectFactPackButton.layer.shadowOpacity = 0.3
         selectFactPackButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         selectFactPackButton.addTarget(self, action: #selector(selectFactPackButtonTapped), for: .touchUpInside)
+        updateSelectDeckButtonAppearance()
         
         // Enhanced Appearance Toggle Button
-        updateAppearanceButton()
         appearanceButton.layer.cornerRadius = 12
         appearanceButton.layer.shadowColor = UIColor.black.cgColor
-        appearanceButton.layer.shadowOffset = CGSize(width: 0, height: 2)
-        appearanceButton.layer.shadowRadius = 4
-        appearanceButton.layer.shadowOpacity = 0.2
+        appearanceButton.layer.shadowOffset = CGSize(width: 0, height: 4)
+        appearanceButton.layer.shadowRadius = 8
+        appearanceButton.layer.shadowOpacity = 0.3
         appearanceButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         appearanceButton.addTarget(self, action: #selector(appearanceButtonTapped), for: .touchUpInside)
+        updateAppearanceButton()
         
         // Not Signed In Label
         notSignedInLabel.text = "Please sign in to view your profile data"
@@ -131,39 +130,36 @@ class ProfileViewController: UIViewController {
         
         // Liked Facts Button
         likedFactsButton.setTitle("❤️ Liked Facts", for: .normal)
-        likedFactsButton.backgroundColor = UIColor.systemRed
-        likedFactsButton.setTitleColor(.white, for: .normal)
         likedFactsButton.layer.cornerRadius = 12
         likedFactsButton.layer.shadowColor = UIColor.black.cgColor
-        likedFactsButton.layer.shadowOffset = CGSize(width: 0, height: 2)
-        likedFactsButton.layer.shadowRadius = 4
-        likedFactsButton.layer.shadowOpacity = 0.2
+        likedFactsButton.layer.shadowOffset = CGSize(width: 0, height: 4)
+        likedFactsButton.layer.shadowRadius = 8
+        likedFactsButton.layer.shadowOpacity = 0.3
         likedFactsButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         likedFactsButton.addTarget(self, action: #selector(likedFactsButtonTapped), for: .touchUpInside)
+        updateLikedFactsButtonAppearance()
         
         // Disliked Facts Button
         dislikedFactsButton.setTitle("👎 Disliked Facts", for: .normal)
-        dislikedFactsButton.backgroundColor = UIColor.systemGray
-        dislikedFactsButton.setTitleColor(.white, for: .normal)
         dislikedFactsButton.layer.cornerRadius = 12
         dislikedFactsButton.layer.shadowColor = UIColor.black.cgColor
-        dislikedFactsButton.layer.shadowOffset = CGSize(width: 0, height: 2)
-        dislikedFactsButton.layer.shadowRadius = 4
-        dislikedFactsButton.layer.shadowOpacity = 0.2
+        dislikedFactsButton.layer.shadowOffset = CGSize(width: 0, height: 4)
+        dislikedFactsButton.layer.shadowRadius = 8
+        dislikedFactsButton.layer.shadowOpacity = 0.3
         dislikedFactsButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         dislikedFactsButton.addTarget(self, action: #selector(dislikedFactsButtonTapped), for: .touchUpInside)
+        updateDislikedFactsButtonAppearance()
         
         // Stats Button
         statsButton.setTitle("📊 Stats", for: .normal)
-        statsButton.backgroundColor = UIColor.systemPurple
-        statsButton.setTitleColor(.white, for: .normal)
         statsButton.layer.cornerRadius = 12
         statsButton.layer.shadowColor = UIColor.black.cgColor
-        statsButton.layer.shadowOffset = CGSize(width: 0, height: 2)
-        statsButton.layer.shadowRadius = 4
-        statsButton.layer.shadowOpacity = 0.2
+        statsButton.layer.shadowOffset = CGSize(width: 0, height: 4)
+        statsButton.layer.shadowRadius = 8
+        statsButton.layer.shadowOpacity = 0.3
         statsButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         statsButton.addTarget(self, action: #selector(statsButtonTapped), for: .touchUpInside)
+        updateStatsButtonAppearance()
         
 
         
@@ -544,6 +540,10 @@ class ProfileViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive) { [weak self] _ in
             do {
                 try self?.firebaseManager.signOut()
+                
+                // Play sign out sound
+                SoundManager.shared.playSignOutSound()
+                
                 self?.dismissProfile()
 
             } catch {
@@ -573,7 +573,7 @@ class ProfileViewController: UIViewController {
         let factPackManager = FactPackManager.shared
         let currentFactPack = factPackManager.getCurrentFactPackName()
         let packInfo = factPackManager.getFactPackInfo(currentFactPack)
-        activeFactPackLabel.text = "📚 Active Fact Pack: \(packInfo.name)"
+        activeFactPackLabel.text = "📚 Active Deck: \(packInfo.name)"
     }
     
     private func updateAppearanceButton() {
@@ -582,21 +582,77 @@ class ProfileViewController: UIViewController {
         
         if isDark {
             appearanceButton.setTitle("☀️ Light Mode", for: .normal)
-            appearanceButton.backgroundColor = UIColor.systemYellow
-            appearanceButton.setTitleColor(.black, for: .normal)
+            appearanceButton.backgroundColor = .black
+            appearanceButton.setTitleColor(.white, for: .normal)
         } else {
             appearanceButton.setTitle("🌙 Dark Mode", for: .normal)
-            appearanceButton.backgroundColor = UIColor.systemIndigo
-            appearanceButton.setTitleColor(.white, for: .normal)
+            appearanceButton.backgroundColor = .white
+            appearanceButton.setTitleColor(.black, for: .normal)
+        }
+    }
+    
+    private func updateSelectDeckButtonAppearance() {
+        let currentStyle = traitCollection.userInterfaceStyle
+        let isDark = currentStyle == .dark
+        
+        if isDark {
+            selectFactPackButton.backgroundColor = .black
+            selectFactPackButton.setTitleColor(.white, for: .normal)
+        } else {
+            selectFactPackButton.backgroundColor = .white
+            selectFactPackButton.setTitleColor(.black, for: .normal)
+        }
+    }
+    
+    private func updateLikedFactsButtonAppearance() {
+        let currentStyle = traitCollection.userInterfaceStyle
+        let isDark = currentStyle == .dark
+        
+        if isDark {
+            likedFactsButton.backgroundColor = .black
+            likedFactsButton.setTitleColor(.white, for: .normal)
+        } else {
+            likedFactsButton.backgroundColor = .white
+            likedFactsButton.setTitleColor(.black, for: .normal)
+        }
+    }
+    
+    private func updateDislikedFactsButtonAppearance() {
+        let currentStyle = traitCollection.userInterfaceStyle
+        let isDark = currentStyle == .dark
+        
+        if isDark {
+            dislikedFactsButton.backgroundColor = .black
+            dislikedFactsButton.setTitleColor(.white, for: .normal)
+        } else {
+            dislikedFactsButton.backgroundColor = .white
+            dislikedFactsButton.setTitleColor(.black, for: .normal)
+        }
+    }
+    
+    private func updateStatsButtonAppearance() {
+        let currentStyle = traitCollection.userInterfaceStyle
+        let isDark = currentStyle == .dark
+        
+        if isDark {
+            statsButton.backgroundColor = .black
+            statsButton.setTitleColor(.white, for: .normal)
+        } else {
+            statsButton.backgroundColor = .white
+            statsButton.setTitleColor(.black, for: .normal)
         }
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         
-        // Update appearance button when system appearance changes
+        // Update all buttons when system appearance changes
         if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
             updateAppearanceButton()
+            updateSelectDeckButtonAppearance()
+            updateLikedFactsButtonAppearance()
+            updateDislikedFactsButtonAppearance()
+            updateStatsButtonAppearance()
         }
     }
 }

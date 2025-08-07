@@ -29,7 +29,7 @@ class DislikedFactsViewController: UIViewController {
         view.backgroundColor = UIColor.systemBackground
         
         // Setup filter button with dark mode support
-        filterButton.setTitle("Filter: All Fact Packs", for: .normal)
+        filterButton.setTitle("Filter: All Decks", for: .normal)
         filterButton.backgroundColor = UIColor.systemBlue
         filterButton.setTitleColor(.white, for: .normal)
         filterButton.layer.cornerRadius = 8
@@ -100,10 +100,10 @@ class DislikedFactsViewController: UIViewController {
     }
     
     @objc private func filterButtonTapped() {
-        let alert = UIAlertController(title: "Filter Fact Packs", message: "Choose a fact pack to filter by:", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Filter Decks", message: "Choose a deck to filter by:", preferredStyle: .actionSheet)
         
         // Add "All" option
-        alert.addAction(UIAlertAction(title: "All Fact Packs", style: .default) { [weak self] _ in
+        alert.addAction(UIAlertAction(title: "All Decks", style: .default) { [weak self] _ in
             self?.selectedFactPack = nil
             self?.updateFilterButtonTitle()
             self?.applyFilter()
@@ -137,7 +137,7 @@ class DislikedFactsViewController: UIViewController {
             let packInfo = factPackManager.getFactPackInfo(selectedFactPack)
             filterButton.setTitle("Filter: \(packInfo.name)", for: .normal)
         } else {
-            filterButton.setTitle("Filter: All Fact Packs", for: .normal)
+            filterButton.setTitle("Filter: All Decks", for: .normal)
         }
     }
 }

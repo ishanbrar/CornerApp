@@ -15,7 +15,7 @@ class FactPackSelectionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Fact Packs"
+        navigationItem.title = "Decks"
         navigationItem.largeTitleDisplayMode = .always
     }
     
@@ -106,8 +106,8 @@ class FactPackSelectionViewController: UIViewController {
         }
         
         let alert = UIAlertController(
-            title: "No Fact Packs Found",
-            message: "No fact packs were found in Firebase Storage. Please ensure JSON files are uploaded.",
+            title: "No Decks Found",
+            message: "No decks were found in Firebase Storage. Please ensure JSON files are uploaded.",
             preferredStyle: .alert
         )
         alert.addAction(UIAlertAction(title: "OK", style: .default))
@@ -208,7 +208,7 @@ extension FactPackSelectionViewController: UITableViewDelegate {
         
         // Confirm fact pack switch
         let alert = UIAlertController(
-            title: "Switch Fact Pack",
+            title: "Switch Deck",
             message: "Are you sure you want to switch to \(factPackManager.getFactPackInfo(factPackName).name)? This will change the facts you see.",
             preferredStyle: .alert
         )
@@ -222,10 +222,10 @@ extension FactPackSelectionViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Available Fact Packs"
+        return "Available Decks"
     }
     
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "Select a fact pack to change the facts you see in the app."
+        return "Select a deck to change the facts you see in the app."
     }
 } 

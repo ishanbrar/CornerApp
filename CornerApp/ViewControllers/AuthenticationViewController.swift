@@ -367,9 +367,8 @@ class AuthenticationViewController: UIViewController {
                 case .success:
                     print("✅ Sign in successful - dismissing auth screen")
                     
-                    // Play success sound and haptic feedback
-                    SoundManager.shared.playSuccessSound()
-                    SoundManager.shared.playSuccessHaptic()
+                    // Play login sound and haptic feedback
+                    SoundManager.shared.playLoginSound()
                     
                     // Dismiss this auth screen and let splash handle the transition
                     self?.dismiss(animated: true) {
@@ -409,9 +408,8 @@ class AuthenticationViewController: UIViewController {
                 case .success:
                     print("✅ Sign up successful - dismissing auth screen")
                     
-                    // Play success sound and haptic feedback
-                    SoundManager.shared.playSuccessSound()
-                    SoundManager.shared.playSuccessHaptic()
+                    // Play login sound and haptic feedback
+                    SoundManager.shared.playLoginSound()
                     
                     // Dismiss this auth screen and let splash handle the transition
                     self?.dismiss(animated: true) {
