@@ -48,56 +48,67 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     private func setupUI() {
         view.backgroundColor = UIColor.systemBackground
         
-        // Setup fact card view
+        // Setup fact card view with enhanced styling
         factCardView.backgroundColor = UIColor.systemBackground
-        factCardView.layer.cornerRadius = 16
+        factCardView.layer.cornerRadius = 20
         factCardView.layer.shadowColor = UIColor.black.cgColor
-        factCardView.layer.shadowOpacity = 0.1
-        factCardView.layer.shadowRadius = 8
-        factCardView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        factCardView.layer.shadowOpacity = traitCollection.userInterfaceStyle == .dark ? 0.3 : 0.15
+        factCardView.layer.shadowRadius = 12
+        factCardView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        factCardView.layer.borderWidth = 1
+        factCardView.layer.borderColor = UIColor.systemGray5.cgColor
         
-        // Setup fact label
+        // Setup fact label with enhanced typography
         factLabel.text = factText
-        factLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        factLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         factLabel.numberOfLines = 0
         factLabel.textColor = UIColor.label
         factLabel.lineBreakMode = .byWordWrapping
+        factLabel.textAlignment = .left
         
-        // Setup comment count label
-        commentCountLabel.text = "0 comments"
-        commentCountLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        commentCountLabel.textColor = UIColor.secondaryLabel
+        // Setup comment count label with enhanced styling
+        commentCountLabel.text = "💬 0 comments"
+        commentCountLabel.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        commentCountLabel.textColor = UIColor.systemBlue
         
-        // Setup table view
+        // Setup table view with enhanced styling
         tableView.backgroundColor = UIColor.clear
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 100
+        tableView.estimatedRowHeight = 120
+        tableView.allowsSelection = false
         
-        // Setup comment field container
+        // Setup comment field container with enhanced styling
         let commentContainerView = UIView()
         commentContainerView.backgroundColor = UIColor.systemBackground
-        commentContainerView.layer.cornerRadius = 12
+        commentContainerView.layer.cornerRadius = 16
         commentContainerView.layer.shadowColor = UIColor.black.cgColor
-        commentContainerView.layer.shadowOpacity = 0.08
-        commentContainerView.layer.shadowRadius = 6
-        commentContainerView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        commentContainerView.layer.shadowOpacity = traitCollection.userInterfaceStyle == .dark ? 0.2 : 0.1
+        commentContainerView.layer.shadowRadius = 8
+        commentContainerView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        commentContainerView.layer.borderWidth = 1
+        commentContainerView.layer.borderColor = UIColor.systemGray5.cgColor
         
-        // Setup comment field
+        // Setup comment field with enhanced styling
         commentField.placeholder = "Add your comment..."
-        commentField.font = UIFont.systemFont(ofSize: 16)
+        commentField.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         commentField.backgroundColor = UIColor.clear
         commentField.borderStyle = .none
         commentField.delegate = self
+        commentField.returnKeyType = .send
         
-        // Setup send button
+        // Setup send button with enhanced styling
         sendButton.setTitle("Send", for: .normal)
         sendButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         sendButton.backgroundColor = UIColor.systemBlue
         sendButton.tintColor = UIColor.white
-        sendButton.layer.cornerRadius = 8
+        sendButton.layer.cornerRadius = 10
+        sendButton.layer.shadowColor = UIColor.systemBlue.cgColor
+        sendButton.layer.shadowOpacity = 0.3
+        sendButton.layer.shadowRadius = 4
+        sendButton.layer.shadowOffset = CGSize(width: 0, height: 2)
         sendButton.addTarget(self, action: #selector(sendComment), for: .touchUpInside)
         
         // Add subviews
@@ -229,11 +240,9 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
             return
         }
         
-        // Check for inappropriate content
+        // Check for inappropriate content and play sound if detected
         if containsInappropriateContent(text) {
             SoundManager.shared.playInappropriateContentSound()
-            showInappropriateContentAlert()
-            return
         }
         
         print("📝 Posting comment to factID: \(factID)")
@@ -375,15 +384,15 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         return false
     }
     
-    private func showInappropriateContentAlert() {
-        let alert = UIAlertController(
-            title: "Inappropriate Content",
-            message: "Your comment contains language that may be offensive. Please revise your comment to be more respectful.",
-            preferredStyle: .alert
-        )
+
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
         
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
+        // Update shadow opacity for dark/light mode
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            factCardView.layer.shadowOpacity = traitCollection.userInterfaceStyle == .dark ? 0.3 : 0.15
+        }
     }
     
     deinit {

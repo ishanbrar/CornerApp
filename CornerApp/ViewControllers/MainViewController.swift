@@ -5,6 +5,7 @@ import FirebaseFirestoreCombineSwift
 class MainViewController: UIViewController {
 
     private var cornerButton: UIButton!
+    private var factScrollView: UIScrollView!
     private var commentButton: UIButton!
     private var factLabel: UILabel!
     private var likeButton: UIButton!
@@ -45,6 +46,7 @@ class MainViewController: UIViewController {
         view.backgroundColor = UIColor.systemBackground
 
         cornerButton = UIButton(type: .system)
+        factScrollView = UIScrollView()
         factLabel = UILabel()
         likeButton = UIButton(type: .system)
         dislikeButton = UIButton(type: .system)
@@ -55,18 +57,27 @@ class MainViewController: UIViewController {
         emojiLabel = UILabel()
         commentBadgeLabel = UILabel()
 
+        // Setup scroll view for fact text
+        factScrollView.showsVerticalScrollIndicator = true
+        factScrollView.showsHorizontalScrollIndicator = false
+        factScrollView.backgroundColor = UIColor.clear
+        
         emojiLabel.textAlignment = .center
-        emojiLabel.font = UIFont.systemFont(ofSize: 28)
+        emojiLabel.font = UIFont.systemFont(ofSize: 36) // Increased from 28 to 36
         emojiLabel.numberOfLines = 1
         emojiLabel.adjustsFontSizeToFitWidth = true
         view.addSubview(emojiLabel)
 
-        // Corner Button
-        cornerButton.setTitle("Corner", for: .normal)
-        cornerButton.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+        // Corner Button with enhanced styling
+        cornerButton.setTitle("🎯 Corner", for: .normal)
+        cornerButton.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         cornerButton.backgroundColor = UIColor.systemBlue
         cornerButton.tintColor = .white
-        cornerButton.layer.cornerRadius = 25
+        cornerButton.layer.cornerRadius = 28
+        cornerButton.layer.shadowColor = UIColor.systemBlue.cgColor
+        cornerButton.layer.shadowOpacity = 0.4
+        cornerButton.layer.shadowRadius = 8
+        cornerButton.layer.shadowOffset = CGSize(width: 0, height: 4)
         cornerButton.addTarget(self, action: #selector(cornerButtonTapped), for: .touchUpInside)
 
         // Comment Badge
@@ -77,11 +88,12 @@ class MainViewController: UIViewController {
         commentBadgeLabel.layer.cornerRadius = 8
         commentBadgeLabel.layer.masksToBounds = true
         commentBadgeLabel.isHidden = true
-        // Fact Label
+        // Fact Label with enhanced styling
         factLabel.numberOfLines = 0
         factLabel.textAlignment = .center
-        factLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        factLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         factLabel.textColor = UIColor.label
+        factLabel.lineBreakMode = .byWordWrapping
 
         // Buttons
         setupActionButton(likeButton, systemName: "heart", color: .systemRed, action: #selector(likeButtonTapped))
@@ -93,9 +105,12 @@ class MainViewController: UIViewController {
         
 
         // Add to view
-        [cornerButton, factLabel, likeButton, dislikeButton, shareButton, profileButton, undoButton, commentButton,commentBadgeLabel].forEach {
+        [cornerButton, factScrollView, factLabel, likeButton, dislikeButton, shareButton, profileButton, undoButton, commentButton, commentBadgeLabel].forEach {
             view.addSubview($0)
         }
+        
+        // Add fact label to scroll view
+        factScrollView.addSubview(factLabel)
 
         setupConstraints()
     }
@@ -105,26 +120,39 @@ class MainViewController: UIViewController {
         button.tintColor = color
         button.backgroundColor = UIColor.systemGray6
         button.layer.cornerRadius = 25
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.1
+        button.layer.shadowRadius = 4
+        button.layer.shadowOffset = CGSize(width: 0, height: 2)
         button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: action, for: .touchUpInside)
     }
 
     private func setupConstraints() {
-        [cornerButton, factLabel, likeButton, dislikeButton, shareButton, profileButton, undoButton, commentButton, commentBadgeLabel, emojiLabel].forEach {
+        [cornerButton, factScrollView, factLabel, likeButton, dislikeButton, shareButton, profileButton, undoButton, commentButton, commentBadgeLabel, emojiLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
 
         NSLayoutConstraint.activate([
-            profileButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            profileButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8), // Move up by 12pt (from 20 to 8)
             profileButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             profileButton.widthAnchor.constraint(equalToConstant: 50),
             profileButton.heightAnchor.constraint(equalToConstant: 50),
 
-            factLabel.topAnchor.constraint(equalTo: profileButton.bottomAnchor, constant: 40),
-            factLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            factLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            // Scroll view for fact text
+            factScrollView.topAnchor.constraint(equalTo: profileButton.bottomAnchor, constant: 16), // Move up by 24pt (from 40 to 16)
+            factScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            factScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            factScrollView.bottomAnchor.constraint(equalTo: undoButton.topAnchor, constant: -58), // Extend height by 12pt (from -70 to -58)
+            
+            // Fact label inside scroll view
+            factLabel.topAnchor.constraint(equalTo: factScrollView.topAnchor, constant: 16),
+            factLabel.leadingAnchor.constraint(equalTo: factScrollView.leadingAnchor, constant: 16),
+            factLabel.trailingAnchor.constraint(equalTo: factScrollView.trailingAnchor, constant: -16),
+            factLabel.bottomAnchor.constraint(equalTo: factScrollView.bottomAnchor, constant: -16),
+            factLabel.widthAnchor.constraint(equalTo: factScrollView.widthAnchor, constant: -32),
 
-            emojiLabel.topAnchor.constraint(equalTo: factLabel.bottomAnchor, constant: 16),
+            emojiLabel.topAnchor.constraint(equalTo: factScrollView.bottomAnchor, constant: 4), // Move down slightly (from -4 to 4)
             emojiLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             emojiLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
 

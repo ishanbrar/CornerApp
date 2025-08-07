@@ -47,13 +47,13 @@ class CommentCell: UITableViewCell {
         backgroundColor = .clear
         selectionStyle = .none
         
-        // Container view for the comment bubble
+        // Container view for the comment bubble with enhanced styling
         containerView.backgroundColor = UIColor.systemBackground
-        containerView.layer.cornerRadius = 16
+        containerView.layer.cornerRadius = 18
         containerView.layer.shadowColor = UIColor.black.cgColor
-        containerView.layer.shadowOpacity = 0.08
-        containerView.layer.shadowRadius = 8
-        containerView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        containerView.layer.shadowOpacity = traitCollection.userInterfaceStyle == .dark ? 0.2 : 0.12
+        containerView.layer.shadowRadius = 10
+        containerView.layer.shadowOffset = CGSize(width: 0, height: 3)
         containerView.layer.borderWidth = 1
         containerView.layer.borderColor = UIColor.systemGray5.cgColor
         
@@ -68,9 +68,9 @@ class CommentCell: UITableViewCell {
         containerView.addSubview(likeButton)
         containerView.addSubview(likeCountLabel)
 
-        // Username label - bold and italic
+        // Username label with enhanced styling
         usernameLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-        usernameLabel.textColor = UIColor.label
+        usernameLabel.textColor = UIColor.systemBlue
         
         // Date label
         dateLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
@@ -82,14 +82,20 @@ class CommentCell: UITableViewCell {
         commentLabel.numberOfLines = 0
         commentLabel.lineBreakMode = .byWordWrapping
         
-        // Like button
-        likeButton.setImage(UIImage(systemName: "hand.thumbsup"), for: .normal)
+        // Like button with enhanced styling
+        likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         likeButton.tintColor = .gray
         likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+        likeButton.layer.cornerRadius = 8
+        likeButton.backgroundColor = UIColor.systemGray6
         
-        // Like count label
+        // Like count label with enhanced styling
         likeCountLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         likeCountLabel.textColor = UIColor.secondaryLabel
+        likeCountLabel.backgroundColor = UIColor.systemGray6
+        likeCountLabel.layer.cornerRadius = 6
+        likeCountLabel.layer.masksToBounds = true
+        likeCountLabel.textAlignment = .center
 
         NSLayoutConstraint.activate([
             // Container view
@@ -234,6 +240,13 @@ class CommentCell: UITableViewCell {
             }
         }
     }
-
-
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        // Update shadow opacity for dark/light mode
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            containerView.layer.shadowOpacity = traitCollection.userInterfaceStyle == .dark ? 0.2 : 0.12
+        }
+    }
 }

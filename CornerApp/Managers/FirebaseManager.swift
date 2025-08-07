@@ -284,13 +284,15 @@ class FirebaseManager: ObservableObject {
     
     func likeFact(_ factId: String, completion: (() -> Void)? = nil) {
         guard var profile = userProfile else { return }
-        if !profile.likedFacts.contains(factId) {
+        if profile.likedFacts.contains(factId) {
+            // If already liked, unlike it
+            profile.likedFacts.removeAll { $0 == factId }
+        } else {
+            // If not liked, like it and remove from disliked
             profile.likedFacts.append(factId)
             profile.dislikedFacts.removeAll { $0 == factId }
-            saveUserProfile(profile) { _ in
-                completion?()
-            }
-        } else {
+        }
+        saveUserProfile(profile) { _ in
             completion?()
         }
     }
@@ -298,13 +300,15 @@ class FirebaseManager: ObservableObject {
     
     func dislikeFact(_ factId: String, completion: (() -> Void)? = nil) {
         guard var profile = userProfile else { return }
-        if !profile.dislikedFacts.contains(factId) {
+        if profile.dislikedFacts.contains(factId) {
+            // If already disliked, undislike it
+            profile.dislikedFacts.removeAll { $0 == factId }
+        } else {
+            // If not disliked, dislike it and remove from liked
             profile.dislikedFacts.append(factId)
             profile.likedFacts.removeAll { $0 == factId }
-            saveUserProfile(profile) { _ in
-                completion?()
-            }
-        } else {
+        }
+        saveUserProfile(profile) { _ in
             completion?()
         }
     }
